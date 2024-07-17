@@ -12,7 +12,7 @@ public class PageInitializer {
     public static LoginPage loginPage;
 
     public static void initializeAllPages() {
-       loginPage= new LoginPage();
+        loginPage = new LoginPage();
 
 
     }
