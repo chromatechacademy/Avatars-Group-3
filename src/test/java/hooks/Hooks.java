@@ -12,8 +12,8 @@ public class Hooks {
     @Before
     public void start(Scenario scenario) {
         CucumberLogUtils.scenario = scenario;
-        PageInitializer.initializeAllPages();
         WebDriverUtils.setUp();
+        PageInitializer.initializeAllPages();
     }
 
     @After
