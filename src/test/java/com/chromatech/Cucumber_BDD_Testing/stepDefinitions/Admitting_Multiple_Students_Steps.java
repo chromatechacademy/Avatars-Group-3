@@ -6,9 +6,6 @@ import com.chromatech.utils.WebDriverUtils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
 
 public class Admitting_Multiple_Students_Steps {
 
@@ -21,21 +18,32 @@ public class Admitting_Multiple_Students_Steps {
         CommonMethods.assertEquals(actualAdmissionPageUrl, expectedAdmissionPageUrl);
 
     }
-    @When("the user fills out all fields {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
-    public void the_user_fills_out_all_fields(String admissionNo, String rollNumber, String classDropDownValue, String sectionDropDownValue, String firstNameText, String lastNameText, String string7, String string8, String string9, String string10, String string11, String string12, String string13, String string14, String string15, String string16, String string17, String string18, String string19, String string20, String string21, String string22) {
+
+    @When("the user fills out all fields {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
+    public void the_user_fills_out_all_fields(String admissionNo, String rollNumber, String classOption, String sectionOption, String firstName, String lastName, String genderOption, String dateOfBirth, String categoryOption, String email, String admissionDate, String bloodGroupOption, String asOnDate, String mobileNumber, String height, String weight, String fatherName, String fatherPhone, String fatherOccupation, String motherName, String motherPhone, String motherOccupation, String guardianName, String guardianRelation, String guardianEmail, String guardianPhone, String guardianOccupation, String guardianAddress) {
         PageInitializer.studentAdmissionPage.admissionNoTextBox.sendKeys(admissionNo);
-        CommonMethods.selectDropDownValue(PageInitializer.studentAdmissionPage.genderDropDown, string7);
+        PageInitializer.studentAdmissionPage.rollNumberTextBox.sendKeys(rollNumber);
+        CommonMethods.selectDropDownValue(classOption, PageInitializer.studentAdmissionPage.classDropDown);
+        CommonMethods.selectDropDownValue(sectionOption, PageInitializer.studentAdmissionPage.sectionDropDown);
+        PageInitializer.studentAdmissionPage.rollNumberTextBox.sendKeys(firstName);
+        PageInitializer.studentAdmissionPage.rollNumberTextBox.sendKeys(lastName);
+        CommonMethods.selectDropDownValue(genderOption, PageInitializer.studentAdmissionPage.genderDropDown);
+        CommonMethods.selectDateByJS(dateOfBirth, PageInitializer.studentAdmissionPage.dateOfBirthTextBox);
+        CommonMethods.selectDropDownValue(categoryOption, PageInitializer.studentAdmissionPage.categoryDropDown);
+
+
 
     }
 
-    @When("click save")
-    public void click_save() throws InterruptedException {
-        CommonMethods.selectDateByJS("01/01/1991", PageInitializer.studentAdmissionPage.dateOfBirthTextBox);
-        Thread.sleep(3000);
+    @When("clicks save")
+    public void clicks_save() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
     }
-//    @Then("the user should be able to admit multiple students with unique admission numbers")
-//    public void the_user_should_be_able_to_admit_multiple_students_with_unique_admission_numbers() {
-//        // Write code here that turns the phrase above into concrete actions
-//        throw new io.cucumber.java.PendingException();
-//    }
+
+    @Then("the user should be able to admit multiple students with unique admission numbers")
+    public void the_user_should_be_able_to_admit_multiple_students_with_unique_admission_numbers() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
 }
