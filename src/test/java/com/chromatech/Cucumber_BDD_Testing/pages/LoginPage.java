@@ -7,7 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 
-    public LoginPage() {PageFactory.initElements(WebDriverUtils.driver, this);}
+    public LoginPage() {
+        PageFactory.initElements(WebDriverUtils.driver, this);
+    }
 
     /**
      * Represents the username text box on the login page.
@@ -24,6 +26,6 @@ public class LoginPage {
      * Represents the Sign In button on the login page.
      * Used by the LoginPage class.
      */
-    @FindBy (xpath = "//button[@type='submit']" )
+    @FindBy(xpath = "//button[@type='submit']")
     public WebElement signInButton;
 }

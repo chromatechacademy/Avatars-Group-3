@@ -1,6 +1,6 @@
 Feature: Valid Credentials Login
 
-  @Progression
+
   Scenario: Valid Credentials Login
     Given a user is on the Chroma Tech Academy practice site "https://mexil.it/chroma/site/login"
     When user enters username "general@teacher.com" in username text box
