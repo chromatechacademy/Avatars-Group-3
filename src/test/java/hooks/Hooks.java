@@ -1,4 +1,4 @@
-package Hooks;
+package hooks;
 
 import com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer;
 import com.chromatech.utils.CucumberLogUtils;
