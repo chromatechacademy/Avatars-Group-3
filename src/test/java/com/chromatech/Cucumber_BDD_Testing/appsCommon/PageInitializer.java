@@ -13,7 +13,5 @@ public class PageInitializer {
 
     public static void initializeAllPages() {
         loginPage = new LoginPage();
-
-
     }
 }
