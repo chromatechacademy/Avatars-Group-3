@@ -1,5 +1,7 @@
 package com.chromatech.Cucumber_BDD_Testing.appsCommon;
 
+import com.chromatech.Cucumber_BDD_Testing.pages.LoginPage;
+
 public class PageInitializer {
 
     /**
@@ -7,7 +9,9 @@ public class PageInitializer {
      * PAGE OBJECTS
      */
 
+    public static LoginPage loginPage;
 
     public static void initializeAllPages() {
+        loginPage = new LoginPage();
     }
 }
