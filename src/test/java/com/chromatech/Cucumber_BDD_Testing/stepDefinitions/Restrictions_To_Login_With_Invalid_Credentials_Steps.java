@@ -20,13 +20,11 @@ public class Restrictions_To_Login_With_Invalid_Credentials_Steps {
     public void enters_invalid_password_in_password_text_box(String invalidPassword) {
         loginPage.passwordTextBox.sendKeys(invalidPassword);
         CucumberLogUtils.logScreenShot();
-
     }
 
     @Then("the user should see an error message")
     public void the_user_should_see_an_error_message() {
-        Assert.assertTrue(loginPage.signInButton.isDisplayed());
+        Assert.assertTrue(loginPage.errorMessage.isDisplayed());
         CucumberLogUtils.logScreenShot();
-
     }
 }

@@ -16,16 +16,24 @@ public class LoginPage {
      */
     @FindBy(xpath = "//input[@id='form-username']")
     public WebElement usernameTextBox;
+
     /**
      * Represents the password text box on the login page.
      * Used by the LoginPage class.
      */
     @FindBy(xpath = "//input[@id='form-password']")
     public WebElement passwordTextBox;
+
     /**
      * Represents the Sign In button on the login page.
      * Used by the LoginPage class.
      */
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement signInButton;
+
+    /**
+     * Represents the error message element on the login page.
+     */
+    @FindBy(xpath = "//div[@class='alert alert-danger']")
+    public WebElement errorMessage;
 }
