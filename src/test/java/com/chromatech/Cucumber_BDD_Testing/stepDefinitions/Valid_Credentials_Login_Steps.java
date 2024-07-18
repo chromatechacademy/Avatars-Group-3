@@ -18,21 +18,25 @@ public class Valid_Credentials_Login_Steps{
         WebDriverUtils.driver.get(url);
         CucumberLogUtils.logScreenShot();
     }
+
     @When("user enters username {string} in username text box")
     public void user_enters_username_in_username_text_box(String username) {
         loginPage.usernameTextBox.sendKeys(username);
         CucumberLogUtils.logScreenShot();
     }
+
     @When("enters password {string} in password text box")
     public void enters_password_in_password_text_box(String password) {
         loginPage.passwordTextBox.sendKeys(password);
         CucumberLogUtils.logScreenShot();
     }
+
     @When("clicks on Sign In button")
     public void clicks_on_sign_in_button() {
         loginPage.signInButton.click();
         CucumberLogUtils.logScreenShot();
     }
+
     @Then("user is directed to the CTSMS dashboard page {string}")
     public void user_is_directed_to_the_ctsms_dashboard_page(String expectedUrl) {
         String actualUrl = WebDriverUtils.driver.getCurrentUrl();
