@@ -185,5 +185,16 @@ public class StudentAdmissionPage {
     @FindBy(xpath = "//textarea[@id='guardian_address']")
     public WebElement guardianAddressTextBox;
 
+    @FindBy(xpath = "(//input[@id='file'])[1]")
+    public WebElement studentPhoto;
+
+    @FindBy(xpath = "(//input[@id='file'])[2]")
+    public WebElement fatherPhoto;
+
+    @FindBy(xpath = "(//input[@id='file'])[3]")
+    public WebElement motherPhoto;
+
+    @FindBy(xpath = "(//input[@id='file'])[4]")
+    public WebElement guardianPhoto;
 
 }

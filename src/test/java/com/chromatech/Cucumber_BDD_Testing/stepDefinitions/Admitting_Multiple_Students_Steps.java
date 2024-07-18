@@ -23,8 +23,8 @@ public class Admitting_Multiple_Students_Steps {
         CommonMethods.assertEquals(actualAdmissionPageUrl, expectedAdmissionPageUrl);
     }
 
-    @When("the user fills out all fields {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
-    public void the_user_fills_out_all_fields(String admissionNo, String rollNumber, String classOption, String sectionOption, String firstName, String lastName, String genderOption, String dateOfBirth, String categoryOption, String email, String admissionDate, String bloodGroupOption, String asOnDate, String mobileNumber, String height, String weight, String fatherName, String fatherPhone, String fatherOccupation, String motherName, String motherPhone, String motherOccupation, String guardianName, String guardianRelation, String guardianEmail, String guardianPhone, String guardianOccupation, String guardianAddress) {
+    @When("the user fills out all fields {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
+    public void the_user_fills_out_all_fields(String admissionNo, String rollNumber, String classOption, String sectionOption, String firstName, String lastName, String genderOption, String dateOfBirth, String categoryOption, String email, String admissionDate, String bloodGroupOption, String asOnDate, String mobileNumber, String height, String weight, String fatherName, String fatherPhone, String fatherOccupation, String motherName, String motherPhone, String motherOccupation, String guardianName, String guardianEmail, String guardianPhone, String guardianOccupation, String guardianAddress) {
         studentAdmissionPage.admissionNoTextBox.sendKeys(admissionNo);
         studentAdmissionPage.rollNumberTextBox.sendKeys(rollNumber);
         CommonMethods.selectDropDownValue(classOption, studentAdmissionPage.classDropDown);
@@ -48,17 +48,20 @@ public class Admitting_Multiple_Students_Steps {
         studentAdmissionPage.motherPhoneTextBox.sendKeys(motherPhone);
         studentAdmissionPage.motherOccupationTextBox.sendKeys(motherOccupation);
         studentAdmissionPage.motherRadioButton.click();
-        studentAdmissionPage.guardianNameTextBox.sendKeys();
+        studentAdmissionPage.guardianNameTextBox.sendKeys(guardianName);
         studentAdmissionPage.guardianEmailTextBox.sendKeys(guardianEmail);
         studentAdmissionPage.guardianPhoneTextBox.sendKeys(guardianPhone);
         studentAdmissionPage.guardianOccupationTextBox.sendKeys(guardianOccupation);
         studentAdmissionPage.guardianAddressTextBox.sendKeys(guardianAddress);
+    }
 
-
-
-
-
-
+    @When("uploads family member photos")
+    public void uploads_family_member_photos() {
+        String photo = System.getProperty("user.dir") + "/src/main/java/com.chromatech.utils/files/famphoto.jpg";
+        studentAdmissionPage.studentPhoto.sendKeys(photo);
+        studentAdmissionPage.fatherPhoto.sendKeys(photo);
+        studentAdmissionPage.motherPhoto.sendKeys(photo);
+        studentAdmissionPage.guardianPhoto.sendKeys(photo);
     }
 
     @When("clicks save")
