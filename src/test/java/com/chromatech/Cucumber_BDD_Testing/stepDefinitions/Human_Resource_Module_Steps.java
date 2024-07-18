@@ -45,13 +45,12 @@ public class Human_Resource_Module_Steps {
         CucumberLogUtils.logScreenShot();
     }
 
-
     @When("the user clicks on the Human Resource module")
     public void the_user_clicks_on_the_human_resource_module() {
         dashboardPage.humanResourceModule.click();
         CucumberLogUtils.logScreenShot();
-
     }
+
     @Then("the following submodules are displayed {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
     public void the_following_submodules_are_displayed(String staffDirectory, String staffAttendance, String payRoll, String approveLeaveRequest, String applyLeave, String leaveType, String teachersRating, String department, String designation) {
         Assert.assertTrue(dashboardPage.staffDirectorySubModule.isDisplayed());
@@ -64,7 +63,5 @@ public class Human_Resource_Module_Steps {
         Assert.assertTrue(dashboardPage.departmentSubModule.isDisplayed());
         Assert.assertTrue(dashboardPage.designationSubModule.isDisplayed());
         CucumberLogUtils.logScreenShot();
-
-
     }
 }

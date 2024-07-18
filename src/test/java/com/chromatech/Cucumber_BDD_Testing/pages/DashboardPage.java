@@ -70,8 +70,6 @@ public class DashboardPage {
      */
     @FindBy(xpath = "//a[normalize-space()='Designation']")
     public WebElement designationSubModule;
-
-
 }
 
 
