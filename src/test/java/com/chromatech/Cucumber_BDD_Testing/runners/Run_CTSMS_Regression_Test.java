@@ -11,6 +11,5 @@ import io.cucumber.testng.CucumberOptions;
         tags = "@Regression",
         dryRun = true
 )
-
 public class Run_CTSMS_Regression_Test extends AbstractTestNGCucumberTests {
 }

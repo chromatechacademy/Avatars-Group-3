@@ -11,7 +11,5 @@ import io.cucumber.testng.CucumberOptions;
         tags = "@Smoke",
         dryRun = true
 )
-
 public class Run_CTSMS_Smoke_Test extends AbstractTestNGCucumberTests {
-
 }

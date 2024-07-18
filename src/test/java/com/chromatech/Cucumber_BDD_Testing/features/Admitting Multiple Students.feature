@@ -1,11 +1,12 @@
 Feature: Admitting Multiple Records
 
-  @Progression
+  @Regression @Kei
   Scenario Outline: Making and saving changes to student information records
     Given a user is on the Chroma Tech Academy practice site "https://mexil.it/chroma/site/login"
     And user enters username "general@teacher.com" in username text box
     And enters password "123456" in password text box
     And clicks on Sign In button
+    And user is directed to the CTSMS dashboard page "https://mexil.it/chroma/admin/admin/dashboard"
     When a CTSMS admin or faculty member is on the student admission page "https://mexil.it/chroma/student/create"
     And the user fills out all fields "<Admission No>", "<Roll Number>", "<Class>", "<Section>", "<First Name>", "<Last Name>", "<Gender>", "<Date of Birth>", "<Category>", "<Email>", "<Admission Date>", "<Blood Group>", "<As on Date>", "<Mobile Number>", "<Height>", "<Weight>", "<Father Name>", "<Father Phone>", "<Father Occupation>", "<Mother Name>", "<Mother Phone>", "<Mother Occupation>", "<Guardian Name>", "<Guardian Relation>", "<Guardian Email>", "<Guardian Phone>", "<Guardian Occupation>", "<Guardian Address>"
     And clicks save
