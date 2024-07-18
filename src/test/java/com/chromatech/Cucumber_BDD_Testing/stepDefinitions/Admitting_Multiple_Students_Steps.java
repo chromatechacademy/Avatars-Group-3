@@ -37,6 +37,7 @@ public class Admitting_Multiple_Students_Steps {
         studentAdmissionPage.emailTextBox.sendKeys(email);
         JavascriptMethods.selectDateByJS(studentAdmissionPage.admissionDateTextBox, admissionDate);
         CommonMethods.selectDropDownValue(bloodGroupOption, studentAdmissionPage.bloodGroupDropDown);
+        JavascriptMethods.selectDateByJS(studentAdmissionPage.asOnDate, asOnDate);
         studentAdmissionPage.mobileNumberTextBox.sendKeys(mobileNumber);
         studentAdmissionPage.heightTextBox.sendKeys(height);
         studentAdmissionPage.weightTextBox.sendKeys(weight);
@@ -48,6 +49,10 @@ public class Admitting_Multiple_Students_Steps {
         studentAdmissionPage.motherOccupationTextBox.sendKeys(motherOccupation);
         studentAdmissionPage.motherRadioButton.click();
         studentAdmissionPage.guardianNameTextBox.sendKeys();
+        studentAdmissionPage.guardianEmailTextBox.sendKeys(guardianEmail);
+        studentAdmissionPage.guardianPhoneTextBox.sendKeys(guardianPhone);
+        studentAdmissionPage.guardianOccupationTextBox.sendKeys(guardianOccupation);
+        studentAdmissionPage.guardianAddressTextBox.sendKeys(guardianAddress);
 
 
 
