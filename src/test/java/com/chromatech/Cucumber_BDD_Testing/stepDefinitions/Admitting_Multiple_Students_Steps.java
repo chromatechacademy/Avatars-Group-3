@@ -32,7 +32,6 @@ public class Admitting_Multiple_Students_Steps {
         CommonMethods.selectDropDownValue(categoryOption, PageInitializer.studentAdmissionPage.categoryDropDown);
 
 
-
     }
 
     @When("clicks save")
