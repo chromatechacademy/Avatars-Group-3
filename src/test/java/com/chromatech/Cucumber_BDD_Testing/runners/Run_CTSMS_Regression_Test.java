@@ -7,9 +7,9 @@ import io.cucumber.testng.CucumberOptions;
         "rerun:target/failed.txt",
         "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
         features = "src/test/java/com/chromatech/Cucumber_BDD_Testing/features",
-        glue = {"com.chromatech.Cucumber_BDD_Testing.stepDefinitions", "hooks"},
-        tags = "@Joyce",
-        dryRun = true
+        glue = {"com.chromatech.Cucumber_BDD_Testing.stepDefinitions", "hooks"} ,
+        tags = "@Regression",
+        dryRun = false
 )
 
 public class Run_CTSMS_Regression_Test extends AbstractTestNGCucumberTests {
