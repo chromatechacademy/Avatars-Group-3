@@ -153,7 +153,7 @@ public class StudentAdmissionPage {
      * WebElement representing the guardian name text box on the Student Admission Page.
      */
     @FindBy(xpath = "//input[@id='guardian_name']")
-    public WebElement guardianNamTextBox;
+    public WebElement guardianNameTextBox;
 
     /**
      * Represents the guardian relation text box element on the Student Admission page.

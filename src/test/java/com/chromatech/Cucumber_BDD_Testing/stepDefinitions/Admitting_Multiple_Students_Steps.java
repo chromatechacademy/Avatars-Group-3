@@ -35,7 +35,20 @@ public class Admitting_Multiple_Students_Steps {
         JavascriptMethods.selectDateByJS(studentAdmissionPage.dateOfBirthTextBox, dateOfBirth);
         CommonMethods.selectDropDownValue(categoryOption, studentAdmissionPage.categoryDropDown);
         studentAdmissionPage.emailTextBox.sendKeys(email);
-        JavascriptMethods.selectDateByJS(studentAdmissionPage.admissionDateTextBox, asOnDate);
+        JavascriptMethods.selectDateByJS(studentAdmissionPage.admissionDateTextBox, admissionDate);
+        CommonMethods.selectDropDownValue(bloodGroupOption, studentAdmissionPage.bloodGroupDropDown);
+        studentAdmissionPage.mobileNumberTextBox.sendKeys(mobileNumber);
+        studentAdmissionPage.heightTextBox.sendKeys(height);
+        studentAdmissionPage.weightTextBox.sendKeys(weight);
+        studentAdmissionPage.fatherNameTextBox.sendKeys(fatherName);
+        studentAdmissionPage.fatherPhoneTextBox.sendKeys(fatherPhone);
+        studentAdmissionPage.fatherOccupationTextBox.sendKeys(fatherOccupation);
+        studentAdmissionPage.motherNameTextBox.sendKeys(motherName);
+        studentAdmissionPage.motherPhoneTextBox.sendKeys(motherPhone);
+        studentAdmissionPage.motherOccupationTextBox.sendKeys(motherOccupation);
+        studentAdmissionPage.motherRadioButton.click();
+        studentAdmissionPage.guardianNameTextBox.sendKeys();
+
 
 
 

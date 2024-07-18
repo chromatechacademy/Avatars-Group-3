@@ -83,4 +83,3 @@ public class DashboardPage {
     @FindBy(xpath = "//a[normalize-space()='Student Admission']")
     public WebElement studentAdmissionSubModule;
 }
-
