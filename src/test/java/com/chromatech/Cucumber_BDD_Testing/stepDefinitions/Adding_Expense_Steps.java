@@ -1,48 +1,34 @@
 package com.chromatech.Cucumber_BDD_Testing.stepDefinitions;
 
-
+import com.beust.ah.A;
+import com.chromatech.Cucumber_BDD_Testing.pages.AddingExpensePage;
 import com.chromatech.Cucumber_BDD_Testing.pages.LoginPage;
+import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.WebDriverUtils;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import tech.grasshopper.pdf.section.dashboard.Dashboard;
 
 public class Adding_Expense_Steps {
 
+    AddingExpensePage addingExpensePage = new AddingExpensePage();
 
-    LoginPage loginPage = new LoginPage();
-
-    @Given("a user is on the Chroma Tech Academy practice site {string}")
-    public void a_user_is_on_the_chroma_tech_academy_practice_site(String url) {
-        WebDriverUtils.driver.get(url);
-        CucumberLogUtils.logScreenShot();
-    }
-
-    @When("user enters username {string} in username text box")
-    public void user_enters_username_in_username_text_box(String username) {
-        loginPage.usernameTextBox.sendKeys(username);
-        CucumberLogUtils.logScreenShot();
-    }
-
-    @When("enters password {string} in password text box")
-    public void enters_password_in_password_text_box(String password) {
-        loginPage.passwordTextBox.sendKeys(password);
-        CucumberLogUtils.logScreenShot();
-    }
-
-    @When("clicks on Sign In button")
-    public void clicks_on_sign_in_button() {
-        loginPage.signInButton.click();
-        CucumberLogUtils.logScreenShot();
-    }
-
-    @Then("user is directed to the CTSMS dashboard page {string}")
-    public void user_is_directed_to_the_ctsms_dashboard_page(String expectedUrl) {
+    @Given("the user is in the dashboard page {string}")
+    public void the_user_is_in_the_dashboard_page(String expectedUrl) {
         String actualUrl = WebDriverUtils.driver.getCurrentUrl();
-        Assert.assertEquals(expectedUrl, actualUrl);
-        CucumberLogUtils.logScreenShot();
+        Assert.assertEquals(actualUrl, expectedUrl);
     }
+
+    @When("user clicks the expense text")
+    public void user_clicks_the_expense_text() {
+        addingExpensePage.expenseText.click();
+    }
+
 }
+
+
+
+
+
