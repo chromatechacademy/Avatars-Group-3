@@ -210,16 +210,16 @@ public class StudentAdmissionPage {
     public WebElement currentAddressTextBox;
 
     @FindBy(xpath = "//textarea[@id='permanent_address']")
-    public WebElement permanentTextBox;
+    public WebElement permanentAddressTextBox;
 
     @FindBy(xpath = "//input[@id='bank_account_no']")
-    public WebElement bankAccountNumber;
+    public WebElement bankAccountNumberTextBox;
 
     @FindBy(xpath = "//input[@id='bank_name']")
-    public WebElement bankName;
+    public WebElement bankNameTextBox;
 
     @FindBy(xpath = "//input[@id='ifsc_code']")
-    public WebElement ifscCode;
+    public WebElement ifscCodeTextBox;
 
     @FindBy(xpath = "//input[@id='adhar_no']")
     public WebElement nationalIDNumberTextBox;
@@ -231,19 +231,50 @@ public class StudentAdmissionPage {
     public WebElement rteYesButton;
 
     @FindBy(xpath = "//textarea[@name='previous_school']")
-    public WebElement previousSchoolDetails;
+    public WebElement previousSchoolDetailsTextBox;
 
     @FindBy(xpath = "//textarea[@name='note']")
-    public WebElement note;
+    public WebElement noteTextBox;
 
     @FindBy(xpath = "//input[@name='first_title']")
-    public WebElement titleOne;
+    public WebElement titleOneTextBox;
 
+    @FindBy(xpath = "//input[@name='first_doc']")
+    public WebElement documentOne;
 
+    @FindBy(xpath = "//input[@name='second_title']")
+    public WebElement titleTwoTextBox;
 
+    @FindBy(xpath = "//input[@name='second_doc']")
+    public WebElement documentTwo;
 
+    @FindBy(xpath = "//input[@name='fourth_title']")
+    public WebElement titleThreeTextBox;
 
+    @FindBy(xpath = "//input[@name='fourth_doc']")
+    public WebElement documentThree;
 
+    @FindBy(xpath = "//input[@name='fifth_title']")
+    public WebElement titleFourTextBox;
 
+    @FindBy(xpath = "//input[@name='fifth_doc']")
+    public WebElement documentFour;
 
+    @FindBy(xpath = "//button[normalize-space()='Add Sibling']")
+    public WebElement addSiblingButton;
+
+    @FindBy(xpath = "//select[@id='sibiling_class_id']")
+    public WebElement siblingClassDropDown;
+
+    @FindBy(xpath = "//select[@id='sibiling_section_id']")
+    public WebElement siblingSectionDropDown;
+
+    @FindBy(xpath = "//select[@id='sibiling_student_id']")
+    public WebElement siblingStudentIDDropDown;
+
+    @FindBy(xpath = "//button[@id='load']")
+    public WebElement addSiblingInformationButton;
+
+    @FindBy(xpath = "//button[@type='submit'][normalize-space()='Save']")
+    public WebElement saveButton;
 }

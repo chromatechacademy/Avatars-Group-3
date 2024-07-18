@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class DashboardPage {
 
     public DashboardPage() {
@@ -82,4 +84,7 @@ public class DashboardPage {
      */
     @FindBy(xpath = "//a[normalize-space()='Student Admission']")
     public WebElement studentAdmissionSubModule;
+
+    @FindBy(xpath = "//ul[@class='treeview-menu menu-open']//a[normalize-space()='Student Details']")
+    public WebElement studentDetailsSubModule;
 }
