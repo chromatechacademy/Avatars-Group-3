@@ -1,4 +1,4 @@
-package Hooks;
+package hooks;
 
 import com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer;
 import com.chromatech.utils.CucumberLogUtils;
@@ -12,8 +12,8 @@ public class Hooks {
     @Before
     public void start(Scenario scenario) {
         CucumberLogUtils.scenario = scenario;
-        PageInitializer.initializeAllPages();
         WebDriverUtils.setUp();
+        PageInitializer.initializeAllPages();
     }
 
     @After
