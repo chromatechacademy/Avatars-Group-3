@@ -3,6 +3,7 @@ package com.chromatech.Cucumber_BDD_Testing.stepDefinitions;
 import com.chromatech.Cucumber_BDD_Testing.pages.LoginPage;
 import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.WebDriverUtils;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -25,21 +26,28 @@ public class Valid_Credentials_Login_Steps{
         CucumberLogUtils.logScreenShot();
     }
 
-    @When("enters password {string} in password text box")
+    @And("enters password {string} in password text box")
     public void enters_password_in_password_text_box(String password) {
         loginPage.passwordTextBox.sendKeys(password);
         CucumberLogUtils.logScreenShot();
     }
 
-    @When("clicks on Sign In button")
+    @And("clicks on Sign In button")
     public void clicks_on_sign_in_button() {
         loginPage.signInButton.click();
         CucumberLogUtils.logScreenShot();
     }
 
-    @Then("user is directed to the CTSMS dashboard page {string}")
+    @And("user is directed to the CTSMS dashboard page {string}")
     public void user_is_directed_to_the_ctsms_dashboard_page(String expectedUrl) {
         String actualUrl = WebDriverUtils.driver.getCurrentUrl();
         Assert.assertEquals(expectedUrl, actualUrl);
+        CucumberLogUtils.logScreenShot();
+    }
+
+    @Then("the following modules are displayed: {string}, {string} , {string} , {string} , {string} ,  {string} , {string} , {string}")
+    public void the_following_modules_are_displayed(String studentInformation, String feesCollection, String income, String expenses, String academics, String humanResource, String homework, String reports){
+        CucumberLogUtils.logScreenShot();
+
     }
 }
