@@ -41,17 +41,17 @@ public class Admitting_Multiple_Students_Steps {
         studentAdmissionPage.mobileNumberTextBox.sendKeys(mobileNumber);
         studentAdmissionPage.heightTextBox.sendKeys(height);
         studentAdmissionPage.weightTextBox.sendKeys(weight);
-        studentAdmissionPage.fatherNameTextBox.sendKeys(fatherName);
-        studentAdmissionPage.fatherPhoneTextBox.sendKeys(fatherPhone);
-        studentAdmissionPage.fatherOccupationTextBox.sendKeys(fatherOccupation);
+//        studentAdmissionPage.fatherNameTextBox.sendKeys(fatherName);
+//        studentAdmissionPage.fatherPhoneTextBox.sendKeys(fatherPhone);
+//        studentAdmissionPage.fatherOccupationTextBox.sendKeys(fatherOccupation);
         studentAdmissionPage.motherNameTextBox.sendKeys(motherName);
         studentAdmissionPage.motherPhoneTextBox.sendKeys(motherPhone);
         studentAdmissionPage.motherOccupationTextBox.sendKeys(motherOccupation);
         studentAdmissionPage.motherRadioButton.click();
-        studentAdmissionPage.guardianNameTextBox.sendKeys(guardianName);
+//        studentAdmissionPage.guardianNameTextBox.sendKeys(guardianName);
         studentAdmissionPage.guardianEmailTextBox.sendKeys(guardianEmail);
-        studentAdmissionPage.guardianPhoneTextBox.sendKeys(guardianPhone);
-        studentAdmissionPage.guardianOccupationTextBox.sendKeys(guardianOccupation);
+//        studentAdmissionPage.guardianPhoneTextBox.sendKeys(guardianPhone);
+//        studentAdmissionPage.guardianOccupationTextBox.sendKeys(guardianOccupation);
         studentAdmissionPage.guardianAddressTextBox.sendKeys(guardianAddress);
     }
 
@@ -62,6 +62,29 @@ public class Admitting_Multiple_Students_Steps {
         studentAdmissionPage.fatherPhoto.sendKeys(photo);
         studentAdmissionPage.motherPhoto.sendKeys(photo);
         studentAdmissionPage.guardianPhoto.sendKeys(photo);
+    }
+
+    @When("clicks the Add More Details button")
+    public void clicks_the_add_more_details_button() {
+        studentAdmissionPage.addMoreDetailsBox.click();
+    }
+
+    @When("adds Student Address Details")
+    public void adds_student_address_details() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+    @When("adds Miscellaneous Details")
+    public void adds_miscellaneous_details() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+    @When("uploads documents")
+    public void uploads_documents() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
     }
 
     @When("clicks save")

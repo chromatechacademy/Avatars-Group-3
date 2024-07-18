@@ -197,4 +197,53 @@ public class StudentAdmissionPage {
     @FindBy(xpath = "(//input[@id='file'])[4]")
     public WebElement guardianPhoto;
 
+    @FindBy(xpath = "//a[normalize-space()='Add More Details']")
+    public WebElement addMoreDetailsBox;
+
+    @FindBy(xpath = "//input[@id='autofill_current_address']")
+    public WebElement guardianAddressCheckBox;
+
+    @FindBy(xpath = "//input[@id='autofill_address']")
+    public WebElement permanentAddressCheckBox;
+
+    @FindBy(xpath = "//textarea[@id='current_address']")
+    public WebElement currentAddressTextBox;
+
+    @FindBy(xpath = "//textarea[@id='permanent_address']")
+    public WebElement permanentTextBox;
+
+    @FindBy(xpath = "//input[@id='bank_account_no']")
+    public WebElement bankAccountNumber;
+
+    @FindBy(xpath = "//input[@id='bank_name']")
+    public WebElement bankName;
+
+    @FindBy(xpath = "//input[@id='ifsc_code']")
+    public WebElement ifscCode;
+
+    @FindBy(xpath = "//input[@id='adhar_no']")
+    public WebElement nationalIDNumberTextBox;
+
+    @FindBy(xpath = "//input[@id='samagra_id']")
+    public WebElement localIDNumberTextBox;
+
+    @FindBy(xpath = "//input[@value='Yes']")
+    public WebElement rteYesButton;
+
+    @FindBy(xpath = "//textarea[@name='previous_school']")
+    public WebElement previousSchoolDetails;
+
+    @FindBy(xpath = "//textarea[@name='note']")
+    public WebElement note;
+
+    @FindBy(xpath = "//input[@name='first_title']")
+    public WebElement titleOne;
+
+
+
+
+
+
+
+
 }

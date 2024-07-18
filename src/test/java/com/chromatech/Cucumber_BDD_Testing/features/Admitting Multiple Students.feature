@@ -10,6 +10,10 @@ Feature: Admitting Multiple Records
     When a CTSMS admin or faculty member is on the student admission page "https://mexil.it/chroma/student/create"
     And the user fills out all fields "<Admission No>", "<Roll Number>", "<Class>", "<Section>", "<First Name>", "<Last Name>", "<Gender>", "<Date of Birth>", "<Category>", "<Email>", "<Admission Date>", "<Blood Group>", "<As on Date>", "<Mobile Number>", "<Height>", "<Weight>", "<Father Name>", "<Father Phone>", "<Father Occupation>", "<Mother Name>", "<Mother Phone>", "<Mother Occupation>", "<Guardian Name>", "<Guardian Email>", "<Guardian Phone>", "<Guardian Occupation>", "<Guardian Address>"
     And uploads family member photos
+    And clicks the Add More Details button
+    And adds Student Address Details
+    And adds Miscellaneous Details
+    And uploads documents
     And clicks save
     Then the user should be able to admit multiple students with unique admission numbers
     Examples:
