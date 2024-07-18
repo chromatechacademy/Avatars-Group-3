@@ -1,8 +1,5 @@
 package com.chromatech.Cucumber_BDD_Testing.appsCommon;
 
-import com.chromatech.Cucumber_BDD_Testing.pages.DashboardPage;
-import com.chromatech.Cucumber_BDD_Testing.pages.StudentAdmissionPage;
-
 public class PageInitializer {
 
     /**
@@ -10,11 +7,6 @@ public class PageInitializer {
      * PAGE OBJECTS
      */
 
-    public static StudentAdmissionPage studentAdmissionPage;
-    public static DashboardPage dashboardPage;
-
     public static void initializeAllPages() {
-        studentAdmissionPage = new StudentAdmissionPage();
-        dashboardPage = new DashboardPage();
     }
 }
