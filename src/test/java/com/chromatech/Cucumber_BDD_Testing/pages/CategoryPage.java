@@ -41,4 +41,6 @@ public class CategoryPage {
     @FindBy(xpath = "//td[normalize-space()='Group 3']/parent::tr/td[3]/a[2]")
     public WebElement group3Delete;
 
+    //select[@id='exp_head_id']
+
 }
