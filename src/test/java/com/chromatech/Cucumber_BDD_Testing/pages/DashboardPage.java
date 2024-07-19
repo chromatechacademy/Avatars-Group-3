@@ -10,6 +10,7 @@ public class DashboardPage {
     public DashboardPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
+
     /**
      * Represents the Human Resource module WebElement on the login page.
      */
