@@ -113,13 +113,43 @@ public class Adding_Expense_Steps {
 
     }
     @And("user user enters the name in the expense list {string}")
-    public void user_user_enters_the_name_in_the_expense_list(String string) {
+    public void user_user_enters_the_name_in_the_expense_list(String expenseListName) {
+        addingExpensePage.searchExpenseBox.sendKeys(expenseListName);
+    }
+
+    @Then("user clicks the search button in the search expenses")
+    public void user_clicks_the_search_button_in_the_search_expenses() {
+        addingExpensePage.searchExpenseSearchButton.click();
 
     }
+
+    @Then("the following expense result {string}, {string}, {string}, {string},{string}")
+    public void the_following_expense_result(String name, String invoiceNumber, String expenseHead, String date, String amount) {
+        Assert.assertTrue(addingExpensePage.searchExpenseResultName.isDisplayed());
+        Assert.assertTrue(addingExpensePage.searchExpenseResultInvoiceNumber.isDisplayed());
+        Assert.assertTrue(addingExpensePage.searchExpenseResultExpenseHead.isDisplayed());
+        Assert.assertTrue(addingExpensePage.searchExpenseResultExpenseDate.isDisplayed());
+        Assert.assertTrue(addingExpensePage.searchExpenseResultAmount.isDisplayed());
     }
+    @And("user clicks add expense to delete the expense")
+    public void user_clicks_add_expense_to_delete_the_expense() {
+       addingExpensePage.addExpenseModuleText.click();
+    }
+
+    @Then("the following expense list result in add expense page {string}, {string}, {string}, {string},{string}")
+    public void the_following_expense_list_result_in_add_expense_page(String name, String invoiceNumber, String date, String expenseHead, String amount) {
+        addingExpensePage.deleteExpense.click();
+        CommonMethods.acceptAlert();
+
+    }
+
+
 
 
 }
+
+
+
 
 
 

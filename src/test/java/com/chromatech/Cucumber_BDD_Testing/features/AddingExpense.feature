@@ -15,14 +15,18 @@ Feature: Student Admission
     Then user clicks add expense sub module text
     And user is in the add expense page site "https://mexil.it/chroma/admin/expense"
     And user select dropdown "Expense Head"
-    And user enters the add expense name "Joyce"
+    And user enters the add expense name "Group 3"
     And user enters the invoice number "98756"
     And user enters the amount "10000"
     And user enters the add expense description "PO"
     Then user clicks save in add expense page
     And user clicks the search expense page to search for the expense
     And the user is the directed to the CTMS search page "https://mexil.it/chroma/admin/expense/expensesearch"
-    And user user enters the name in the expense list "Joyce"
+    And user user enters the name in the expense list "Group 3"
+    And user clicks the search button in the search expenses
+    And the following expense result "name", "invoice number", "expense head", "Date","Amount"
+    And user clicks add expense to delete the expense
+   And the following expense list result in add expense page "name", "invoice number", "expense head", "Date","Amount"
 
 
 
