@@ -33,20 +33,21 @@ public class Adding_Expense_Steps {
     }
 
     @Then("user enters the expense head {string}")
-    public void user_enters_the_expense_head(String string) {
-        addingExpensePage.addingExpenseHead.sendKeys(string);
+    public void user_enters_the_expense_head(String expenseHeadText) {
+        addingExpensePage.expenseHeadBox.sendKeys(expenseHeadText);
         CucumberLogUtils.logScreenShot();
     }
 
     @Then("user enters {string} in the description box")
-    public void user_enters_in_the_description_box(String string) {
-        addingExpensePage.expenseHeadDescriptionBox.sendKeys(string);
+    public void user_enters_in_the_description_box(String expenseHeadDescription) {
+        addingExpensePage.expenseHeadDescriptionBox.sendKeys(expenseHeadDescription);
         CucumberLogUtils.logScreenShot();
     }
 
     @Then("user clicks save")
-    public void user_clicks_save() {
+    public void user_clicks_save() throws InterruptedException {
         addingExpensePage.expenseHeadSavebutton.click();
+        Thread.sleep(3000);
         CucumberLogUtils.logScreenShot();
     }
 
@@ -65,10 +66,46 @@ public class Adding_Expense_Steps {
 
     @Then("user select dropdown {string}")
     public void user_select_dropdown(String expenseHead) {
-        CommonMethods.selectDropDownValue(expenseHead, addingExpensePage.expenseHeadSelectDropdown);
+        CommonMethods.selectDropDownValue("TEST AG3CP-28", addingExpensePage.expenseHeadSelectDropdown);
+        CucumberLogUtils.logScreenShot();
+    }
 
-         }
+    @Then("user enters the add expense name {string}")
+    public void user_enters_the_add_expense_name(String name) {
+        addingExpensePage.expenseNameBox.sendKeys(name);
+        CucumberLogUtils.logScreenShot();
+    }
+
+    @Then("user enters the invoice number {string}")
+    public void user_enters_the_invoice_number(String invoiceNumber) {
+        addingExpensePage.expenseInvoiceNumberBox.sendKeys(invoiceNumber);
+        CucumberLogUtils.logScreenShot();
+    }
+
+    @Then("user enters the amount {string}")
+    public void user_enters_the_amount(String amount) {
+        addingExpensePage.expenseAmount.sendKeys(amount);
+        CucumberLogUtils.logScreenShot();
+    }
+
+    @Then("user enters the add expense description {string}")
+    public void user_enters_the_add_expense_description(String expenseDescription) {
+        addingExpensePage.expenseDescriptionBox.sendKeys(expenseDescription);
+        CucumberLogUtils.logScreenShot();
+    }
+
+    @Then("user clicks save in add expense page")
+    public void user_clicks_save_in_add_expense_page() {
+        addingExpensePage.expenseSaveButton.click();
+        CucumberLogUtils.logScreenShot();
+
+    }
 }
+
+
+
+
+
 
 
 

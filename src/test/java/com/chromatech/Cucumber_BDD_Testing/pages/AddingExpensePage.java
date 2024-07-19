@@ -2,36 +2,56 @@ package com.chromatech.Cucumber_BDD_Testing.pages;
 
 
 import com.chromatech.utils.WebDriverUtils;
-import org.apache.xmlbeans.impl.xb.xsdschema.SelectorDocument;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class AddingExpensePage {
-    public AddingExpensePage(){
+    public AddingExpensePage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
-  //CLICKING EXPENSE TEXT
+
+    //CLICKING EXPENSE TEXT
     @FindBy(xpath = "//span[contains(text(),'Expenses')]")
     public WebElement expenseModuleText;
-   //CLICKING EXPENSES HEAD TO ADD AN EXPENSE HEAD
-   @FindBy(xpath = "//a[normalize-space()='Expense Head']")
+    //CLICKING EXPENSES HEAD
+    @FindBy(xpath = "//a[normalize-space()='Expense Head']")
     public WebElement addingExpenseHead;
-   //ENTERS "INVOICE" IN THE DESCRIPTION BOX
+    //USER ENTERS ADDING EXPENSE HEAD
+    @FindBy(xpath = "//input[@id='expensehead']")
+    public WebElement expenseHeadBox;
+    //USER ENTERS IN THE DESCRIPTION BOX
     @FindBy(xpath = "//textarea[@id='description']")
     public WebElement expenseHeadDescriptionBox;
     //EXPENSE HEAD BUTTON
-    @FindBy(xpath ="//textarea[@id='description']")
+    @FindBy(xpath = "//button[@type='submit'][normalize-space()='Save']")
     public WebElement expenseHeadSavebutton;
     //CLICKING ADD EXPENSE MODULE TEXT
     @FindBy(xpath = "(//a[normalize-space()='Add Expense'])[2]")
     public WebElement addExpenseModuleText;
-  //SELECT EXPENSE HEAD
+    //SELECT EXPENSE HEAD
     @FindBy(xpath = "//a[normalize-space()='Expense Head']")
-   public WebElement expenseHeadModule;
-  // CLICKING ADD EXPENSE MODULE TEXT
+    public WebElement expenseHeadModule;
+    // CLICKING ADD EXPENSE MODULE TEXT
     @FindBy(xpath = "//select[@id='exp_head_id']")
     public WebElement expenseHeadSelectDropdown;
-
+    //USER ENTERS THE NAME
+    @FindBy(xpath = "//input[@id='name']")
+    public WebElement expenseNameBox;
+    //USER ENTERS THE INVOICE NUMBER
+    @FindBy(xpath = "//input[@id='invoice_no']")
+    public WebElement expenseInvoiceNumberBox;
+    //USER ENTERS THE EXPENSE AMOUNT
+    @FindBy(xpath = "//input[@id='amount']")
+    public WebElement expenseAmount;
+    //USER ENTERS THE DESCRIPTION
+    @FindBy(xpath = "//textarea[@id='description']")
+    public WebElement expenseDescriptionBox;
+    //USER CLICKS SAVE IN THE AD EXPENSE PAGE
+    @FindBy(xpath = "//button[@type='submit'][normalize-space()='Save']")
+    public WebElement expenseSaveButton;
+    //THE EXPENSE DISPLAYED AS EXPECTED INVOICE NUMBER
+    @FindBy(xpath = "//td[normalize-space()='98756']")
+    public WebElement expectedInvoiceNumber;
 }
 
