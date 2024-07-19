@@ -20,6 +20,10 @@ Feature: Student Admission
     And user enters the amount "10000"
     And user enters the add expense description "PO"
     Then user clicks save in add expense page
+    And user clicks the search expense page to search for the expense
+    And the user is the directed to the CTMS search page "https://mexil.it/chroma/admin/expense/expensesearch"
+    And user user enters the name in the expense list "Joyce"
+
 
 
 

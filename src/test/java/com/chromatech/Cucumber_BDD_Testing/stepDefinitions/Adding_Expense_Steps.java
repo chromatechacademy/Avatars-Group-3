@@ -4,6 +4,7 @@ import com.chromatech.Cucumber_BDD_Testing.pages.AddingExpensePage;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.WebDriverUtils;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -100,6 +101,24 @@ public class Adding_Expense_Steps {
         CucumberLogUtils.logScreenShot();
 
     }
+    @And("user clicks the search expense page to search for the expense")
+    public void user_clicks_the_search_expense_page_to_search_for_the_expense() {
+        addingExpensePage.searchExpensePageButton.click();
+        CucumberLogUtils.logScreenShot();
+    }
+    @Then("the user is the directed to the CTMS search page {string}")
+    public void the_user_is_the_directed_to_the_ctms_search_page(String expectedUrl) {
+        String actualUrl = WebDriverUtils.driver.getCurrentUrl();
+        Assert.assertEquals(actualUrl, expectedUrl);
+
+    }
+    @And("user user enters the name in the expense list {string}")
+    public void user_user_enters_the_name_in_the_expense_list(String string) {
+
+    }
+    }
+
+
 }
 
 

@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import javax.xml.xpath.XPath;
+
 public class AddingExpensePage {
     public AddingExpensePage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
@@ -53,5 +55,12 @@ public class AddingExpensePage {
     //THE EXPENSE DISPLAYED AS EXPECTED INVOICE NUMBER
     @FindBy(xpath = "//td[normalize-space()='98756']")
     public WebElement expectedInvoiceNumber;
+    //CLICK SEARCH PAGE
+    @FindBy(xpath = "//a[normalize-space()='Search Expense']")
+    public WebElement searchExpensePageButton;
+    //SEARCH THE EXPENSE
+    @FindBy(xpath = "//input[@placeholder='Search by Expense']")
+    public WebElement searchExpenseBox;
+
 }
 
