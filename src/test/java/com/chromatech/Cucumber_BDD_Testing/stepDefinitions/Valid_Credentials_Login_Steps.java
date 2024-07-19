@@ -10,7 +10,7 @@ import io.cucumber.java.en.When;
 import org.testng.Assert;
 
 
-public class Valid_Credentials_Login_Steps{
+public class Valid_Credentials_Login_Steps {
 
     LoginPage loginPage = new LoginPage();
 
@@ -43,11 +43,5 @@ public class Valid_Credentials_Login_Steps{
         String actualUrl = WebDriverUtils.driver.getCurrentUrl();
         Assert.assertEquals(expectedUrl, actualUrl);
         CucumberLogUtils.logScreenShot();
-    }
-
-    @Then("the following modules are displayed: {string}, {string} , {string} , {string} , {string} ,  {string} , {string} , {string}")
-    public void the_following_modules_are_displayed(String studentInformation, String feesCollection, String income, String expenses, String academics, String humanResource, String homework, String reports){
-        CucumberLogUtils.logScreenShot();
-
     }
 }

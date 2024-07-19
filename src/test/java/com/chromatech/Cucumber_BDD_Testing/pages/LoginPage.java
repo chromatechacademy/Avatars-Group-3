@@ -36,4 +36,17 @@ public class LoginPage {
      */
     @FindBy(xpath = "//div[@class='alert alert-danger']")
     public WebElement errorMessage;
+
+    /**
+     * Represents the navigation element in the web page.
+     * <p>
+     * Example usage:
+     * <pre>
+     *     LoginPage loginPage = new LoginPage();
+     *     WebElement navigation = loginPage.navigation;
+     * </pre>
+     */
+    @FindBy(xpath = "//nav[@role='navigation']")
+    public WebElement navigation;
+
 }
