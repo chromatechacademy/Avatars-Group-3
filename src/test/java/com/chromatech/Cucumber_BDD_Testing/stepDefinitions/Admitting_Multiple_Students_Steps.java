@@ -21,17 +21,6 @@ public class Admitting_Multiple_Students_Steps {
     StudentDetailsPage studentDetailsPage = new StudentDetailsPage();
     BulkDeletePage bulkDeletePage = new BulkDeletePage();
 
-    @Given("creates a sibling")
-    public void creates_a_sibling() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @Given("creates a category")
-    public void creates_a_category() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
     @Given("a CTSMS admin or faculty member is on the student admission page {string}")
     public void a_ctsms_admin_or_faculty_member_is_on_the_student_admission_page(String expectedAdmissionPageUrl) throws InterruptedException {
         dashboardPage.studentInformationModule.click();
@@ -41,10 +30,29 @@ public class Admitting_Multiple_Students_Steps {
         CommonMethods.assertEquals(actualAdmissionPageUrl, expectedAdmissionPageUrl);
     }
 
+    @When("creates a sibling with admission number {string}, class {string}, section {string}, first name {string}, gender {string}, date of birth {string}, guardian name {string}, guardian phone number {string}")
+    public void creates_a_sibling_with_admission_number_class_section_first_name_gender_date_of_birth_guardian_name_guardian_phone_number(String admissionNo, String classOption, String sectionOption, String firstName, String genderOption, String dateOfBirth, String guardianName, String guardianPhoneNumber) {
+        studentAdmissionPage.admissionNoTextBox.sendKeys(admissionNo);
+        CommonMethods.selectDropDownValue(classOption, studentAdmissionPage.classDropDown);
+        CommonMethods.selectDropDownValue(sectionOption, studentAdmissionPage.sectionDropDown);
+        studentAdmissionPage.firstNameTextBox.sendKeys(firstName);
+        CommonMethods.selectDropDownValue(genderOption, studentAdmissionPage.genderDropDown);
+        JavascriptMethods.selectDateByJS(studentAdmissionPage.dateOfBirthTextBox, dateOfBirth);
+        studentAdmissionPage.guardianNameTextBox.sendKeys(guardianName);
+        studentAdmissionPage.guardianPhoneTextBox.sendKeys(guardianPhoneNumber);
+        studentAdmissionPage.saveButton.click();
+    }
+
+    @Given("creates a category")
+    public void creates_a_category() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+
+    }
+
     @When("the user fills out all fields {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
     public void the_user_fills_out_all_fields(String admissionNo, String rollNumber, String classOption, String sectionOption, String firstName, String lastName, String genderOption, String dateOfBirth, String categoryOption, String email, String admissionDate, String bloodGroupOption, String asOnDate, String mobileNumber, String height, String weight, String fatherName, String fatherPhone, String fatherOccupation, String motherName, String motherPhone, String motherOccupation, String guardianName, String guardianEmail, String guardianPhone, String guardianOccupation, String guardianAddress) {
         studentAdmissionPage.admissionNoTextBox.sendKeys(admissionNo);
-        //ROLL NUMBER NEEDS TO BE UNIQUE
         studentAdmissionPage.rollNumberTextBox.sendKeys(rollNumber);
         CommonMethods.selectDropDownValue(classOption, studentAdmissionPage.classDropDown);
         CommonMethods.selectDropDownValue(sectionOption, studentAdmissionPage.sectionDropDown);
@@ -52,7 +60,7 @@ public class Admitting_Multiple_Students_Steps {
         studentAdmissionPage.rollNumberTextBox.sendKeys(lastName);
         CommonMethods.selectDropDownValue(genderOption, studentAdmissionPage.genderDropDown);
         JavascriptMethods.selectDateByJS(studentAdmissionPage.dateOfBirthTextBox, dateOfBirth);
-//        NEED TO CREATE A CATEGORY
+//        NEED TO CREATE A CATEGORY AND CHANGE CATEGORY NAME IN EXAMPLES TABLE
         CommonMethods.selectDropDownValue(categoryOption, studentAdmissionPage.categoryDropDown);
         studentAdmissionPage.emailTextBox.sendKeys(email);
         JavascriptMethods.selectDateByJS(studentAdmissionPage.admissionDateTextBox, admissionDate);
@@ -85,15 +93,14 @@ public class Admitting_Multiple_Students_Steps {
     }
 
     @When("adds a sibling")
-    public void adds_a_sibling() throws InterruptedException {
+    public void adds_a_sibling() {
         studentAdmissionPage.addSiblingButton.click();
         CommonMethods.waitForVisibility(studentAdmissionPage.siblingClassDropDown);
-        CommonMethods.selectDropDownValue( "SDET", studentAdmissionPage.siblingClassDropDown);
+        CommonMethods.selectDropDownValue("SDET", studentAdmissionPage.siblingClassDropDown);
         CommonMethods.waitForVisibility(studentAdmissionPage.siblingSectionDropDown);
         CommonMethods.selectDropDownValue("Cucumber Fundamentals", studentAdmissionPage.siblingSectionDropDown);
         CommonMethods.selectDropDownValue("Sibling Three (123123) ", studentAdmissionPage.siblingStudentIDDropDown);
         studentAdmissionPage.addSiblingInformationButton.click();
-
     }
 
     @When("clicks the Add More Details button")
@@ -165,6 +172,7 @@ public class Admitting_Multiple_Students_Steps {
         bulkDeletePage.deleteButton.click();
         CommonMethods.acceptAlert();
     }
+
     @Then("delete sibling account with {string}")
     public void delete_sibling_account_with(String admissionNo) {
         JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
