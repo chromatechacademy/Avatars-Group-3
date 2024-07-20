@@ -14,16 +14,13 @@ public class Expenses_Module_Steps {
     @When("the user clicks on the Expenses module")
     public void the_user_clicks_on_the_expenses_module() {
         dashboardPage.expensesModule.click();
-        CucumberLogUtils.logScreenShot();
     }
 
     @Then("the following submodules are displayed {string},{string}, {string}")
     public void the_following_submodules_are_displayed(String addExpenseSubModule, String searchExpenseSubModule, String expenseHeadSubModule) {
+        CucumberLogUtils.logScreenShot();
         Assert.assertTrue(dashboardPage.addExpenseSubModule.isDisplayed());
         Assert.assertTrue(dashboardPage.searchExpenseSubModule.isDisplayed());
         Assert.assertTrue(dashboardPage.expenseHeadSubModule.isDisplayed());
-        CucumberLogUtils.logScreenShot();
-
     }
 }
-
