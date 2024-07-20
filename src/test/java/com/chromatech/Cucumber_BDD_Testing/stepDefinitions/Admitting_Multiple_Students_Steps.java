@@ -26,8 +26,7 @@ public class Admitting_Multiple_Students_Steps {
         bulkDeletePage.classDropDown.click();
         bulkDeletePage.sectionDropDown.click();
         bulkDeletePage.searchButton.click();
-        try {
-            JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
+        try {JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
             if ((BulkDeletePage.dynamicRecordLocateDeleter(admissionNo).isDisplayed())) {
                 BulkDeletePage.dynamicRecordLocateDeleter(admissionNo).click();
                 bulkDeletePage.deleteButton.click();
