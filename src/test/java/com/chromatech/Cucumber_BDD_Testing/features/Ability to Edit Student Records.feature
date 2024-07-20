@@ -7,7 +7,7 @@ Feature: Editing Student Records
     And enters password "123456" in password text box
     And clicks on Sign In button
     And user is directed to the CTSMS dashboard page "https://mexil.it/chroma/admin/admin/dashboard"
-    And verifies a student with "<Admission No>" is not an existing student
+    And verifies a student with "Admission No" is not an existing student
     And creates a test category "Group 3 Category"
     When a CTSMS admin or faculty member is on the student admission page "https://mexil.it/chroma/student/create"
     And fills out all required fields with admission number "112358132134", class "SDET", section "Cucumber Fundamentals", first name "Group Three Student", gender "Female", date of birth "03/03/1993", guardian name "Group Three Guardian", guardian phone number "3333333333"
