@@ -2,6 +2,7 @@ package com.chromatech.Cucumber_BDD_Testing.stepDefinitions;
 
 import com.chromatech.Cucumber_BDD_Testing.pages.*;
 import com.chromatech.utils.CommonMethods;
+import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.JavascriptMethods;
 import com.chromatech.utils.WebDriverUtils;
 import io.cucumber.java.en.And;
@@ -57,6 +58,7 @@ public class Ability_To_Edit_Student_Records_Steps {
     @Then("the student information is successfully saved with {string}, {string}, and {string}")
     public void the_student_information_is_successfully_saved_with(String classOption, String sectionOption, String admissionNo) {
         webDriverWait.until(ExpectedConditions.urlContains("chroma/student/search"));
+        CucumberLogUtils.logScreenShot();
         CommonMethods.assertTrue(studentDetailsPage.successfulRecordUpdateAlert.isDisplayed());
         bulkDeletePage.bulkDeleteSubModule.click();
         CommonMethods.selectDropDownValue(classOption, bulkDeletePage.classDropDown);
