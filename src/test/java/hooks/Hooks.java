@@ -18,8 +18,7 @@ public class Hooks {
     }
 
     @After
-    public void end() {
-        WebDriverUtils.tearDown();
+    public void end() {WebDriverUtils.tearDown();
     }
 
     @AfterStep
