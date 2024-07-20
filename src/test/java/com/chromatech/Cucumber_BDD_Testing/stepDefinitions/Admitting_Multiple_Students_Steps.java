@@ -39,7 +39,6 @@ public class Admitting_Multiple_Students_Steps {
 
     @And("creates a test category {string}")
     public void creates_a_test_category(String categoryName) {
-        dashboardPage.studentInformationModule.click();
         categoryPage.studentCategories.click();
         categoryPage.categoryTextBox.sendKeys(categoryName);
         categoryPage.categorySaveButton.click();
