@@ -13,17 +13,13 @@ public class Hooks {
     @Before
     public void start(Scenario scenario) {
         CucumberLogUtils.scenario = scenario;
-        PageInitializer.initializeAllPages();
         WebDriverUtils.setUp();
+        PageInitializer.initializeAllPages();
     }
 
     @After
-    public void end() {WebDriverUtils.tearDown();
-    }
-
-    @AfterStep
-    public void afterStepSS() {
-        CucumberLogUtils.logScreenShot();
+    public void end() {
+        WebDriverUtils.tearDown();
     }
 
     @AfterStep
