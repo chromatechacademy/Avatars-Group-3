@@ -37,8 +37,8 @@ public class Ability_To_Edit_Student_Records_Steps {
         CommonMethods.waitForVisibility(studentAdmissionPage.studentSavedSuccessfullyAlert);
     }
 
-    @When("a CTSMS user opens a student record with admission number {string} and first name {string}")
-    public void a_ctsms_user_opens_a_student_record_with_admission_number_and_first_name(String admissionNo, String firstName) {
+    @When("a CTSMS user opens a student record with admission number {string}")
+    public void a_ctsms_user_opens_a_student_record_with_admission_number(String admissionNo) {
         dashboardPage.studentDetailsSubModule.click();
         studentDetailsPage.searchByKeywordTextBox.sendKeys(admissionNo);
         studentDetailsPage.searchByKeywordButton.click();

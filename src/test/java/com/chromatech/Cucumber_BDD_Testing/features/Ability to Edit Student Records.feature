@@ -12,7 +12,7 @@ Feature: Editing Student Records
     When a CTSMS admin or faculty member is on the student admission page "https://mexil.it/chroma/student/create"
     And fills out all required fields with admission number "112358132134", class "SDET", section "Cucumber Fundamentals", first name "Group Three Student", gender "Female", date of birth "03/03/1993", guardian name "Group Three Guardian", guardian phone number "3333333333"
     And clicks save
-    When a CTSMS user opens a student record with admission number "112358132134" and first name "Group Three Student"
+    When a CTSMS user opens a student record with admission number "112358132134"
     And makes and saves changes to the student information with "email@newemail.com", and "333-333-3333"
     Then the student information is successfully saved with "SDET", "Cucumber Fundamentals", and "112358132134"
     And delete test account with "112358132134"
