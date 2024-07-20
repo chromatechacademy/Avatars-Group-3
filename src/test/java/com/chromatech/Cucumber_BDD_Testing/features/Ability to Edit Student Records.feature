@@ -14,4 +14,6 @@ Feature: Editing Student Records
     And clicks save
     When a CTSMS user opens a student record with admission number "112358132134" and first name "Group Three Student"
     And makes and saves changes to the student information with "email@newemail.com", and "333-333-3333"
-    Then the student information is successfully saved
+    Then the student information is successfully saved with "SDET", "Cucumber Fundamentals", and "112358132134"
+    And delete test account with "112358132134"
+    And delete the test category
