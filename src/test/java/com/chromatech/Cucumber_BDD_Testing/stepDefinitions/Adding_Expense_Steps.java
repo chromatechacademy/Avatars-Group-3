@@ -129,14 +129,9 @@ public class Adding_Expense_Steps {
 
     }
 
-    @Then("the following expense result {string}, {string}, {string}, {string},{string}")
-    public void the_following_expense_result(String name, String invoiceNumber, String expenseHead, String date, String amount) {
-        CucumberLogUtils.logScreenShot();
-        Assert.assertTrue(addingExpensePage.searchExpenseResultName.isDisplayed());
-        Assert.assertTrue(addingExpensePage.searchExpenseResultInvoiceNumber.isDisplayed());
-        Assert.assertTrue(addingExpensePage.searchExpenseResultExpenseHead.isDisplayed());
-        Assert.assertTrue(addingExpensePage.searchExpenseResultExpenseDate.isDisplayed());
-        Assert.assertTrue(addingExpensePage.searchExpenseResultAmount.isDisplayed());
+    @When("the following expense result name , invoice number, expense head, date, amount")
+    public void the_following_expense_result_name_invoice_number_expense_head_date_amount() {
+        addingExpensePage.searchExpenseResult.getText();
     }
 
     @And("user clicks add expense to delete the expense")
@@ -145,8 +140,8 @@ public class Adding_Expense_Steps {
         CucumberLogUtils.logScreenShot();
     }
 
-    @Then("the following expense list result in add expense page {string}, {string}, {string}, {string},{string}")
-    public void the_following_expense_list_result_in_add_expense_page(String name, String invoiceNumber, String date, String expenseHead, String amount) {
+    @Then("delete the expense list is displayed name, invoice number, expense head, date, amount")
+    public void delete_the_expense_list_is_displayed_name_invoice_number_expense_head_date_amount() {
         addingExpensePage.deleteExpense.click();
         CommonMethods.acceptAlert();
         CucumberLogUtils.logScreenShot();

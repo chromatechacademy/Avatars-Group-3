@@ -77,25 +77,29 @@ public class AddingExpensePage {
     @FindBy(xpath = "//button[@value='search_full']")
     public WebElement searchExpenseSearchButton;
 
+    //FIND THE EXPENSE
+    @FindBy(xpath = "//td[normalize-space()='Group 3']/ancestor::tr")
+    public WebElement searchExpenseResult;
+
     //NAME IN SEARCH EXPENSE RESULT
-    @FindBy(xpath = "//td[normalize-space()='Group 3']")
-    public WebElement searchExpenseResultName;
+   // @FindBy(xpath = "//td[normalize-space()='Group 3']")
+   // public WebElement searchExpenseResultName;
 
     //INVOICE NUMBER IN SEARCH EXPENSE RESULT
-    @FindBy(xpath = "//td[normalize-space()='98756']")
-    public WebElement searchExpenseResultInvoiceNumber;
+   // @FindBy(xpath = "//td[normalize-space()='98756']")
+    //public WebElement searchExpenseResultInvoiceNumber;
 
-    //EXPENSE HEAD IN SEARCH EXPENSE RESULT
-    @FindBy(xpath = "//td[normalize-space()='TEST AG3CP-28']")
-    public WebElement searchExpenseResultExpenseHead;
+   // //EXPENSE HEAD IN SEARCH EXPENSE RESULT
+   // @FindBy(xpath = "//td[normalize-space()='TEST AG3CP-28']")
+   // public WebElement searchExpenseResultExpenseHead;
 
     //DATE IN SEARCH EXPENSE RESULT
-    @FindBy(xpath = "//td[normalize-space()='07/19/2024']")
-    public WebElement searchExpenseResultExpenseDate;
+    //@FindBy(xpath = "//td[normalize-space()='07/19/2024']")
+    //public WebElement searchExpenseResultExpenseDate;
 
     //AMOUNT OF THE SEARCH EXPENSE RESULT
-    @FindBy(xpath = "//td[@class='pull-right']")
-    public WebElement searchExpenseResultAmount;
+   // @FindBy(xpath = "//td[@class='pull-right']")
+   // public WebElement searchExpenseResultAmount;
 
     //DELETE EXPENSE
     @FindBy(xpath = "//a[normalize-space()='Group 3']/ancestor::tr/td/a[2]")

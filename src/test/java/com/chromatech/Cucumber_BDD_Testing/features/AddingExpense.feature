@@ -1,6 +1,6 @@
 Feature: Student Admission
 
- # @Regression @AG3CP-28 @Joyce
+  @Regression @AG3CP-28 @Joyce
   Scenario:Adding Expense
     Given a user is on the Chroma Tech Academy practice site "https://mexil.it/chroma/site/login"
     When user enters username "general@teacher.com" in username text box
@@ -24,9 +24,9 @@ Feature: Student Admission
     And the user is the directed to the CTMS search page "https://mexil.it/chroma/admin/expense/expensesearch"
     And user user enters the name in the expense list "Group 3"
     And user clicks the search button in the search expenses
-    And the following expense result "name", "invoice number", "expense head", "Date","Amount"
+    And the following expense result name , invoice number, expense head, date, amount
     And user clicks add expense to delete the expense
-    Then the following expense list result in add expense page "name", "invoice number", "expense head", "Date","Amount"
+    Then delete the expense list is displayed name, invoice number, expense head, date, amount
 
 
 
