@@ -12,26 +12,74 @@ public class DashboardPage {
     }
 
     /**
-     * Represents the expensesModule WebElement on the DashboardPage.
+     * Represents the Human Resource module WebElement on the login page.
      */
-    @FindBy(xpath = "//span[normalize-space()='Expenses']")
-    public WebElement expensesModule;
+    @FindBy(xpath = "//span[normalize-space()='Human Resource']")
+    public WebElement humanResourceModule;
 
     /**
-     * Represents the addExpenseSubModule WebElement on the DashboardPage.
+     * Represents the WebElement for the Staff Directory link on the Dashboard page.
      */
-    @FindBy(xpath = "//ul[@class='treeview-menu menu-open']//a[normalize-space()='Add Expense']")
-    public WebElement addExpenseSubModule;
+    @FindBy(xpath = "//ul[contains(@class,'treeview-menu menu-open')]//a[normalize-space()='Staff Directory']")
+    public WebElement staffDirectorySubModule;
 
     /**
-     * Represents the searchExpenseSubModule WebElement on the DashboardPage.
+     * Represents the WebElement for the Staff Attendance link on the Dashboard page.
      */
-    @FindBy(xpath = "//a[normalize-space()='Search Expense']")
-    public WebElement searchExpenseSubModule;
+    @FindBy(xpath = "//ul[contains(@class,'treeview-menu menu-open')]//a[normalize-space()='Staff Attendance']")
+    public WebElement staffAttendanceSubModule;
 
     /**
-     * Represents the expenseHeadSubModule WebElement on the DashboardPage.
+     * Represents the WebElement for the Payroll link on the Dashboard page.
      */
-    @FindBy(xpath = "//a[normalize-space()='Expense Head']")
-    public WebElement expenseHeadSubModule;
+    @FindBy(xpath = "//a[normalize-space()='Payroll']")
+    public WebElement payrollSubModule;
+
+    /**
+     * Represents the WebElement for the ApproveLeaveRequest link on Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Approve Leave Request']")
+    public WebElement approveLeaveRequestSubModule;
+
+    /**
+     * Represents the WebElement for the Apply Leave link on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Apply Leave']")
+    public WebElement applyLeaveSubModule;
+
+    /**
+     * Represents the WebElement for the Leave Type link on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Leave Type']")
+    public WebElement leaveTypeSubModule;
+
+    /**
+     * Represents the WebElement for the Teachers Rating link on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Teachers Rating']")
+    public WebElement teachersRatingSubModule;
+
+    /**
+     * Represents the Department link WebElement in the DashboardPage class.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Department']")
+    public WebElement departmentSubModule;
+
+    /**
+     * Represents the Designation link WebElement in the DashboardPage class.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Designation']")
+    public WebElement designationSubModule;
+
+    /**
+     * Represents the WebElement for the Homework module on the Dashboard page.
+     */
+    @FindBy(xpath = "//span[normalize-space()='Homework']")
+    public  WebElement homeworkModule;
+
+    /**
+     * Represents the WebElement for the Add Homework link on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Add Homework']")
+    public WebElement addHomeworkSubModule;
 }
