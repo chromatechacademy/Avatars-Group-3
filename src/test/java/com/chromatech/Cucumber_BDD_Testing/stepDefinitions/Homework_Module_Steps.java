@@ -15,15 +15,9 @@ public class Homework_Module_Steps {
         dashboardPage.homeworkModule.click();
     }
 
-    @Then("the Homework module displays")
-    public void the_homework_module_displays() {
+    @Then("the {string} module displays")
+    public void the_module_displays(String addHomework) {
         CucumberLogUtils.logScreenShot();
-        Assert.assertTrue(dashboardPage.addHomeworkSubModule.isDisplayed());
-    }
-
-    @Then("the Add Homework module displays")
-    public void the_add_homework_module_displays() {
-        CucumberLogUtils.logScreenShot();
-        Assert.assertTrue(dashboardPage.addHomeworkSubModule.isDisplayed());
+        Assert.assertEquals(dashboardPage.addHomeworkSubModule.getText(), addHomework);
     }
 }

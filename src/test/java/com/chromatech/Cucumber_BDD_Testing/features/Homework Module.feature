@@ -7,5 +7,5 @@ Feature: Homework Module
     And enters password "123456" in password text box
     And clicks on Sign In button
     And user is directed to the CTSMS dashboard page "https://mexil.it/chroma/admin/admin/dashboard"
-    And the user clicks on the Homework module
-    Then the Add Homework module displays
+    When the user clicks on the Homework module
+    Then the "Add Homework" module displays

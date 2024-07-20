@@ -1,7 +1,6 @@
 package com.chromatech.Cucumber_BDD_Testing.stepDefinitions;
 
 import com.chromatech.Cucumber_BDD_Testing.pages.DashboardPage;
-import com.chromatech.Cucumber_BDD_Testing.pages.LoginPage;
 import com.chromatech.utils.CucumberLogUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -10,7 +9,6 @@ import org.testng.Assert;
 public class Human_Resource_Module_Steps {
 
     DashboardPage dashboardPage = new DashboardPage();
-    LoginPage loginPage = new LoginPage();
 
     @When("the user clicks on the Human Resource module")
     public void the_user_clicks_on_the_human_resource_module() {
@@ -30,6 +28,4 @@ public class Human_Resource_Module_Steps {
         Assert.assertEquals(dashboardPage.departmentSubModule.getText(), department);
         Assert.assertEquals(dashboardPage.designationSubModule.getText(), designation);
     }
-
-
 }
