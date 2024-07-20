@@ -24,7 +24,7 @@ Feature: Student Admission
     And the user is the directed to the CTMS search page "https://mexil.it/chroma/admin/expense/expensesearch"
     And user user enters the name in the expense list "Group 3"
     And user clicks the search button in the search expenses
-    And the following expense result name, invoice number, expense head, date, amount
+    And the following expense result name "Group 3", invoice number, expense head, date, amount
     And user clicks add expense to delete the expense
     Then delete the expense list is displayed name, invoice number, expense head, date, amount
 

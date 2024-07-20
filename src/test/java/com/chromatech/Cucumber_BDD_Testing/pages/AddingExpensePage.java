@@ -65,7 +65,7 @@ public class AddingExpensePage {
     @FindBy(xpath = "//a[normalize-space()='Search Expense']")
     public WebElement searchExpensePageButton;
 
-    //SEND NAME IN THE SEARCH BOX
+    //SEARCH BY NAME IN THE SEARCH BOX
     @FindBy(xpath = "//input[@placeholder='Search by Expense']")
     public WebElement searchExpenseBox;
 
