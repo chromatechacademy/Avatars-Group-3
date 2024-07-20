@@ -15,7 +15,7 @@ public class CategoryPage {
     @FindBy(xpath = "//a[normalize-space()='Student Categories']")
     public WebElement studentCategories;
 
-    /*Category Text Box */
+    /* Category Text Box */
     @FindBy(xpath = "//input[@id='category']")
     public WebElement categoryTextBox;
 
