@@ -13,15 +13,15 @@ public class StudentDetailsPage {
     }
 
     @FindBy(xpath = "//select[@id='class_id']")
-    public WebElement classIDDropDown;
+    public WebElement classDropDown;
 
     @FindBy(xpath = "//select[@id='section_id']")
-    public WebElement sectionIDDropDown;
+    public WebElement sectionDropDown;
 
-    @FindBy(xpath = "//name[@class='search_text']")
-    public WebElement searchByKeywordTextBox;
+    @FindBy(xpath = "//button[@value='search_filter']")
+    public WebElement searchByClassSectionButton;
 
-    public static WebElement dynamicRecordLocator(String text){
-        return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'"+ text + "')]//parent::tr/td/input"));
+    public static WebElement dynamicRecordLocator(String text) {
+        return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + text + "')]//parent::tr/td/input"));
     }
 }

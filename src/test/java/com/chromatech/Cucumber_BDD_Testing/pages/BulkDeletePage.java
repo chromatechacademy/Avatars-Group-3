@@ -29,16 +29,26 @@ public class BulkDeletePage {
     public WebElement deleteButton;
 
     /**
+     * Find the WebElement that represents the dynamic record locate deleter.
+     *
      * @param text to be searched for in the record locator
      * @return WebElement that represents the delete record locator
      */
-    public static WebElement dynamicRecordLocateDeleter(String text){
-        return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'"+ text + "')]//ancestor::tr/td/input"));
+    public static WebElement dynamicRecordLocateDeleter(String text) {
+        return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + text + "')]//ancestor::tr/td/input"));
     }
 
-    public static WebElement dynamicRecordNameLocator(String text){
-        return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'"+ text + "')]/ancestor::tr/td[2]"));
+    /**
+     * Find the WebElement that represents the dynamic record name locator.
+     *
+     * @param text the text to be searched for in the record locator
+     * @return the WebElement that represents the dynamic record name locator
+     */
+    public static WebElement dynamicRecordNameLocator(String text) {
+        return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + text + "')]/ancestor::tr/td[2]"));
     }
 
-    public BulkDeletePage(){ PageFactory.initElements(WebDriverUtils.driver, this); }
+    public BulkDeletePage() {
+        PageFactory.initElements(WebDriverUtils.driver, this);
+    }
 }

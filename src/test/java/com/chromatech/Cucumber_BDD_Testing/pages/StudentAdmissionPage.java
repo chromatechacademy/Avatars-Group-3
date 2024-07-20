@@ -185,96 +185,192 @@ public class StudentAdmissionPage {
     @FindBy(xpath = "//textarea[@id='guardian_address']")
     public WebElement guardianAddressTextBox;
 
+    /**
+     * Represents the WebElement for the student's photo in the StudentAdmissionPage class.
+     */
     @FindBy(xpath = "(//input[@id='file'])[1]")
     public WebElement studentPhoto;
 
+    /**
+     * Represents the WebElement for the father's photo in the StudentAdmissionPage class.
+     */
     @FindBy(xpath = "(//input[@id='file'])[2]")
     public WebElement fatherPhoto;
 
+    /**
+     * Represents an input element for uploading a photo of the mother.
+     */
     @FindBy(xpath = "(//input[@id='file'])[3]")
     public WebElement motherPhoto;
 
+    /**
+     * Represents an input element for uploading a photo of the guardian.
+     */
     @FindBy(xpath = "(//input[@id='file'])[4]")
     public WebElement guardianPhoto;
 
+    /**
+     * Represents the add more details text box on the Student Admission Page.
+     */
     @FindBy(xpath = "//a[normalize-space()='Add More Details']")
     public WebElement addMoreDetailsBox;
 
+    /**
+     * Represents a checkbox for the guardian address on the Student Admission page.
+     */
     @FindBy(xpath = "//input[@id='autofill_current_address']")
     public WebElement guardianAddressCheckBox;
 
+    /**
+     * Represents a checkbox for the student's permanent address on the Student Admission page.
+     */
     @FindBy(xpath = "//input[@id='autofill_address']")
     public WebElement permanentAddressCheckBox;
 
+    /**
+     * Represents a text box for the student's current address on the Student Admission page.
+     */
     @FindBy(xpath = "//textarea[@id='current_address']")
     public WebElement currentAddressTextBox;
 
+    /**
+     * Represents a text box for the student's permanent address on the Student Admission page.
+     */
     @FindBy(xpath = "//textarea[@id='permanent_address']")
     public WebElement permanentAddressTextBox;
 
+    /**
+     * Represents a bank account number text box on the Student Admission page.
+     */
     @FindBy(xpath = "//input[@id='bank_account_no']")
     public WebElement bankAccountNumberTextBox;
 
+    /**
+     * Represents a bank name text box on the Student Admission page.
+     */
     @FindBy(xpath = "//input[@id='bank_name']")
     public WebElement bankNameTextBox;
 
+    /**
+     * Represents the ifsc code text box on the Student Admission page.
+     */
     @FindBy(xpath = "//input[@id='ifsc_code']")
     public WebElement ifscCodeTextBox;
 
+    /**
+     * Represents the national ID number text box on the Student Admission page.
+     */
     @FindBy(xpath = "//input[@id='adhar_no']")
     public WebElement nationalIDNumberTextBox;
 
+    /**
+     * Represents the local ID number text box on the Student Admission page.
+     */
     @FindBy(xpath = "//input[@id='samagra_id']")
     public WebElement localIDNumberTextBox;
 
+    /**
+     * Represents the rte 'Yes' radio button on the Student Admission page.
+     */
     @FindBy(xpath = "//input[@value='Yes']")
     public WebElement rteYesButton;
 
+    /**
+     * Represents the previous school details text box on the Student Admission page.
+     */
     @FindBy(xpath = "//textarea[@name='previous_school']")
     public WebElement previousSchoolDetailsTextBox;
 
+    /**
+     * Represents the note text box on the Student Admission page.
+     */
     @FindBy(xpath = "//textarea[@name='note']")
     public WebElement noteTextBox;
 
+    /**
+     * Represents the title one text box on the Student Admission page.
+     */
     @FindBy(xpath = "//input[@name='first_title']")
     public WebElement titleOneTextBox;
 
+    /**
+     * Represents the WebElement to upload a document for title one on the StudentAdmissionPage class.
+     */
     @FindBy(xpath = "//input[@name='first_doc']")
     public WebElement documentOne;
 
+    /**
+     * Represents the title two text box on the Student Admission page.
+     */
     @FindBy(xpath = "//input[@name='second_title']")
     public WebElement titleTwoTextBox;
 
+    /**
+     * Represents the WebElement to upload a document for title one on the StudentAdmissionPage class.
+     */
     @FindBy(xpath = "//input[@name='second_doc']")
     public WebElement documentTwo;
 
+    /**
+     * Represents the title three text box on the Student Admission page.
+     */
     @FindBy(xpath = "//input[@name='fourth_title']")
     public WebElement titleThreeTextBox;
 
+    /**
+     * Represents the WebElement to upload a document for title one on the StudentAdmissionPage class.
+     */
     @FindBy(xpath = "//input[@name='fourth_doc']")
     public WebElement documentThree;
 
+    /**
+     * Represents the title four text box on the Student Admission page.
+     */
     @FindBy(xpath = "//input[@name='fifth_title']")
     public WebElement titleFourTextBox;
 
+    /**
+     * Represents the WebElement to upload a document for title one on the StudentAdmissionPage class.
+     */
     @FindBy(xpath = "//input[@name='fifth_doc']")
     public WebElement documentFour;
 
+    /**
+     * Represents the add sibling button on the Student Admission page.
+     */
     @FindBy(xpath = "//button[normalize-space()='Add Sibling']")
     public WebElement addSiblingButton;
 
+    /**
+     * Represents the add sibling class dropdown WebElement on the Student Admission page.
+     */
     @FindBy(xpath = "//select[@id='sibiling_class_id']")
     public WebElement siblingClassDropDown;
 
+    /**
+     * Represents the add sibling section dropdown WebElement on the Student Admission page.
+     */
     @FindBy(xpath = "//select[@id='sibiling_section_id']")
     public WebElement siblingSectionDropDown;
 
+    /**
+     * Represents the add sibling student ID number dropdown WebElement on the Student Admission page.
+     */
     @FindBy(xpath = "//select[@id='sibiling_student_id']")
     public WebElement siblingStudentIDDropDown;
 
+    /**
+     * Represents the add sibling student add information button WebElement on the Student Admission page.
+     */
     @FindBy(xpath = "//button[@id='load']")
     public WebElement addSiblingInformationButton;
 
+    /**
+     * Represents the save button on the Student Admission page.
+     */
     @FindBy(xpath = "//button[@type='submit'][normalize-space()='Save']")
     public WebElement saveButton;
+
+    @FindBy(xpath = "//div[@class='alert alert-success']")
+    public WebElement studentSavedSuccessfullyAlert;
 }
