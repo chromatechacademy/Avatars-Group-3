@@ -188,8 +188,8 @@ public class Admitting_Multiple_Students_Steps {
         CommonMethods.acceptAlert();
     }
 
-    @Then("deletes the test category")
-    public void deletes_the_test_category() {
+    @Then("delete the test category")
+    public void delete_the_test_category() {
         categoryPage.studentCategories.click();
         categoryPage.group3Delete.click();
         CommonMethods.acceptAlert();

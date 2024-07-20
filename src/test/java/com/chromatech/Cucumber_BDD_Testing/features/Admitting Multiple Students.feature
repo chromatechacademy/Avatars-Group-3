@@ -22,7 +22,7 @@ Feature: Admit Multiple Students
     Then the user should be able to admit multiple students with unique admission numbers "<Class>", "<Section>", "<Admission No>"
     And delete test account with "<Admission No>"
     And delete test sibling account with admission number "112358132134"
-    And deletes the test category
+    And delete the test category
 
     Examples:
       | Admission No | Roll Number | Class | Section               | First Name | Last Name  | Gender | Date of Birth | Category | Email                        | Admission Date | Blood Group | As on Date | Mobile Number | Height | Weight | Father Name     | Father Phone | Father Occupation   | Mother Name        | Mother Phone  | Mother Occupation | Guardian Email               | Guardian Address       | Bank Account Number | Bank Name           | IFSC Code | National Identification Number | Local Identification Number | Previous School Details                                      | Note                                                                                                                                                                               | Title 1 | Title 2     | Title 3 | Title 4     |
