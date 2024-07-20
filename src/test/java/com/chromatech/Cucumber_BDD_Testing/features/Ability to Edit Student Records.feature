@@ -15,4 +15,3 @@ Feature: Editing Student Records
     When a CTSMS user opens a student record with admission number "112358132134" and first name "Group Three Student"
     And makes and saves changes to the student information with "email@newemail.com", and "333-333-3333"
     Then the student information is successfully saved
-

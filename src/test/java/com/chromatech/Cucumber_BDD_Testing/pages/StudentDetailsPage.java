@@ -28,5 +28,4 @@ public class StudentDetailsPage {
     /* Successful Record Update Alert */
     @FindBy(xpath = "//div[@class='alert alert-success']/div[contains(text(), 'Record Update Successfully')]")
     public WebElement successfulRecordUpdateAlert;
-
 }
