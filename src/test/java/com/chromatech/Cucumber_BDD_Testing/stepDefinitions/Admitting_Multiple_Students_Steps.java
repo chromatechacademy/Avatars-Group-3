@@ -8,50 +8,50 @@ import com.chromatech.utils.WebDriverUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
+import org.openqa.selenium.NoSuchElementException;
 
 public class Admitting_Multiple_Students_Steps {
 
     DashboardPage dashboardPage = new DashboardPage();
     StudentAdmissionPage studentAdmissionPage = new StudentAdmissionPage();
-    StudentDetailsPage studentDetailsPage = new StudentDetailsPage();
     BulkDeletePage bulkDeletePage = new BulkDeletePage();
     CategoryPage categoryPage = new CategoryPage();
+
+    String photo = System.getProperty("user.dir") + "/src/main/java/com/chromatech/utils/files/famphoto.jpg";
+
+    @And("verifies a student with {string} is not an existing student")
+    public void verifies_a_student_with_is_not_an_existing_student(String admissionNo) {
+        dashboardPage.studentInformationModule.click();
+        bulkDeletePage.bulkDeleteSubModule.click();
+        bulkDeletePage.classDropDown.click();
+        bulkDeletePage.sectionDropDown.click();
+        bulkDeletePage.searchButton.click();
+        try {
+            JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
+            if ((BulkDeletePage.dynamicRecordLocateDeleter(admissionNo).isDisplayed())) {
+                BulkDeletePage.dynamicRecordLocateDeleter(admissionNo).click();
+                bulkDeletePage.deleteButton.click();
+                CommonMethods.acceptAlert();
+            }
+        } catch (NoSuchElementException e) {
+        }
+    }
 
     @And("creates a test category {string}")
     public void creates_a_test_category(String categoryName) {
         dashboardPage.studentInformationModule.click();
         categoryPage.studentCategories.click();
-        categoryPage.categoriesTextBox.sendKeys(categoryName);
+        categoryPage.categoryTextBox.sendKeys(categoryName);
         categoryPage.categorySaveButton.click();
         CucumberLogUtils.logScreenShot();
-        CommonMethods.assertTrue(categoryPage.categoryGroup3.isDisplayed());
-    }
-
-    @And("verifies a student with {string} is not an existing student")
-    public void verifies_a_student_with_is_not_an_existing_student(String admissionNo) {
-        bulkDeletePage.bulkDeleteSubModule.click();
-        bulkDeletePage.classDropDown.click();
-        bulkDeletePage.sectionDropDown.click();
-        bulkDeletePage.searchButton.click();
-        WebDriverWait wDW = new WebDriverWait(WebDriverUtils.driver, Duration.ofSeconds(2L));
-        wDW.until(ExpectedConditions.visibilityOf(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo)));
-        if(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo).isDisplayed()) {
-            BulkDeletePage.dynamicRecordLocateDeleter(admissionNo).click();
-            bulkDeletePage.deleteButton.click();
-            CommonMethods.acceptAlert();
-        }
+        CommonMethods.assertEquals(categoryPage.categoryGroup3.getText(), categoryName);
     }
 
     @When("a CTSMS admin or faculty member is on the student admission page {string}")
     public void a_ctsms_admin_or_faculty_member_is_on_the_student_admission_page(String expectedAdmissionPageUrl) {
         dashboardPage.studentAdmissionSubModule.click();
-        String actualAdmissionPageUrl = WebDriverUtils.driver.getCurrentUrl();
         CucumberLogUtils.logScreenShot();
-        CommonMethods.assertEquals(actualAdmissionPageUrl, expectedAdmissionPageUrl);
+        CommonMethods.assertEquals(WebDriverUtils.driver.getCurrentUrl(), expectedAdmissionPageUrl);
     }
 
     @And("creates a test sibling with admission number {string}, class {string}, section {string}, first name {string}, gender {string}, date of birth {string}, guardian name {string}, guardian phone number {string}")
@@ -62,7 +62,7 @@ public class Admitting_Multiple_Students_Steps {
         studentAdmissionPage.firstNameTextBox.sendKeys(firstName);
         CommonMethods.selectDropDownValue(genderOption, studentAdmissionPage.genderDropDown);
         JavascriptMethods.selectDateByJS(studentAdmissionPage.dateOfBirthTextBox, dateOfBirth);
-        studentAdmissionPage.motherRadioButton.click();
+        studentAdmissionPage.fatherRadioButton.click();
         studentAdmissionPage.guardianNameTextBox.sendKeys(guardianName);
         studentAdmissionPage.guardianPhoneTextBox.sendKeys(guardianPhoneNumber);
         studentAdmissionPage.saveButton.click();
@@ -74,14 +74,13 @@ public class Admitting_Multiple_Students_Steps {
         studentAdmissionPage.addSiblingButton.click();
         CommonMethods.waitForVisibility(studentAdmissionPage.siblingClassDropDown);
         CommonMethods.selectDropDownValue("SDET", studentAdmissionPage.siblingClassDropDown);
-        CommonMethods.waitForVisibility(studentAdmissionPage.siblingSectionDropDown);
         CommonMethods.selectDropDownValue("Cucumber Fundamentals", studentAdmissionPage.siblingSectionDropDown);
         CommonMethods.selectDropDownValue("Group Three Sibling ()", studentAdmissionPage.siblingStudentIDDropDown);
         studentAdmissionPage.addSiblingInformationButton.click();
     }
 
-    @And("the user fills out all fields {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
-    public void the_user_fills_out_all_fields(String admissionNo, String rollNumber, String classOption, String sectionOption, String firstName, String lastName, String genderOption, String dateOfBirth, String categoryOption, String email, String admissionDate, String bloodGroupOption, String asOnDate, String mobileNumber, String height, String weight, String fatherName, String fatherPhone, String fatherOccupation, String motherName, String motherPhone, String motherOccupation, String guardianEmail, String guardianPhone, String guardianOccupation, String guardianAddress) {
+    @And("the user fills out all fields {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
+    public void the_user_fills_out_all_fields(String admissionNo, String rollNumber, String classOption, String sectionOption, String firstName, String lastName, String genderOption, String dateOfBirth, String categoryOption, String email, String admissionDate, String bloodGroupOption, String asOnDate, String mobileNumber, String height, String weight, String fatherName, String fatherPhone, String fatherOccupation, String motherName, String motherPhone, String motherOccupation, String guardianEmail, String guardianAddress) {
         studentAdmissionPage.admissionNoTextBox.sendKeys(admissionNo);
         studentAdmissionPage.rollNumberTextBox.sendKeys(rollNumber);
         CommonMethods.selectDropDownValue(classOption, studentAdmissionPage.classDropDown);
@@ -106,14 +105,11 @@ public class Admitting_Multiple_Students_Steps {
         studentAdmissionPage.motherOccupationTextBox.sendKeys(motherOccupation);
         studentAdmissionPage.motherRadioButton.click();
         studentAdmissionPage.guardianEmailTextBox.sendKeys(guardianEmail);
-        studentAdmissionPage.guardianPhoneTextBox.sendKeys(guardianPhone);
-        studentAdmissionPage.guardianOccupationTextBox.sendKeys(guardianOccupation);
         studentAdmissionPage.guardianAddressTextBox.sendKeys(guardianAddress);
     }
 
     @And("uploads family member photos")
     public void uploads_family_member_photos() {
-        String photo = System.getProperty("user.dir") + "/src/main/java/com/chromatech/utils/files/famphoto.jpg";
         studentAdmissionPage.studentPhoto.sendKeys(photo);
         studentAdmissionPage.fatherPhoto.sendKeys(photo);
         studentAdmissionPage.motherPhoto.sendKeys(photo);
@@ -149,7 +145,6 @@ public class Admitting_Multiple_Students_Steps {
 
     @And("uploads documents {string}, {string}, {string}, {string}")
     public void uploads_documents(String titleOne, String titleTwo, String titleThree, String titleFour) {
-        String photo = System.getProperty("user.dir") + "/src/main/java/com/chromatech/utils/files/famphoto.jpg";
         studentAdmissionPage.titleOneTextBox.sendKeys(titleOne);
         studentAdmissionPage.titleTwoTextBox.sendKeys(titleTwo);
         studentAdmissionPage.titleThreeTextBox.sendKeys(titleThree);
@@ -170,7 +165,6 @@ public class Admitting_Multiple_Students_Steps {
         dashboardPage.studentDetailsSubModule.click();
         bulkDeletePage.bulkDeleteSubModule.click();
         CommonMethods.selectDropDownValue(classOption, bulkDeletePage.classDropDown);
-        CommonMethods.waitForVisibility(bulkDeletePage.sectionDropDown);
         CommonMethods.selectDropDownValue(sectionOption, bulkDeletePage.sectionDropDown);
         bulkDeletePage.searchButton.click();
         JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));

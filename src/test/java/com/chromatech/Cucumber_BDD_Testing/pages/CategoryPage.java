@@ -21,7 +21,7 @@ public class CategoryPage {
      * Category Text Box.
      */
     @FindBy(xpath = "//input[@id='category']")
-    public WebElement categoriesTextBox;
+    public WebElement categoryTextBox;
 
     /**
      * Category Save Button.
