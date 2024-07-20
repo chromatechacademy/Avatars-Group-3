@@ -99,7 +99,6 @@ public class Adding_Expense_Steps {
     public void user_clicks_save_in_add_expense_page() {
         addingExpensePage.expenseSaveButton.click();
         CucumberLogUtils.logScreenShot();
-
     }
 
     @And("user clicks the search expense page to search for the expense")
@@ -113,7 +112,6 @@ public class Adding_Expense_Steps {
         String actualUrl = WebDriverUtils.driver.getCurrentUrl();
         Assert.assertEquals(actualUrl, expectedUrl);
         CucumberLogUtils.logScreenShot();
-
     }
 
     @And("user user enters the name in the expense list {string}")
@@ -126,11 +124,11 @@ public class Adding_Expense_Steps {
     public void user_clicks_the_search_button_in_the_search_expenses() {
         addingExpensePage.searchExpenseSearchButton.click();
         CucumberLogUtils.logScreenShot();
-
     }
 
-    @When("the following expense result name , invoice number, expense head, date, amount")
+    @When("the following expense result name, invoice number, expense head, date, amount")
     public void the_following_expense_result_name_invoice_number_expense_head_date_amount() {
+        Assert.assertTrue(addingExpensePage.searchExpenseResult.isDisplayed());
         addingExpensePage.searchExpenseResult.getText();
     }
 

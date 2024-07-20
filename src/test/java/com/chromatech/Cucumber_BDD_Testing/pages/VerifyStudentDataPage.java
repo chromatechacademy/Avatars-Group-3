@@ -18,5 +18,27 @@ public class VerifyStudentDataPage {
     @FindBy(xpath = "//a[normalize-space()='Student Admission']")
     public WebElement studentAdmission;
 
+    //THE USER ENTERS THE ADMISSION NUMBER
+    @FindBy(xpath = "//input[@id='admission_no']")
+    public WebElement admissionNumber;
 
+    //ENTERS THE ROLL NUMBER
+    @FindBy(xpath = "//input[@id='roll_no']")
+    public WebElement rollNumber;
+
+    //SELECT DROPDOWN
+    @FindBy(xpath = "//select[@id='class_id']")
+    public WebElement selectCLassDropdown;
+
+    //SELECT SECTION
+    @FindBy(xpath = "//select[@id='section_id']")
+    public WebElement selectSectionDropdown;
+
+    //ENTERS FIRST NAME
+    @FindBy(xpath = "//input[@id='lastname']")
+    public WebElement lastName;
+
+    //ENTERS LAST NAME
+    @FindBy(xpath = "//select[@name='gender']")
+    public WebElement genderDropDown;
 }
