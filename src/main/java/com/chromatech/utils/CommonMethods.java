@@ -544,6 +544,7 @@ public class CommonMethods extends WebDriverUtils {
     }
 
     /**
+     *
      * Use this method to assert a boolean condition
      *
      * @param flag
