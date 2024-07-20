@@ -84,6 +84,12 @@ public class DashboardPage {
     public WebElement feesCollectionModule;
 
     /**
+     * Represents the WebElement for the "Income" module on the DashboardPage.
+     */
+    @FindBy(xpath ="//span[normalize-space()='Income']")
+    public WebElement incomeModule;
+
+    /**
      * Represents the WebElement for the Income module in the Dashboard page.
      */
     @FindBy(xpath = "//span[normalize-space()='Expenses']")
