@@ -162,5 +162,4 @@ public class DashboardPage {
     @FindBy(xpath = "//a[normalize-space()='Sections']")
     public WebElement sectionsSubModule;
 
-
 }

@@ -23,5 +23,4 @@ public class CTSMS_Navigation_Modules_Steps {
         Assert.assertEquals(dashboardPage.reportsModule.getText(), reports);
 
     }
-
 }
