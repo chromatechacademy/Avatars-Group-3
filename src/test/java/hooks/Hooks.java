@@ -4,6 +4,7 @@ import com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer;
 import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.WebDriverUtils;
 import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 
@@ -17,7 +18,11 @@ public class Hooks {
     }
 
     @After
-    public void end() {
-        WebDriverUtils.tearDown();
+    public void end() {WebDriverUtils.tearDown();
+    }
+
+    @AfterStep
+    public void afterStepSS() {
+        CucumberLogUtils.logScreenShot();
     }
 }
