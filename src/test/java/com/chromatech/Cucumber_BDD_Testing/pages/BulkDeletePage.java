@@ -8,37 +8,45 @@ import org.openqa.selenium.support.PageFactory;
 
 public class BulkDeletePage {
 
-    /* BULK DELETE SUB MODULE */
+    public BulkDeletePage() { PageFactory.initElements(WebDriverUtils.driver, this); }
+
+    /* Bulk Delete Sub Module */
     @FindBy(xpath = "//a[normalize-space()='Bulk Delete']")
     public WebElement bulkDeleteSubModule;
 
-    /* CLASS DROPDOWN SELECTOR */
+    /* Class Dropdown Selector */
     @FindBy(xpath = "//select[@name='class_id']")
     public WebElement classDropDown;
 
-    /* SECTION DROPDOWN SELECTOR */
+    /* Section Dropdown Selector */
     @FindBy(xpath = "//select[@name='section_id']")
     public WebElement sectionDropDown;
 
-    /* SEARCH BUTTON */
+    /* Search Button */
     @FindBy(xpath = "//button[normalize-space()='Search']")
     public WebElement searchButton;
 
-    /* DELETE BUTTON */
+    /* Delete Button */
     @FindBy(xpath = "//button[normalize-space()='Delete']")
     public WebElement deleteButton;
 
-    /* DYNAMIC RECORD LOCATE DELETER */
+    /**
+     * Locates and returns the WebElement of a dynamic record based on the given text.
+     *
+     * @param text the text to search for in the record
+     * @return the WebElement representing the dynamic record
+     */
     public static WebElement dynamicRecordLocateDeleter(String text) {
         return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + text + "')]//ancestor::tr/td/input"));
     }
 
-    /* DYNAMIC RECORD NAME LOCATOR */
+    /**
+     * Locates and returns the WebElement of a dynamic record name based on the given text.
+     *
+     * @param text the text to search for in the record
+     * @return the WebElement representing the dynamic record name
+     */
     public static WebElement dynamicRecordNameLocator(String text) {
         return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + text + "')]/ancestor::tr/td[2]"));
-    }
-
-    public BulkDeletePage() {
-        PageFactory.initElements(WebDriverUtils.driver, this);
     }
 }

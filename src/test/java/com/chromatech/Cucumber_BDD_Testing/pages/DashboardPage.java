@@ -75,7 +75,7 @@ public class DashboardPage {
      * Represents the WebElement for the Homework module on the Dashboard page.
      */
     @FindBy(xpath = "//span[normalize-space()='Homework']")
-    public  WebElement homeworkModule;
+    public WebElement homeworkModule;
 
     /**
      * Represents the WebElement for the Add Homework link on the Dashboard page.
@@ -101,5 +101,3 @@ public class DashboardPage {
     @FindBy(xpath = "//ul[@class='treeview-menu']//a[normalize-space()='Student Details']")
     public WebElement studentDetailsSubModule;
 }
-
-//a[@href='https://mexil.it/chroma/admin/timetable/classreport']
