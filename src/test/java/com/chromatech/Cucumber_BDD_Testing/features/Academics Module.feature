@@ -1,6 +1,6 @@
 Feature: Academics Module
 
-  @Progression @AG3CP-8 @Mustafa
+  @Regression @AG3CP-8 @Mustafa
   Scenario: Academics Module displays
     Given a user is on the Chroma Tech Academy practice site "https://mexil.it/chroma/site/login"
     And user enters username "general@teacher.com" in username text box
