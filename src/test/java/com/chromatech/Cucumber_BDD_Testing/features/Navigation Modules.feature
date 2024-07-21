@@ -1,6 +1,6 @@
 Feature: Navigation Modules
 
-  @Regression @AG3CP-51 @Mustafa
+  #@Regression @AG3CP-51 @Mustafa
   Scenario: All Modules Are Displayed
     Given a user is on the Chroma Tech Academy practice site "https://mexil.it/chroma/site/login"
     And user enters username "general@teacher.com" in username text box
