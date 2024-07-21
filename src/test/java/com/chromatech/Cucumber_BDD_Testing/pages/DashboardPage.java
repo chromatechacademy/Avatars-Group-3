@@ -162,4 +162,9 @@ public class DashboardPage {
     @FindBy(xpath = "//a[normalize-space()='Sections']")
     public WebElement sectionsSubModule;
 
+    /**
+     * Represents the WebElement for the Add Homework link on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Add Homework']")
+    public WebElement addHomeworkSubModule;
 }
