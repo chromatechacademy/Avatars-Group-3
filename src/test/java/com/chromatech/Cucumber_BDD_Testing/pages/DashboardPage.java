@@ -82,4 +82,22 @@ public class DashboardPage {
      */
     @FindBy(xpath = "//a[normalize-space()='Add Homework']")
     public WebElement addHomeworkSubModule;
+
+    /**
+     * Represents the WebElement for the Student Information module on the Dashboard page
+     */
+    @FindBy(xpath = "//span[normalize-space()='Student Information']")
+    public WebElement studentInformationModule;
+
+    /**
+     * Represents the WebElement for the Student Admission submodule on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Student Admission']")
+    public WebElement studentAdmissionSubModule;
+
+    /**
+     * Represents the WebElement for the Student Details submodule on the Dashboard page.
+     */
+    @FindBy(xpath = "//ul[@class='treeview-menu']//a[normalize-space()='Student Details']")
+    public WebElement studentDetailsSubModule;
 }

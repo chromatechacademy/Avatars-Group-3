@@ -3,6 +3,7 @@ package com.chromatech.Cucumber_BDD_Testing.stepDefinitions;
 import com.chromatech.Cucumber_BDD_Testing.pages.BulkDeletePage;
 import com.chromatech.Cucumber_BDD_Testing.pages.CategoryPage;
 import com.chromatech.Cucumber_BDD_Testing.pages.DashboardPage;
+import com.chromatech.Cucumber_BDD_Testing.pages.StudentAdmissionPage;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.JavascriptMethods;
@@ -10,6 +11,7 @@ import com.chromatech.utils.WebDriverUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.NoSuchElementException;
 
 public class Student_Admission_Steps {
 
@@ -157,18 +159,6 @@ public class Student_Admission_Steps {
     @When("clicks save")
     public void clicks_save() {
         studentAdmissionPage.saveButton.click();
-    }
-
-    @Then("the user should be able to admit multiple students with unique admission numbers {string}, {string}, {string}")
-    public void the_user_should_be_able_to_admit_multiple_students_with_unique_admission_numbers(String classOption, String sectionOption, String admissionNo) {
-        dashboardPage.studentDetailsSubModule.click();
-        bulkDeletePage.bulkDeleteSubModule.click();
-        CommonMethods.selectDropDownValue(classOption, bulkDeletePage.classDropDown);
-        CommonMethods.selectDropDownValue(sectionOption, bulkDeletePage.sectionDropDown);
-        bulkDeletePage.searchButton.click();
-        JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
-        CucumberLogUtils.logScreenShot();
-        CommonMethods.assertEquals(BulkDeletePage.dynamicRecordNameLocator(admissionNo).getText(), admissionNo);
     }
 
     @And("delete test account with {string}")
