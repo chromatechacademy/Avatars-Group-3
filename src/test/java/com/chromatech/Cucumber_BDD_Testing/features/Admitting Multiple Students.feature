@@ -1,6 +1,6 @@
 Feature: Admit Multiple Students
 
-  @Progression @Kei @AG3CP-19
+  @Regression @Kei @AG3CP-19
   Scenario Outline: Admitting Multiple Students
     Given a user is on the Chroma Tech Academy practice site "https://mexil.it/chroma/site/login"
     And user enters username "general@teacher.com" in username text box
