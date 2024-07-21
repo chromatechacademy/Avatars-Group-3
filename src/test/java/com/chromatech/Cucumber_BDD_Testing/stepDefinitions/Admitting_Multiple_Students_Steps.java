@@ -7,6 +7,7 @@ import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.JavascriptMethods;
 import com.chromatech.utils.WebDriverUtils;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.NoSuchElementException;
@@ -29,6 +30,19 @@ public class Admitting_Multiple_Students_Steps {
             JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
             if ((BulkDeletePage.dynamicRecordLocateDeleter(admissionNo).isDisplayed())) {
                 BulkDeletePage.dynamicRecordLocateDeleter(admissionNo).click();
+                bulkDeletePage.deleteButton.click();
+                CommonMethods.acceptAlert();
+            }
+        } catch (NoSuchElementException e) {
+        }
+    }
+
+    @Given("verifies a sibling with {string} is not an existing student")
+    public void verifies_a_sibling_with_is_not_an_existing_student(String siblingAdmissionNO) {
+        try {
+            JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(siblingAdmissionNO));
+            if ((BulkDeletePage.dynamicRecordLocateDeleter(siblingAdmissionNO).isDisplayed())) {
+                BulkDeletePage.dynamicRecordLocateDeleter(siblingAdmissionNO).click();
                 bulkDeletePage.deleteButton.click();
                 CommonMethods.acceptAlert();
             }
@@ -190,6 +204,7 @@ public class Admitting_Multiple_Students_Steps {
     public void delete_the_test_category() {
         CommonMethods.waitForClickability(categoryPage.studentCategories);
         categoryPage.studentCategories.click();
+        CommonMethods.waitForClickability(categoryPage.groupSelenium);
         categoryPage.groupSelenium.click();
         CommonMethods.acceptAlert();
     }

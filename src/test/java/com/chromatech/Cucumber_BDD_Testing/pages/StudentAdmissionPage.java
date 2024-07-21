@@ -11,247 +11,251 @@ public class StudentAdmissionPage {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
 
-    /* Admission Number Text Box */
+    /* ADMISSION NUMBER TEXT BOX */
     @FindBy(xpath = "//input[@id='admission_no']")
     public WebElement admissionNoTextBox;
 
-    /* Roll Number Text Box */
+    /* ROLL NUMBER TEXT BOX */
     @FindBy(xpath = "//input[@id='roll_no']")
     public WebElement rollNumberTextBox;
 
-    /* Class Select Dropdown */
+    /* CLASS SELECT DROPDOWN */
     @FindBy(xpath = "//select[@id='class_id']")
     public WebElement classDropDown;
 
-    /* Section Dropdown */
+    /* SECTION DROPDOWN */
     @FindBy(xpath = "//select[@id='section_id']")
     public WebElement sectionDropDown;
 
-    /* First Name Text Box */
+    /* FIRST NAME TEXT BOX */
     @FindBy(xpath = "//input[@id='firstname']")
     public WebElement firstNameTextBox;
 
-    /* Last Name Text Box */
+    /* LAST NAME TEXT BOX */
     @FindBy(xpath = "//input[@id='lastname']")
     public WebElement lastNameTextBox;
 
-    /* Gender Dropdown */
+    /* GENDER DROPDOWN */
     @FindBy(xpath = "//select[@name='gender']")
     public WebElement genderDropDown;
 
-    /* The Date Of Birth Text Box */
+    /* THE DATE OF BIRTH TEXT BOX */
     @FindBy(xpath = "//input[@id='dob']")
     public WebElement dateOfBirthTextBox;
 
-    /* Category dropdown  */
+    /* CATEGORY DROPDOWN */
     @FindBy(xpath = "//select[@id='category_id']")
     public WebElement categoryDropDown;
 
-    /* Email Text Box */
+    /* EMAIL TEXT BOX */
     @FindBy(xpath = "//input[@id='email']")
     public WebElement emailTextBox;
 
-    /* Admission Date Text Box */
+    /* ADMISSION DATE TEXT BOX */
     @FindBy(xpath = "//input[@id='admission_date']")
     public WebElement admissionDateTextBox;
 
-    /* Blood Group Dropdown */
+    /* BLOOD GROUP DROPDOWN */
     @FindBy(xpath = "//select[@name='blood_group']")
     public WebElement bloodGroupDropDown;
 
-    /* As On Date Datepicker */
+    /* AS ON DATE DATEPICKER */
     @FindBy(xpath = "//input[@id='measure_date']")
     public WebElement asOnDate;
 
-    /* Mobile Number Text Box */
+    /* MOBILE NUMBER TEXT BOX */
     @FindBy(xpath = "(//input[@type='number'])[1]")
     public WebElement mobileNumberTextBox;
 
-    /* Height Text Box*/
+    /* HEIGHT TEXT BOX */
     @FindBy(xpath = "//label[normalize-space()='Height']/following-sibling::input")
     public WebElement heightTextBox;
 
-    /* Weight Text Box*/
+    /* WEIGHT TEXT BOX */
     @FindBy(xpath = "//label[normalize-space()='Weight']/following-sibling::input")
     public WebElement weightTextBox;
 
-    /* Father Name Text Box */
+    /* FATHER NAME TEXT BOX */
     @FindBy(xpath = "//input[@id='father_name']")
     public WebElement fatherNameTextBox;
 
-    /* Father Phone Number Text Box */
+    /* FATHER PHONE NUMBER TEXT BOX */
     @FindBy(xpath = "//input[@id='father_phone']")
     public WebElement fatherPhoneTextBox;
 
-    /* Father Radio Button */
+    /* FATHER RADIO BUTTON */
     @FindBy(xpath = "//input[@value='father']")
     public WebElement fatherRadioButton;
 
-    /* Father Occupation Text Box */
+    /* FATHER OCCUPATION TEXT BOX */
     @FindBy(xpath = "//input[@id='father_occupation']")
     public WebElement fatherOccupationTextBox;
 
-    /* Mother Name Text Box */
+    /* MOTHER NAME TEXT BOX */
     @FindBy(xpath = "//input[@id='mother_name']")
     public WebElement motherNameTextBox;
 
-    /* Mother Phone Number Text Box */
+    /* MOTHER PHONE NUMBER TEXT BOX */
     @FindBy(xpath = "//input[@id='mother_phone']")
     public WebElement motherPhoneTextBox;
 
-    /* Mother Occupation Text Box */
+    /* MOTHER OCCUPATION TEXT BOX */
     @FindBy(xpath = "//input[@id='mother_occupation']")
     public WebElement motherOccupationTextBox;
 
-    /* Mother Radio Button */
+    /* MOTHER RADIO BUTTON */
     @FindBy(xpath = "//input[@value='mother']")
     public WebElement motherRadioButton;
 
-    /* Guardian Name Text Box */
+    /* GUARDIAN NAME TEXT BOX */
     @FindBy(xpath = "//input[@id='guardian_name']")
     public WebElement guardianNameTextBox;
 
-    /* Guardian Email Text Box */
+    /* GUARDIAN EMAIL TEXT BOX */
     @FindBy(xpath = "//input[@id='guardian_email']")
     public WebElement guardianEmailTextBox;
 
-    /* Guardian Phone Number Text Box */
+    /* GUARDIAN PHONE NUMBER TEXT BOX */
     @FindBy(xpath = "//input[@id='guardian_phone']")
     public WebElement guardianPhoneTextBox;
 
-    /* Guardian Occupation Text Box */
+    /* GUARDIAN OCCUPATION TEXT BOX */
     @FindBy(xpath = "//input[@id='guardian_occupation']")
     public WebElement guardianOccupationTextBox;
 
-    /* Guardian Address Text Box */
+    /* GUARDIAN ADDRESS TEXT BOX */
     @FindBy(xpath = "//textarea[@id='guardian_address']")
     public WebElement guardianAddressTextBox;
 
-    /* Student Photo Upload Element */
+    /* STUDENT PHOTO UPLOAD ELEMENT */
     @FindBy(xpath = "(//input[@id='file'])[1]")
     public WebElement studentPhoto;
 
-    /* Father Photo Upload Element */
+    /* FATHER PHOTO UPLOAD ELEMENT */
     @FindBy(xpath = "(//input[@id='file'])[2]")
     public WebElement fatherPhoto;
 
-    /* Mother Photo Upload Element */
+    /* MOTHER PHOTO UPLOAD ELEMENT */
     @FindBy(xpath = "(//input[@id='file'])[3]")
     public WebElement motherPhoto;
 
-    /* Guardian Photo Upload Element */
+    /* GUARDIAN PHOTO UPLOAD ELEMENT */
     @FindBy(xpath = "(//input[@id='file'])[4]")
     public WebElement guardianPhoto;
 
-    /* Add More Details Bar */
+    /* ADD MORE DETAILS BAR */
     @FindBy(xpath = "//a[normalize-space()='Add More Details']")
     public WebElement addMoreDetailsBox;
 
-    /* Guardian Address Check Box */
+    /* GUARDIAN ADDRESS CHECK BOX */
     @FindBy(xpath = "//input[@id='autofill_current_address']")
     public WebElement guardianAddressCheckBox;
 
-    /* Permanent Address Check Box */
+    /* PERMANENT ADDRESS CHECK BOX */
     @FindBy(xpath = "//input[@id='autofill_address']")
     public WebElement permanentAddressCheckBox;
 
-    /* Current Address Check Box */
+    /* CURRENT ADDRESS CHECK BOX */
     @FindBy(xpath = "//textarea[@id='current_address']")
     public WebElement currentAddressTextBox;
 
-    /* Permanent Address Text Box */
+    /* PERMANENT ADDRESS TEXT BOX */
     @FindBy(xpath = "//textarea[@id='permanent_address']")
     public WebElement permanentAddressTextBox;
 
-    /* Bank Account Number Text Box */
+    /* BANK ACCOUNT NUMBER TEXT BOX */
     @FindBy(xpath = "//input[@id='bank_account_no']")
     public WebElement bankAccountNumberTextBox;
 
-    /* Bank Name Text Box */
+    /* BANK NAME TEXT BOX */
     @FindBy(xpath = "//input[@id='bank_name']")
     public WebElement bankNameTextBox;
 
-    /* IFSC Code Text Box */
+    /* IFSC CODE TEXT BOX */
     @FindBy(xpath = "//input[@id='ifsc_code']")
     public WebElement ifscCodeTextBox;
 
-    /* National ID Number Text Box */
+    /* NATIONAL ID NUMBER TEXT BOX */
     @FindBy(xpath = "//input[@id='adhar_no']")
     public WebElement nationalIDNumberTextBox;
 
-    /* Local ID Number Text Box */
+    /* LOCAL ID NUMBER TEXT BOX */
     @FindBy(xpath = "//input[@id='samagra_id']")
     public WebElement localIDNumberTextBox;
 
-    /* rte 'Yes' Radio Button */
+    /* RTE 'YES' RADIO BUTTON */
     @FindBy(xpath = "//input[@value='Yes']")
     public WebElement rteYesButton;
 
-    /* Previous School Details Text Box */
+    /* PREVIOUS SCHOOL DETAILS TEXT BOX */
     @FindBy(xpath = "//textarea[@name='previous_school']")
     public WebElement previousSchoolDetailsTextBox;
 
-    /* Note Text Box */
+    /* NOTE TEXT BOX */
     @FindBy(xpath = "//textarea[@name='note']")
     public WebElement noteTextBox;
 
-    /* Title One Text Box */
+    /* TITLE ONE TEXT BOX */
     @FindBy(xpath = "//input[@name='first_title']")
     public WebElement titleOneTextBox;
 
-    /* Title One Photo Upload Element */
+    /* TITLE ONE PHOTO UPLOAD ELEMENT */
     @FindBy(xpath = "//input[@name='first_doc']")
     public WebElement documentOne;
 
-    /* Title Two Text Box */
+    /* TITLE TWO TEXT BOX */
     @FindBy(xpath = "//input[@name='second_title']")
     public WebElement titleTwoTextBox;
 
-    /* Title Two Photo Upload Element */
+    /* TITLE TWO PHOTO UPLOAD ELEMENT */
     @FindBy(xpath = "//input[@name='second_doc']")
     public WebElement documentTwo;
 
-    /* Title Three Text Box */
+    /* TITLE THREE TEXT BOX */
     @FindBy(xpath = "//input[@name='fourth_title']")
     public WebElement titleThreeTextBox;
 
-    /* Title Three Photo Upload Element */
+    /* TITLE THREE PHOTO UPLOAD ELEMENT */
     @FindBy(xpath = "//input[@name='fourth_doc']")
     public WebElement documentThree;
 
-    /* Title Four Text Box */
+    /* TITLE FOUR TEXT BOX */
     @FindBy(xpath = "//input[@name='fifth_title']")
     public WebElement titleFourTextBox;
 
-    /* Title Four Photo Upload Element */
+    /* TITLE FOUR PHOTO UPLOAD ELEMENT */
     @FindBy(xpath = "//input[@name='fifth_doc']")
     public WebElement documentFour;
 
-    /* Add Sibling Button */
+    /* ADD SIBLING BUTTON */
     @FindBy(xpath = "//button[normalize-space()='Add Sibling']")
     public WebElement addSiblingButton;
 
-    /* Add Sibling Class Dropdown */
+    /* ADD SIBLING CLASS DROPDOWN */
     @FindBy(xpath = "//select[@id='sibiling_class_id']")
     public WebElement siblingClassDropDown;
 
-    /* Add Sibling Section Dropdown */
+    /* ADD SIBLING SECTION DROPDOWN */
     @FindBy(xpath = "//select[@id='sibiling_section_id']")
     public WebElement siblingSectionDropDown;
 
-    /* Add Sibling Student ID Dropdown */
+    /* ADD SIBLING STUDENT ID DROPDOWN */
     @FindBy(xpath = "//select[@id='sibiling_student_id']")
     public WebElement siblingStudentIDDropDown;
 
-    /* Add Sibling Add Information Button */
+    /* ADD SIBLING ADD INFORMATION BUTTON */
     @FindBy(xpath = "//button[@id='load']")
     public WebElement addSiblingInformationButton;
 
-    /* Save Button */
+    /* SAVE BUTTON */
     @FindBy(xpath = "//button[@type='submit'][normalize-space()='Save']")
     public WebElement saveButton;
 
-    /* Saved Successfully Alert */
+    /* SAVED SUCCESSFULLY ALERT */
     @FindBy(xpath = "//div[@class='alert alert-success']")
     public WebElement studentSavedSuccessfullyAlert;
+
+    /* ADMISSION NO UNIQUE VALUE MESSAGE */
+    @FindBy(xpath = "//p[contains(text(),'The Admission No field must contain a unique value')]")
+    public WebElement admissionNoUniqueValueMessage;
 }
