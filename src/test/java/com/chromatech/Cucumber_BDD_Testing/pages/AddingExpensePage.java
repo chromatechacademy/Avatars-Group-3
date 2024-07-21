@@ -6,8 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import javax.xml.xpath.XPath;
-
 public class AddingExpensePage {
     public AddingExpensePage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
@@ -80,6 +78,5 @@ public class AddingExpensePage {
     //DELETE EXPENSE
     @FindBy(xpath = "//a[normalize-space()='Group 3']/ancestor::tr/td/a[2]")
     public WebElement deleteExpense;
-
 }
 

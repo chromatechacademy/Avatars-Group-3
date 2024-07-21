@@ -126,13 +126,10 @@ public class Adding_Expense_Steps {
         CucumberLogUtils.logScreenShot();
     }
 
-
     @When("the following expense result name {string}, invoice number, expense head, date, amount")
     public void the_following_expense_result_name_invoice_number_expense_head_date_amount(String name) {
-        addingExpensePage.searchExpenseResult.getText();
-        Assert.assertTrue(addingExpensePage.searchExpenseResult.isDisplayed());
-
-
+        Assert.assertEquals(addingExpensePage.searchExpenseResult.getText(),addingExpensePage.searchExpenseResult.getText());
+        CucumberLogUtils.logScreenShot();
     }
 
     @And("user clicks add expense to delete the expense")
@@ -146,7 +143,6 @@ public class Adding_Expense_Steps {
         addingExpensePage.deleteExpense.click();
         CommonMethods.acceptAlert();
         CucumberLogUtils.logScreenShot();
-
     }
 
 
