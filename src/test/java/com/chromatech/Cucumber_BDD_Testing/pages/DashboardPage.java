@@ -117,13 +117,13 @@ public class DashboardPage {
      * This variable represents a WebElement for the class timetable sub-module link on the Dashboard page.
      */
     @FindBy(xpath = "//a[@href='https://mexil.it/chroma/admin/timetable/classreport']")
-    public WebElement classTimeableSubModule;
+    public WebElement classTimetableSubModule;
 
     /**
      * Represents the WebElement for the "Teachers Timetable" sub-module in the DashboardPage class.
      */
     @FindBy(xpath = "//a[normalize-space()='Teachers Timetable']")
-    public WebElement teacherTimeableSubModule;
+    public WebElement teachersTimetableSubModule;
 
     /**
      * This variable represents the web element for the "Assign Class Teacher" sub-module in the Dashboard Page.
