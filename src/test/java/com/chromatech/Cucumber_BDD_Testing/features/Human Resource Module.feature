@@ -1,6 +1,6 @@
 Feature: Human Resource Module
 
-#  @Regression @Nahun @AG3CP-52
+  @Regression @Nahun @AG3CP-52
   Scenario: Human Resource Module displays
     Given a user is on the Chroma Tech Academy practice site "https://mexil.it/chroma/site/login"
     And user enters username "general@teacher.com" in username text box
