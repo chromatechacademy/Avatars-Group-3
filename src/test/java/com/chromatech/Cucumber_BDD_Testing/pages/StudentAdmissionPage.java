@@ -254,5 +254,9 @@ public class StudentAdmissionPage {
     /* SAVED SUCCESSFULLY ALERT */
     @FindBy(xpath = "//div[@class='alert alert-success']")
     public WebElement studentSavedSuccessfullyAlert;
+
+    /* ADMISSION NO UNIQUE VALUE MESSAGE */
+    @FindBy(xpath = "//p[contains(text(),'The Admission No field must contain a unique value')]")
+    public WebElement admissionNoUniqueValueMessage;
 }
 

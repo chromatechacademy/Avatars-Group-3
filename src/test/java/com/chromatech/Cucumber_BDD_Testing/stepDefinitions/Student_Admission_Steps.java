@@ -1,9 +1,6 @@
 package com.chromatech.Cucumber_BDD_Testing.stepDefinitions;
 
-import com.chromatech.Cucumber_BDD_Testing.pages.BulkDeletePage;
-import com.chromatech.Cucumber_BDD_Testing.pages.CategoryPage;
-import com.chromatech.Cucumber_BDD_Testing.pages.DashboardPage;
-import com.chromatech.Cucumber_BDD_Testing.pages.StudentAdmissionPage;
+import com.chromatech.Cucumber_BDD_Testing.pages.*;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.JavascriptMethods;
@@ -29,6 +26,18 @@ public class Student_Admission_Steps {
         bulkDeletePage.classDropDown.click();
         bulkDeletePage.sectionDropDown.click();
         bulkDeletePage.searchButton.click();
+        try {JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
+            if ((BulkDeletePage.dynamicRecordLocateDeleter(admissionNo).isDisplayed())) {
+                BulkDeletePage.dynamicRecordLocateDeleter(admissionNo).click();
+                bulkDeletePage.deleteButton.click();
+                CommonMethods.acceptAlert();
+            }
+        } catch (NoSuchElementException e) {
+        }
+    }
+
+    @And("verifies a sibling with {string} is not an existing student")
+    public void verifies_a_sibling_with_is_not_an_existing_student(String admissionNo) {
         try {JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
             if ((BulkDeletePage.dynamicRecordLocateDeleter(admissionNo).isDisplayed())) {
                 BulkDeletePage.dynamicRecordLocateDeleter(admissionNo).click();
@@ -161,6 +170,22 @@ public class Student_Admission_Steps {
         studentAdmissionPage.saveButton.click();
     }
 
+    @Then("the message Admission No field must contain a unique value. is displayed")
+    public void the_message_admission_no_field_must_contain_a_unique_value_is_displayed() {
+        CommonMethods.isElementDisplayed(studentAdmissionPage.admissionNoUniqueValueMessage);
+    }
+
+    @Then("navigate to test student {string}, {string}, {string}")
+    public void navigate_to_test_student(String classOption, String sectionOption, String admissionNo) {
+        bulkDeletePage.bulkDeleteSubModule.click();
+        CommonMethods.selectDropDownValue(classOption, bulkDeletePage.classDropDown);
+        CommonMethods.selectDropDownValue(sectionOption, bulkDeletePage.sectionDropDown);
+        bulkDeletePage.searchButton.click();
+        JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
+        CucumberLogUtils.logScreenShot();
+        CommonMethods.assertEquals(BulkDeletePage.dynamicRecordNameLocator(admissionNo).getText(), admissionNo);
+    }
+
     @And("delete test account with {string}")
     public void delete_test_account_with(String admissionNo) {
         BulkDeletePage.dynamicRecordLocateDeleter(admissionNo).click();
@@ -170,9 +195,9 @@ public class Student_Admission_Steps {
 
     @And("delete test sibling account with admission number {string}")
     public void delete_test_sibling_account_with_admission_number_with_class_section(String admissionNo) {
-        JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
         CucumberLogUtils.logScreenShot();
         CommonMethods.assertEquals(BulkDeletePage.dynamicRecordNameLocator(admissionNo).getText(), admissionNo);
+        CommonMethods.waitForClickability(bulkDeletePage.deleteButton);
         BulkDeletePage.dynamicRecordLocateDeleter(admissionNo).click();
         bulkDeletePage.deleteButton.click();
         CommonMethods.acceptAlert();
@@ -180,6 +205,7 @@ public class Student_Admission_Steps {
 
     @Then("delete the test category")
     public void delete_the_test_category() {
+        CommonMethods.waitForClickability(categoryPage.studentCategories);
         categoryPage.studentCategories.click();
         categoryPage.group3Delete.click();
         CommonMethods.acceptAlert();

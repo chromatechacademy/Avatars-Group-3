@@ -38,6 +38,8 @@ public class BulkDeletePage {
         return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + text + "')]/ancestor::tr/td[2]"));
     }
 
+    //td[normalize-space()='1260225082']
+
     public BulkDeletePage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
