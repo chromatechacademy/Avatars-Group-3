@@ -1,6 +1,5 @@
 package com.chromatech.Cucumber_BDD_Testing.pages;
 
-
 import com.chromatech.utils.WebDriverUtils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -67,7 +66,7 @@ public class AddingExpensePage {
     @FindBy(xpath = "//input[@placeholder='Search by Expense']")
     public WebElement searchExpenseBox;
 
-    //CLICK SEARCH
+    //CLICK SEARCH BUTTON
     @FindBy(xpath = "//button[@value='search_full']")
     public WebElement searchExpenseSearchButton;
 
@@ -79,4 +78,3 @@ public class AddingExpensePage {
     @FindBy(xpath = "//a[normalize-space()='Group 3']/ancestor::tr/td/a[2]")
     public WebElement deleteExpense;
 }
-

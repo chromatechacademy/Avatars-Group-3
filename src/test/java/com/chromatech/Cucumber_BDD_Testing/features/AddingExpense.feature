@@ -1,4 +1,4 @@
-Feature: Student Admission
+Feature: Adding Expense
 
   @Regression @AG3CP-28 @Joyce
   Scenario:Adding Expense
@@ -27,7 +27,3 @@ Feature: Student Admission
     And the following expense result name "Group 3", invoice number, expense head, date, amount
     And user clicks add expense to delete the expense
     Then delete the expense list is displayed name, invoice number, expense head, date, amount
-
-
-
-
