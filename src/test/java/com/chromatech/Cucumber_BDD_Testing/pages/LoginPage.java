@@ -31,9 +31,18 @@ public class LoginPage {
    @FindBy(xpath = "//button[@type='submit']")
    public WebElement signInButton;
 
+<<<<<<< HEAD
    /**
    * Represents the error message element on the login page.
     */
   @FindBy(xpath = "//div[@class='alert alert-danger']")
    public WebElement errorMessage;
 }
+=======
+    /**
+     * Represents the error message element on the login page.
+     */
+    @FindBy(xpath = "//div[@class='alert alert-danger']")
+    public WebElement errorMessage;
+}
+>>>>>>> 2964697d21806017c4bc02478f262e0a33ef9559
