@@ -42,7 +42,7 @@ public class Admitting_Multiple_Students_Steps {
         categoryPage.categoryTextBox.sendKeys(categoryName);
         categoryPage.categorySaveButton.click();
         CucumberLogUtils.logScreenShot();
-        CommonMethods.assertEquals(categoryPage.categoryGroup3.getText(), categoryName);
+        CommonMethods.assertEquals(categoryPage.categorySelenium.getText(), categoryName);
     }
 
     @When("a CTSMS admin or faculty member is on the student admission page {string}")
@@ -190,7 +190,7 @@ public class Admitting_Multiple_Students_Steps {
     public void delete_the_test_category() {
         CommonMethods.waitForClickability(categoryPage.studentCategories);
         categoryPage.studentCategories.click();
-        categoryPage.group3Delete.click();
+        categoryPage.groupSelenium.click();
         CommonMethods.acceptAlert();
     }
 }

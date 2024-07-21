@@ -23,11 +23,11 @@ public class CategoryPage {
     @FindBy(xpath = "//button[@type='submit'][normalize-space()='Save']")
     public WebElement categorySaveButton;
 
-    /* Group 3 Category */
-    @FindBy(xpath = "//td[normalize-space()='Group 3 Category']")
-    public WebElement categoryGroup3;
+    /* Selenium Category Table Cell*/
+    @FindBy(xpath = "//td[normalize-space()='Selenium']")
+    public WebElement categorySelenium;
 
-    /* Group 3 Category Delete Button */
-    @FindBy(xpath = "//td[normalize-space()='Group 3 Category']/parent::tr/td[3]/a[2]")
-    public WebElement group3Delete;
+    /* Selenium Category Delete Button */
+    @FindBy(xpath = "//td[normalize-space()='Selenium']/parent::tr/td[3]/a[2]")
+    public WebElement groupSelenium;
 }
