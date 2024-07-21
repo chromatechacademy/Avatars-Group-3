@@ -1,5 +1,6 @@
 package com.chromatech.Cucumber_BDD_Testing.stepDefinitions;
 
+import com.chromatech.Cucumber_BDD_Testing.Constants.AppConstants;
 import com.chromatech.Cucumber_BDD_Testing.pages.*;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
@@ -17,8 +18,6 @@ public class Admitting_Multiple_Students_Steps {
     BulkDeletePage bulkDeletePage = new BulkDeletePage();
     CategoryPage categoryPage = new CategoryPage();
 
-    String photo = System.getProperty("user.dir") + "/src/main/java/com/chromatech/utils/files/famphoto.jpg";
-
     @And("verifies a student with {string} is not an existing student")
     public void verifies_a_student_with_is_not_an_existing_student(String admissionNo) {
         dashboardPage.studentInformationModule.click();
@@ -26,7 +25,8 @@ public class Admitting_Multiple_Students_Steps {
         bulkDeletePage.classDropDown.click();
         bulkDeletePage.sectionDropDown.click();
         bulkDeletePage.searchButton.click();
-        try {JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
+        try {
+            JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
             if ((BulkDeletePage.dynamicRecordLocateDeleter(admissionNo).isDisplayed())) {
                 BulkDeletePage.dynamicRecordLocateDeleter(admissionNo).click();
                 bulkDeletePage.deleteButton.click();
@@ -108,10 +108,10 @@ public class Admitting_Multiple_Students_Steps {
 
     @And("uploads family member photos")
     public void uploads_family_member_photos() {
-        studentAdmissionPage.studentPhoto.sendKeys(photo);
-        studentAdmissionPage.fatherPhoto.sendKeys(photo);
-        studentAdmissionPage.motherPhoto.sendKeys(photo);
-        studentAdmissionPage.guardianPhoto.sendKeys(photo);
+        studentAdmissionPage.studentPhoto.sendKeys(AppConstants.photoFilepath);
+        studentAdmissionPage.fatherPhoto.sendKeys(AppConstants.photoFilepath);
+        studentAdmissionPage.motherPhoto.sendKeys(AppConstants.photoFilepath);
+        studentAdmissionPage.guardianPhoto.sendKeys(AppConstants.photoFilepath);
     }
 
     @And("clicks the Add More Details button")
@@ -147,10 +147,10 @@ public class Admitting_Multiple_Students_Steps {
         studentAdmissionPage.titleTwoTextBox.sendKeys(titleTwo);
         studentAdmissionPage.titleThreeTextBox.sendKeys(titleThree);
         studentAdmissionPage.titleFourTextBox.sendKeys(titleFour);
-        studentAdmissionPage.documentOne.sendKeys(photo);
-        studentAdmissionPage.documentTwo.sendKeys(photo);
-        studentAdmissionPage.documentThree.sendKeys(photo);
-        studentAdmissionPage.documentFour.sendKeys(photo);
+        studentAdmissionPage.documentOne.sendKeys(AppConstants.photoFilepath);
+        studentAdmissionPage.documentTwo.sendKeys(AppConstants.photoFilepath);
+        studentAdmissionPage.documentThree.sendKeys(AppConstants.photoFilepath);
+        studentAdmissionPage.documentFour.sendKeys(AppConstants.photoFilepath);
     }
 
     @When("clicks save")
@@ -158,9 +158,8 @@ public class Admitting_Multiple_Students_Steps {
         studentAdmissionPage.saveButton.click();
     }
 
-    @Then("the user should be able to admit multiple students with unique admission numbers {string}, {string}, {string}")
-    public void the_user_should_be_able_to_admit_multiple_students_with_unique_admission_numbers(String classOption, String sectionOption, String admissionNo) {
-        dashboardPage.studentDetailsSubModule.click();
+    @Then("the user should be able to admit students with unique admission numbers {string}, {string}, {string}")
+    public void the_user_should_be_able_to_admit_students_with_unique_admission_numbers(String classOption, String sectionOption, String admissionNo) {
         bulkDeletePage.bulkDeleteSubModule.click();
         CommonMethods.selectDropDownValue(classOption, bulkDeletePage.classDropDown);
         CommonMethods.selectDropDownValue(sectionOption, bulkDeletePage.sectionDropDown);
@@ -189,6 +188,7 @@ public class Admitting_Multiple_Students_Steps {
 
     @Then("delete the test category")
     public void delete_the_test_category() {
+        CommonMethods.waitForClickability(categoryPage.studentCategories);
         categoryPage.studentCategories.click();
         categoryPage.group3Delete.click();
         CommonMethods.acceptAlert();

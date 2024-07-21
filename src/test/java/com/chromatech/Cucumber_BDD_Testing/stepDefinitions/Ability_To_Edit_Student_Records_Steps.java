@@ -4,14 +4,9 @@ import com.chromatech.Cucumber_BDD_Testing.pages.*;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.JavascriptMethods;
-import com.chromatech.utils.WebDriverUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class Ability_To_Edit_Student_Records_Steps {
 
@@ -20,8 +15,6 @@ public class Ability_To_Edit_Student_Records_Steps {
     StudentDetailsPage studentDetailsPage = new StudentDetailsPage();
     StudentEditPage studentEditPage = new StudentEditPage();
     BulkDeletePage bulkDeletePage = new BulkDeletePage();
-
-    WebDriverWait webDriverWait = new WebDriverWait(WebDriverUtils.driver, Duration.ofSeconds(1));
 
     @And("fills out all required fields with admission number {string}, class {string}, section {string}, first name {string}, gender {string}, date of birth {string}, guardian name {string}, guardian phone number {string}")
     public void fills_out_all_required_fields_with_admission_number_class_section_first_name_gender_date_of_birth_guardian_name_guardian_phone_number(String admissionNo, String classOption, String sectionOption, String firstName, String genderOption, String dateOfBirth, String guardianName, String guardianPhoneNumber) {
@@ -45,7 +38,6 @@ public class Ability_To_Edit_Student_Records_Steps {
         studentDetailsPage.searchByKeywordButton.click();
         JavascriptMethods.scrollIntoView(StudentDetailsPage.dynamicAdmissionRecordLocator(admissionNo));
         StudentDetailsPage.dynamicAdmissionRecordLocator(admissionNo).click();
-        webDriverWait.until(ExpectedConditions.urlContains("chroma/student/edit/"));
     }
 
     @And("makes and saves changes to the student information with {string}, and {string}")
@@ -55,9 +47,8 @@ public class Ability_To_Edit_Student_Records_Steps {
         studentEditPage.saveButton.click();
     }
 
-    @Then("the student information is successfully saved with {string}, {string}, and {string}")
+    @Then("the student information is successfully saved with class {string}, section {string}, and admission number {string}")
     public void the_student_information_is_successfully_saved_with(String classOption, String sectionOption, String admissionNo) {
-        webDriverWait.until(ExpectedConditions.urlContains("chroma/student/search"));
         CucumberLogUtils.logScreenShot();
         CommonMethods.assertTrue(studentDetailsPage.successfulRecordUpdateAlert.isDisplayed());
         bulkDeletePage.bulkDeleteSubModule.click();

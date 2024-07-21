@@ -28,12 +28,22 @@ public class BulkDeletePage {
     @FindBy(xpath = "//button[normalize-space()='Delete']")
     public WebElement deleteButton;
 
-    /* Dynamic Record Locate Deleter */
+    /**
+     * Locates and returns the WebElement of a dynamic record based on the given text.
+     *
+     * @param text the text to search for in the record
+     * @return the WebElement representing the dynamic record
+     */
     public static WebElement dynamicRecordLocateDeleter(String text) {
         return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + text + "')]//ancestor::tr/td/input"));
     }
 
-    /* Dynamic Record Name Locator */
+    /**
+     * Locates and returns the WebElement of a dynamic record name based on the given text.
+     *
+     * @param text the text to search for in the record
+     * @return the WebElement representing the dynamic record name
+     */
     public static WebElement dynamicRecordNameLocator(String text) {
         return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + text + "')]/ancestor::tr/td[2]"));
     }

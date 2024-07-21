@@ -20,7 +20,14 @@ public class StudentDetailsPage {
     @FindBy(xpath = "//button[@value='search_full']")
     public WebElement searchByKeywordButton;
 
-    /* Dynamic Record Admission Number Edit Button Locator */
+    /**
+     * Locates the dynamic admission record WebElement based on the given admission number.
+     * The admission number is used to generate an XPath that searches for a table cell (td) containing
+     * the admission number and following the parent chain to find the corresponding edit link.
+     *
+     * @param admission the admission number to search for
+     * @return the WebElement representing the edit link for the admission record
+     */
     public static WebElement dynamicAdmissionRecordLocator(String admission) {
         return WebDriverUtils.driver.findElement(By.xpath("//td[contains(text(),'" + admission + "')]//parent::tr//td[11]/a[@title='Edit']"));
     }
