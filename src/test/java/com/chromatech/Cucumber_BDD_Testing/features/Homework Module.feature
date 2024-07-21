@@ -1,6 +1,6 @@
 Feature: Homework Module
 
-  #@Regression @Nahun @AG3CP-10
+  @Regression @Nahun @AG3CP-10
   Scenario: Add Homework Module Displays
     Given a user is on the Chroma Tech Academy practice site "https://mexil.it/chroma/site/login"
     And user enters username "general@teacher.com" in username text box

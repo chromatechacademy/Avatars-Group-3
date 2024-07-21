@@ -170,11 +170,6 @@ public class Student_Admission_Steps {
         studentAdmissionPage.saveButton.click();
     }
 
-    @Then("the message Admission No field must contain a unique value. is displayed")
-    public void the_message_admission_no_field_must_contain_a_unique_value_is_displayed() {
-        CommonMethods.isElementDisplayed(studentAdmissionPage.admissionNoUniqueValueMessage);
-    }
-
     @Then("navigate to test student {string}, {string}, {string}")
     public void navigate_to_test_student(String classOption, String sectionOption, String admissionNo) {
         bulkDeletePage.bulkDeleteSubModule.click();
@@ -201,12 +196,14 @@ public class Student_Admission_Steps {
         BulkDeletePage.dynamicRecordLocateDeleter(admissionNo).click();
         bulkDeletePage.deleteButton.click();
         CommonMethods.acceptAlert();
+
     }
 
     @Then("delete the test category")
     public void delete_the_test_category() {
         CommonMethods.waitForClickability(categoryPage.studentCategories);
         categoryPage.studentCategories.click();
+        CommonMethods.waitForClickability(categoryPage.group3Delete);
         categoryPage.group3Delete.click();
         CommonMethods.acceptAlert();
     }

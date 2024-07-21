@@ -259,4 +259,3 @@ public class StudentAdmissionPage {
     @FindBy(xpath = "//p[contains(text(),'The Admission No field must contain a unique value')]")
     public WebElement admissionNoUniqueValueMessage;
 }
-
