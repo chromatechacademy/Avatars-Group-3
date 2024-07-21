@@ -11,23 +11,23 @@ public class CategoryPage {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
 
-    /* Student Categories Sub Module  */
+    /* STUDENT CATEGORIES SUB MODULE */
     @FindBy(xpath = "//a[normalize-space()='Student Categories']")
     public WebElement studentCategories;
 
-    /* Category Text Box */
+    /* CATEGORY TEXT BOX */
     @FindBy(xpath = "//input[@id='category']")
     public WebElement categoryTextBox;
 
-    /* Category Save Button */
+    /* CATEGORY SAVE BUTTON */
     @FindBy(xpath = "//button[@type='submit'][normalize-space()='Save']")
     public WebElement categorySaveButton;
 
-    /* Group 3 Category */
+    /* GROUP 3 CATEGORY */
     @FindBy(xpath = "//td[normalize-space()='Group 3 Category']")
     public WebElement categoryGroup3;
 
-    /* Group 3 Category Delete Button */
+    /* GROUP 3 CATEGORY DELETE BUTTON */
     @FindBy(xpath = "//td[normalize-space()='Group 3 Category']/parent::tr/td[3]/a[2]")
     public WebElement group3Delete;
 }
