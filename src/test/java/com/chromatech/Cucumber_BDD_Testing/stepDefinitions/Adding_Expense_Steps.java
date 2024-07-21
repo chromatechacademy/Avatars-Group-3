@@ -58,32 +58,32 @@ public class Adding_Expense_Steps {
         CucumberLogUtils.logScreenShot();
     }
 
-    @Then("user is in the add expense page site {string}")
-    public void user_is_in_the_add_expense_page_site(String expectedUrl) {
+    @And("user navigates on the add expense page site {string}")
+    public void user_navigates_on_the_add_expense_page_site(String expectedUrl) {
         String actualUrl = WebDriverUtils.driver.getCurrentUrl();
         Assert.assertEquals(actualUrl, expectedUrl);
         CucumberLogUtils.logScreenShot();
     }
 
-    @Then("user select dropdown {string}")
+    @And("user select dropdown {string}")
     public void user_select_dropdown(String expenseHead) {
         CommonMethods.selectDropDownValue("TEST AG3CP-28", addingExpensePage.expenseHeadSelectDropdown);
         CucumberLogUtils.logScreenShot();
     }
 
-    @Then("user enters the add expense name {string}")
+    @And("user enters the add expense name {string}")
     public void user_enters_the_add_expense_name(String name) {
         addingExpensePage.expenseNameBox.sendKeys(name);
         CucumberLogUtils.logScreenShot();
     }
 
-    @Then("user enters the invoice number {string}")
+    @And("user enters the invoice number {string}")
     public void user_enters_the_invoice_number(String invoiceNumber) {
         addingExpensePage.expenseInvoiceNumberBox.sendKeys(invoiceNumber);
         CucumberLogUtils.logScreenShot();
     }
 
-    @Then("user enters the amount {string}")
+    @And("user enters the amount {string}")
     public void user_enters_the_amount(String amount) {
         addingExpensePage.expenseAmount.sendKeys(amount);
         CucumberLogUtils.logScreenShot();
@@ -95,7 +95,7 @@ public class Adding_Expense_Steps {
         CucumberLogUtils.logScreenShot();
     }
 
-    @Then("user clicks save in add expense page")
+    @And("user clicks save in add expense page")
     public void user_clicks_save_in_add_expense_page() {
         addingExpensePage.expenseSaveButton.click();
         CucumberLogUtils.logScreenShot();
@@ -107,7 +107,7 @@ public class Adding_Expense_Steps {
         CucumberLogUtils.logScreenShot();
     }
 
-    @Then("the user is the directed to the CTMS search page {string}")
+    @And("the user is the directed to the CTMS search page {string}")
     public void the_user_is_the_directed_to_the_ctms_search_page(String expectedUrl) {
         String actualUrl = WebDriverUtils.driver.getCurrentUrl();
         Assert.assertEquals(actualUrl, expectedUrl);
@@ -120,13 +120,13 @@ public class Adding_Expense_Steps {
         CucumberLogUtils.logScreenShot();
     }
 
-    @Then("user clicks the search button in the search expenses")
+    @And("user clicks the search button in the search expenses")
     public void user_clicks_the_search_button_in_the_search_expenses() {
         addingExpensePage.searchExpenseSearchButton.click();
         CucumberLogUtils.logScreenShot();
     }
 
-    @When("the following expense result name {string}, invoice number, expense head, date, amount")
+    @And("the following expense result name {string}, invoice number, expense head, date, amount")
     public void the_following_expense_result_name_invoice_number_expense_head_date_amount(String name) {
         Assert.assertEquals(addingExpensePage.searchExpenseResult.getText(),addingExpensePage.searchExpenseResult.getText());
         CucumberLogUtils.logScreenShot();

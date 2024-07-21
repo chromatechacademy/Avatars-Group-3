@@ -13,7 +13,7 @@ Feature: Student Admission
     And  user enters "TEST AG3CP-28" in the description box
     And user clicks save
     And user clicks add expense sub module text
-    And user is in the add expense page site "https://mexil.it/chroma/admin/expense"
+    And user navigates on the add expense page site "https://mexil.it/chroma/admin/expense"
     And user select dropdown "Expense Head"
     And user enters the add expense name "Group 3"
     And user enters the invoice number "98756"
