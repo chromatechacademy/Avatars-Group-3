@@ -101,3 +101,5 @@ public class DashboardPage {
     @FindBy(xpath = "//ul[@class='treeview-menu']//a[normalize-space()='Student Details']")
     public WebElement studentDetailsSubModule;
 }
+
+//a[@href='https://mexil.it/chroma/admin/timetable/classreport']
