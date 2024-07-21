@@ -9,9 +9,6 @@ public class PageInitializer {
      * PAGE OBJECTS
      */
 
-    public static LoginPage loginPage;
-
     public static void initializeAllPages() {
-        loginPage = new LoginPage();
     }
 }
