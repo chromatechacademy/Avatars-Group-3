@@ -8,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class BulkDeletePage {
 
+    public BulkDeletePage() { PageFactory.initElements(WebDriverUtils.driver, this); }
+
     /* Bulk Delete Sub Module */
     @FindBy(xpath = "//a[normalize-space()='Bulk Delete']")
     public WebElement bulkDeleteSubModule;
@@ -46,9 +48,5 @@ public class BulkDeletePage {
      */
     public static WebElement dynamicRecordNameLocator(String text) {
         return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + text + "')]/ancestor::tr/td[2]"));
-    }
-
-    public BulkDeletePage() {
-        PageFactory.initElements(WebDriverUtils.driver, this);
     }
 }
