@@ -34,7 +34,6 @@ public class Valid_Credentials_Login_Steps {
 
     @Then("user is directed to the CTSMS dashboard page {string}")
     public void user_is_directed_to_the_ctsms_dashboard_page(String expectedUrl) {
-        CucumberLogUtils.logScreenShot();
         String actualUrl = WebDriverUtils.driver.getCurrentUrl();
         CucumberLogUtils.logScreenShot();
         Assert.assertEquals(expectedUrl, actualUrl);
