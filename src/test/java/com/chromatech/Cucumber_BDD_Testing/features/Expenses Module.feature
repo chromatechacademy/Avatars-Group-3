@@ -8,4 +8,4 @@ Feature: Expenses Module
     And clicks on Sign In button
     When user is directed to the CTSMS dashboard page "https://mexil.it/chroma/admin/admin/dashboard"
     And the user clicks on the Expenses module
-    Then the following submodules are displayed "Add Expense","Search Expense", "Expense Head"
+    Then the following submodules are displayed "Add Expense", "Search Expense", "Expense Head"

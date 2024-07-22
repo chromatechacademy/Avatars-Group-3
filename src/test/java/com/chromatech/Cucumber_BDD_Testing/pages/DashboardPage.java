@@ -75,11 +75,35 @@ public class DashboardPage {
      * Represents the WebElement for the Homework module on the Dashboard page.
      */
     @FindBy(xpath = "//span[normalize-space()='Homework']")
-    public  WebElement homeworkModule;
+    public WebElement homeworkModule;
 
     /**
      * Represents the WebElement for the Add Homework link on the Dashboard page.
      */
     @FindBy(xpath = "//a[normalize-space()='Add Homework']")
     public WebElement addHomeworkSubModule;
+
+    /**
+     * Represents the WebElement for the Expenses module on the Dashboard page.
+     */
+    @FindBy(xpath = "//span[normalize-space()='Expenses']")
+    public WebElement expensesModule;
+
+    /**
+     * Represents the WebElement for the Add Expense on the Dashboard page.
+     */
+    @FindBy(xpath = "//ul[contains(@class,'treeview-menu menu-open')]//a[normalize-space()='Add Expense']")
+    public WebElement addExpenseSubModule;
+
+    /**
+     * Represents the WebElement for the Search Expense on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Search Expense']")
+    public WebElement searchExpenseSubModule;
+
+    /**
+     * Represents the WebElement for the Expense Head on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Expense Head']")
+    public WebElement expenseHeadSubModule;
 }
