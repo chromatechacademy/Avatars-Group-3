@@ -42,6 +42,7 @@ public class Ability_To_Edit_Student_Records_Steps {
 
     @And("makes and saves changes to the student information with {string}, and {string}")
     public void makes_and_saves_changes_to_the_student_information_with(String email, String guardianPhoneNumber) {
+        studentEditPage.editButton.click();
         studentEditPage.emailTextBox.sendKeys(email);
         studentEditPage.guardianPhoneNumberTextBox.sendKeys(guardianPhoneNumber);
         studentEditPage.saveButton.click();
