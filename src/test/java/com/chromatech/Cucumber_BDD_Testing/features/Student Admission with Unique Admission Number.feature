@@ -1,6 +1,6 @@
 Feature: Student Admission with Unique Admission Number
 
-  @Regression @AG3CP-13 @Chris
+  @Progression @AG3CP-13 @Chris
   Scenario Outline: Student Admission with Unique Admission Number
     Given a user is on the Chroma Tech Academy practice site "https://mexil.it/chroma/site/login"
     And user enters username "general@teacher.com" in username text box

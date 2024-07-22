@@ -51,7 +51,7 @@ public class WebDriverUtils {
         } else {
             throw new RuntimeException("* * * * INVALID BROWSER NAME * * * *");
         }
-        driver.manage().window().maximize();
+//        driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
