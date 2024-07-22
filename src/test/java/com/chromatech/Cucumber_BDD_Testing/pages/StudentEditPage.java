@@ -11,15 +11,15 @@ public class StudentEditPage {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
 
-    /* Email Text Box */
+    /* EMAIL TEXT BOX */
     @FindBy(xpath = "//input[@id='email']")
     public WebElement emailTextBox;
 
-    /* Guardian Phone Number Text Box */
+    /* GUARDIAN PHONE NUMBER TEXT BOX */
     @FindBy(xpath = "//input[@id='guardian_phone']")
     public WebElement guardianPhoneNumberTextBox;
 
-    /* Save Button */
+    /* SAVE BUTTON */
     @FindBy(xpath = "//button[@type='submit'][normalize-space()='Save']")
     public WebElement saveButton;
 }

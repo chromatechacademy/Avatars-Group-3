@@ -12,11 +12,11 @@ public class StudentDetailsPage {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
 
-    /* Search By Keyword Text Box */
+    /* SEARCH BY KEYWORD TEXT BOX */
     @FindBy(xpath = "(//input[@name='search_text'])[2]")
     public WebElement searchByKeywordTextBox;
 
-    /* Search By Keyword Button */
+    /* SEARCH BY KEYWORD BUTTON */
     @FindBy(xpath = "//button[@value='search_full']")
     public WebElement searchByKeywordButton;
 
@@ -32,7 +32,7 @@ public class StudentDetailsPage {
         return WebDriverUtils.driver.findElement(By.xpath("//td[contains(text(),'" + admission + "')]//parent::tr//td[11]/a[@title='Edit']"));
     }
 
-    /* Successful Record Update Alert */
+    /* SUCCESSFUL RECORD UPDATE ALERT */
     @FindBy(xpath = "//div[@class='alert alert-success']/div[contains(text(), 'Record Update Successfully')]")
     public WebElement successfulRecordUpdateAlert;
 }
