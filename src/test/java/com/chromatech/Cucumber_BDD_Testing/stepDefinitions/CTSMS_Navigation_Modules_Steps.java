@@ -20,6 +20,5 @@ public class CTSMS_Navigation_Modules_Steps {
         Assert.assertEquals(dashboardPage.humanResourceModule.getText(), humanResource);
         Assert.assertEquals(dashboardPage.homeworkModule.getText(), homework);
         Assert.assertEquals(dashboardPage.reportsModule.getText(), reports);
-
     }
 }
