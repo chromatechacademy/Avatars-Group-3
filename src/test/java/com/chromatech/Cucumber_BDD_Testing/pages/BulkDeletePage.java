@@ -10,23 +10,23 @@ public class BulkDeletePage {
 
     public BulkDeletePage() { PageFactory.initElements(WebDriverUtils.driver, this); }
 
-    /* Bulk Delete Sub Module */
+    /* BULK DELETE SUB MODULE */
     @FindBy(xpath = "//a[normalize-space()='Bulk Delete']")
     public WebElement bulkDeleteSubModule;
 
-    /* Class Dropdown Selector */
+    /* CLASS DROPDOWN SELECTOR */
     @FindBy(xpath = "//select[@name='class_id']")
     public WebElement classDropDown;
 
-    /* Section Dropdown Selector */
+    /* SECTION DROPDOWN SELECTOR */
     @FindBy(xpath = "//select[@name='section_id']")
     public WebElement sectionDropDown;
 
-    /* Search Button */
+    /* SEARCH BUTTON */
     @FindBy(xpath = "//button[normalize-space()='Search']")
     public WebElement searchButton;
 
-    /* Delete Button */
+    /* DELETE BUTTON */
     @FindBy(xpath = "//button[normalize-space()='Delete']")
     public WebElement deleteButton;
 
