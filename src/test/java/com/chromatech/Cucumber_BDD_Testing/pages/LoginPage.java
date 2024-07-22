@@ -19,14 +19,12 @@ public class LoginPage {
 
     /**
      * Represents the password text box on the login page.
-     * Used by the LoginPage class.
      */
     @FindBy(xpath = "//input[@id='form-password']")
     public WebElement passwordTextBox;
 
     /**
      * Represents the Sign In button on the login page.
-     * Used by the LoginPage class.
      */
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement signInButton;
@@ -39,14 +37,7 @@ public class LoginPage {
 
     /**
      * Represents the navigation element in the web page.
-     * <p>
-     * Example usage:
-     * <pre>
-     *     LoginPage loginPage = new LoginPage();
-     *     WebElement navigation = loginPage.navigation;
-     * </pre>
      */
     @FindBy(xpath = "//nav[@role='navigation']")
     public WebElement navigation;
-
 }
