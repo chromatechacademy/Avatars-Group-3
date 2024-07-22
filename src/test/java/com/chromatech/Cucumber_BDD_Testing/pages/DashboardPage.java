@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class DashboardPage {
 
+    public WebElement studentDetailsSubModule;
+
     public DashboardPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
@@ -84,10 +86,95 @@ public class DashboardPage {
     public WebElement addHomeworkSubModule;
 
     /**
-     * Represents the WebElement for the Expenses module on the Dashboard page.
+     * Represents the WebElement for the Student Information module on the Dashboard page
+     */
+    @FindBy(xpath = "//span[normalize-space()='Student Information']")
+    public WebElement studentInformationModule;
+
+    /**
+     * Represents the WebElement for the Student Admission submodule on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Student Admission']")
+    public WebElement studentAdmissionSubModule;
+
+    /**
+     * Represents the WebElement for the Fees Collection module on the Dashboard page.
+     */
+    @FindBy(xpath = "//span[normalize-space()='Fees Collection']")
+    public WebElement feesCollectionModule;
+
+    /**
+     * Represents the WebElement for the "Income" module on the DashboardPage.
+     */
+    @FindBy(xpath = "//span[normalize-space()='Income']")
+    public WebElement incomeModule;
+
+    /**
+     * Represents the WebElement for the Income module in the Dashboard page.
      */
     @FindBy(xpath = "//span[normalize-space()='Expenses']")
     public WebElement expensesModule;
+
+    /**
+     * The academicsModule variable represents
+     */
+    @FindBy(xpath = "//span[normalize-space()='Academics']")
+    public WebElement academicsModule;
+
+    /**
+     * Represents a WebElement object for the "Reports" module on the Dashboard page.
+     */
+    @FindBy(xpath = "//span[normalize-space()='Reports']")
+    public WebElement reportsModule;
+
+    /**
+     * This variable represents a WebElement for the class timetable sub-module link on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[@href='https://mexil.it/chroma/admin/timetable/classreport']")
+    public WebElement classTimetableSubModule;
+
+    /**
+     * Represents the WebElement for the "Teachers Timetable" sub-module in the DashboardPage class.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Teachers Timetable']")
+    public WebElement teachersTimetableSubModule;
+
+    /**
+     * This variable represents the web element for the "Assign Class Teacher" sub-module in the Dashboard Page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Assign Class Teacher']")
+    public WebElement assignClassTeacherSubModule;
+
+    /**
+     * Represents the web element for the "Promote Students" sub-module.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Promote Students']")
+    public WebElement promoteStudentSubModule;
+
+    /**
+     * The Subject Group sub-module is located on the Dashboard page and can be accessed by clicking on a link
+     * with the text "Subject Group".
+     */
+    @FindBy(xpath = "//a[normalize-space()='Subject Group']")
+    public WebElement subjectGroupSubModule;
+
+    /**
+     * This variable represents the WebElement for the "Subjects" sub-module in the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Subjects']")
+    public WebElement subjectsSubModule;
+
+    /**
+     * Represents a WebElement for the class sub-module on a DashboardPage.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Class']")
+    public WebElement classClassSubModule;
+
+    /**
+     * This variable represents the sections submodule WebElement on the Dashboard Page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Sections']")
+    public WebElement sectionsSubModule;
 
     /**
      * Represents the WebElement for the Add Expense on the Dashboard page.
