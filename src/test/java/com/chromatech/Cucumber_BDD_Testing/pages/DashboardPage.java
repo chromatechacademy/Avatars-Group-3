@@ -175,4 +175,22 @@ public class DashboardPage {
      */
     @FindBy(xpath = "//a[normalize-space()='Sections']")
     public WebElement sectionsSubModule;
+
+    /**
+     * Represents the WebElement for the Add Expense on the Dashboard page.
+     */
+    @FindBy(xpath = "//ul[contains(@class,'treeview-menu menu-open')]//a[normalize-space()='Add Expense']")
+    public WebElement addExpenseSubModule;
+
+    /**
+     * Represents the WebElement for the Search Expense on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Search Expense']")
+    public WebElement searchExpenseSubModule;
+
+    /**
+     * Represents the WebElement for the Expense Head on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Expense Head']")
+    public WebElement expenseHeadSubModule;
 }
