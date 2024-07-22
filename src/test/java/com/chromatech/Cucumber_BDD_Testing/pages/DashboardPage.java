@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class DashboardPage {
 
+    public WebElement studentDetailsSubModule;
+
     public DashboardPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
