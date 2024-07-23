@@ -36,12 +36,13 @@ public class Ability_To_Edit_Student_Records_Steps {
         dashboardPage.studentDetailsSubModule.click();
         studentDetailsPage.searchByKeywordTextBox.sendKeys(admissionNo);
         studentDetailsPage.searchByKeywordButton.click();
-        JavascriptMethods.scrollIntoView(StudentDetailsPage.dynamicAdmissionRecordLocator(admissionNo));
-        StudentDetailsPage.dynamicAdmissionRecordLocator(admissionNo).click();
+        JavascriptMethods.scrollIntoView(StudentDetailsPage.dynamicAdmissionRecordNameLocator(admissionNo));
+        StudentDetailsPage.dynamicAdmissionRecordNameLocator(admissionNo).click();
     }
 
     @And("makes and saves changes to the student information with {string}, and {string}")
     public void makes_and_saves_changes_to_the_student_information_with(String email, String guardianPhoneNumber) {
+        studentEditPage.editButton.click();
         studentEditPage.emailTextBox.sendKeys(email);
         studentEditPage.guardianPhoneNumberTextBox.sendKeys(guardianPhoneNumber);
         studentEditPage.saveButton.click();
@@ -49,7 +50,10 @@ public class Ability_To_Edit_Student_Records_Steps {
 
     @Then("the student information is successfully saved with class {string}, section {string}, and admission number {string}")
     public void the_student_information_is_successfully_saved_with(String classOption, String sectionOption, String admissionNo) {
+        CommonMethods.sleep(10000);
         CucumberLogUtils.logScreenShot();
+        CommonMethods.waitForVisibility(studentDetailsPage.successfulRecordUpdateAlert);
+        CommonMethods.sleep(3000);
         CommonMethods.assertTrue(studentDetailsPage.successfulRecordUpdateAlert.isDisplayed());
         bulkDeletePage.bulkDeleteSubModule.click();
         CommonMethods.selectDropDownValue(classOption, bulkDeletePage.classDropDown);

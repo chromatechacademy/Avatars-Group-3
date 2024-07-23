@@ -7,8 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class DashboardPage {
 
-    public WebElement studentDetailsSubModule;
-
     public DashboardPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
@@ -193,4 +191,8 @@ public class DashboardPage {
      */
     @FindBy(xpath = "//a[normalize-space()='Expense Head']")
     public WebElement expenseHeadSubModule;
+
+    /* Represents the WebElement for the Student Details submodule on the Dashboard page */
+    @FindBy(xpath = "//ul[@class='treeview-menu']//a[normalize-space()='Student Details']")
+    public WebElement studentDetailsSubModule;
 }
