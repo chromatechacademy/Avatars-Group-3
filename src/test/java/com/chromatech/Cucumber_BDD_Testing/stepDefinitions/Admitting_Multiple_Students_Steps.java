@@ -181,7 +181,6 @@ public class Admitting_Multiple_Students_Steps {
         CommonMethods.selectDropDownValue(classOption, bulkDeletePage.classDropDown);
         CommonMethods.selectDropDownValue(sectionOption, bulkDeletePage.sectionDropDown);
         bulkDeletePage.searchButton.click();
-        JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
         CucumberLogUtils.logScreenShot();
         CommonMethods.assertEquals(BulkDeletePage.dynamicRecordNameLocator(admissionNo).getText(), admissionNo);
     }
