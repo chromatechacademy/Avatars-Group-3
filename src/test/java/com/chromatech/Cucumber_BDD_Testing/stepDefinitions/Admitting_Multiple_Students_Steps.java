@@ -83,6 +83,7 @@ public class Admitting_Multiple_Students_Steps {
 
     @And("adds a sibling")
     public void adds_a_sibling() {
+        CommonMethods.sleep(5000);
         studentAdmissionPage.addSiblingButton.click();
         CommonMethods.waitForVisibility(studentAdmissionPage.siblingClassDropDown);
         CommonMethods.selectDropDownValue("SDET", studentAdmissionPage.siblingClassDropDown);
