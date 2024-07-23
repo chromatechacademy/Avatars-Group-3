@@ -38,8 +38,8 @@ public class BulkDeletePage {
      */
     public static WebElement dynamicRecordLocateDeleter(String text) {
         return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + text + "')]//ancestor::tr/td/input"));
-    }
 
+    }
     /**
      * Locates and returns the WebElement of a dynamic record name based on the given text.
      *
