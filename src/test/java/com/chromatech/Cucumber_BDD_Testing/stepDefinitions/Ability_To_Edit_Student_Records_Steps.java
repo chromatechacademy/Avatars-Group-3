@@ -36,8 +36,8 @@ public class Ability_To_Edit_Student_Records_Steps {
         dashboardPage.studentDetailsSubModule.click();
         studentDetailsPage.searchByKeywordTextBox.sendKeys(admissionNo);
         studentDetailsPage.searchByKeywordButton.click();
-        JavascriptMethods.scrollIntoView(StudentDetailsPage.dynamicAdmissionRecordLocator(admissionNo));
-        StudentDetailsPage.dynamicAdmissionRecordLocator(admissionNo).click();
+        JavascriptMethods.scrollIntoView(StudentDetailsPage.dynamicAdmissionRecordNameLocator(admissionNo));
+        StudentDetailsPage.dynamicAdmissionRecordNameLocator(admissionNo).click();
     }
 
     @And("makes and saves changes to the student information with {string}, and {string}")
