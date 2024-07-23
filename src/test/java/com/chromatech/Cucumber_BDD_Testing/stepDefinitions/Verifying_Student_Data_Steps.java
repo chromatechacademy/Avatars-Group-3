@@ -28,26 +28,6 @@ public class Verifying_Student_Data_Steps {
         StudentDetailsPage.dynamicAdmissionRecordNameLocator(admissionNo).click();
     }
 
-//    @Then("all data submitted with the record should display as expected {string}, class {string}, section {string}, first name {string}, gender {string}, date of birth {string}, guardian name {string}, guardian phone number {string}, admission date {string}, as on date{string}")
-//    public void all_data_submitted_with_the_record_should_display_as_expected_class_section_first_name_gender_date_of_birth_guardian_name_guardian_phone_number(String admissionNo, String classOption, String sectionOption, String firstName, String gender, String admissionDate, String dateOfBirth, String guardianName, String guardianPhone, String asOnDate) {
-//        CommonMethods.assertEquals(studentDetailsPage.admissionNo.getText(), admissionNo);
-//        CommonMethods.assertEquals(studentDetailsPage.classOption.getText(), classOption + " (2020-21)");
-//        CommonMethods.assertEquals(studentDetailsPage.sectionOption.getText(), sectionOption);
-//        CommonMethods.assertEquals(studentDetailsPage.rteValue.getText(), "No");
-//        CommonMethods.assertEquals(studentDetailsPage.gender.getText(), gender);
-//        CommonMethods.assertEquals(studentDetailsPage.admissionDate.getText(), admissionDate);
-//        CommonMethods.assertEquals(studentDetailsPage.dateOfBirth.getText(), dateOfBirth);
-//        CommonMethods.assertEquals(studentDetailsPage.gender.getText(), gender);
-//        CommonMethods.assertEquals(studentDetailsPage.admissionDate.getText(), admissionDate);
-//        CommonMethods.assertEquals(studentDetailsPage.dateOfBirth.getText(), dateOfBirth);
-//        CommonMethods.assertEquals(studentDetailsPage.guardianName.getText(), guardianName);
-//        CommonMethods.assertEquals(studentDetailsPage.guardianRelation.getText(), "Father");
-//        CommonMethods.assertEquals(studentDetailsPage.guardianPhone.getText(), guardianPhone);
-//        CommonMethods.assertEquals(studentDetailsPage.asOnDate.getText(), asOnDate);
-//
-//
-//    }
-
     @Then("all data submitted with the record should display as expected {string}, {string}, {string}, {string}, {string} {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
     public void allDataSubmittedWithTheRecordShouldDisplayAsExpected(String admissionNo, String rollNumber, String classOption, String sectionOption, String fullName, String gender, String dateOfBirth, String category, String email, String admissionDate, String bloodGroup, String asOnDate, String mobileNumber, String height, String weight, String fatherName, String fatherPhone, String fatherOccupation, String motherName, String motherPhone, String motherOccupation, String guardianEmail, String guardianAddress) {
         CommonMethods.assertEquals(StudentDetailsPage.dynamicNameRecordLocator(fullName).getText(), fullName);
