@@ -1,6 +1,6 @@
 Feature: Editing Student Records
 
-  @Progression @Kei @AG3CP-14
+  @Regression @Kei @AG3CP-14
   Scenario Outline: Successfully Make And Save Changes To A Student Record
     Given a user is on the Chroma Tech Academy practice site "https://mexil.it/chroma/site/login"
     And user enters username "general@teacher.com" in username text box
@@ -14,7 +14,7 @@ Feature: Editing Student Records
     And clicks save
     When a CTSMS user opens a student record with admission number "<Admission No>"
     And makes and saves changes to the student information with "email@newemail.com", and "333-333-333"
-    Then the student information is successfully saved with class "<Class>", section "<Section>", and admission number "<Admission No>"
+    Then the student information is successfully saved with class "<Class>", section "<Section>" admission number "<Admission No>", and alert "Record Update Successfully"
     And delete test account with "<Admission No>"
     And delete the test category
 

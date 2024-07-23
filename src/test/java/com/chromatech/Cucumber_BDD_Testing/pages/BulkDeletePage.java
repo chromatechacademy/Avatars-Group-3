@@ -8,7 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 
 public class BulkDeletePage {
 
-    public BulkDeletePage() { PageFactory.initElements(WebDriverUtils.driver, this); }
+    public BulkDeletePage() {
+        PageFactory.initElements(WebDriverUtils.driver, this);
+    }
 
     /* BULK DELETE SUB MODULE */
     @FindBy(xpath = "//a[normalize-space()='Bulk Delete']")
