@@ -6,7 +6,6 @@ import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.JavascriptMethods;
 import io.cucumber.java.en.Then;
-import org.testng.Assert;
 
 public class Student_Admission_With_Unique_Admission_Number_Steps {
 
@@ -16,7 +15,7 @@ public class Student_Admission_With_Unique_Admission_Number_Steps {
     @Then("the user should see {string}")
     public void the_user_should_see(String expectedAdmissionNoUniqueValueMessage) {
         CucumberLogUtils.logScreenShot();
-        Assert.assertEquals(studentAdmissionPage.admissionNoUniqueValueMessage.getText(), expectedAdmissionNoUniqueValueMessage);
+        CommonMethods.assertEquals(studentAdmissionPage.admissionNoUniqueValueMessage.getText(), expectedAdmissionNoUniqueValueMessage);
     }
 
     @Then("navigate to test student {string}, {string}, {string}")

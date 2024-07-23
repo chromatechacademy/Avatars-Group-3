@@ -14,7 +14,8 @@ Feature: Editing Student Records
     And clicks save
     When a CTSMS user opens a student record with admission number "<Admission No>"
     And makes and saves changes to the student information with "email@newemail.com", and "333-333-333"
-    Then the student information is successfully saved with class "<Class>", section "<Section>", and admission number "<Admission No>"
+    Then the user should see message "Record Update Successfully"
+    Then user navigate to test students account "<Class>", section "<Section>", and admission number "<Admission No>"
     And delete test account with "<Admission No>"
     And delete the test category
 

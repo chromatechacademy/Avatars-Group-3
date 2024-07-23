@@ -1,12 +1,12 @@
 package com.chromatech.Cucumber_BDD_Testing.stepDefinitions;
 
 import com.chromatech.Cucumber_BDD_Testing.pages.LoginPage;
+import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.WebDriverUtils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.testng.Assert;
 
 public class Valid_Credentials_Login_Steps {
 
@@ -36,6 +36,6 @@ public class Valid_Credentials_Login_Steps {
     public void user_is_directed_to_the_ctsms_dashboard_page(String expectedUrl) {
         String actualUrl = WebDriverUtils.driver.getCurrentUrl();
         CucumberLogUtils.logScreenShot();
-        Assert.assertEquals(expectedUrl, actualUrl);
+        CommonMethods.assertEquals(expectedUrl, actualUrl);
     }
 }
