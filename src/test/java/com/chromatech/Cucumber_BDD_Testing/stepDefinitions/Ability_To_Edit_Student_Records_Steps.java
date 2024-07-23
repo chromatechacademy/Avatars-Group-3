@@ -19,7 +19,7 @@ public class Ability_To_Edit_Student_Records_Steps {
 
     @And("fills out all required fields with admission number {string}, class {string}, section {string}, first name {string}, gender {string}, date of birth {string}, guardian name {string}, guardian phone number {string}")
     public void fills_out_all_required_fields_with_admission_number_class_section_first_name_gender_date_of_birth_guardian_name_guardian_phone_number(String admissionNo, String classOption, String sectionOption, String firstName, String genderOption, String dateOfBirth, String guardianName, String guardianPhoneNumber) {
-        CommonMethods.sleep(2000);
+        CommonMethods.sleep(3000);
         studentAdmissionPage.admissionNoTextBox.sendKeys(admissionNo);
         CommonMethods.selectDropDownValue(classOption, studentAdmissionPage.classDropDown);
         CommonMethods.selectDropDownValue(sectionOption, studentAdmissionPage.sectionDropDown);
@@ -47,7 +47,7 @@ public class Ability_To_Edit_Student_Records_Steps {
         studentEditPage.editButton.click();
         studentEditPage.emailTextBox.sendKeys(email);
         studentEditPage.guardianPhoneNumberTextBox.sendKeys(guardianPhoneNumber);
-        CommonMethods.sleep(2000);
+        CommonMethods.sleep(3000);
         studentEditPage.saveButton.click();
     }
 
