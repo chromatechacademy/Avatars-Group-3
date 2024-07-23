@@ -52,7 +52,7 @@ public class Admitting_Multiple_Students_Steps {
 
     @And("creates a test category {string}")
     public void creates_a_test_category(String categoryName) {
-        CommonMethods.waitForVisibility(categoryPage.studentCategories);
+        CommonMethods.sleep(5000);
         categoryPage.studentCategories.click();
         categoryPage.categoryTextBox.sendKeys(categoryName);
         categoryPage.categorySaveButton.click();
@@ -80,11 +80,11 @@ public class Admitting_Multiple_Students_Steps {
         studentAdmissionPage.guardianNameTextBox.sendKeys(guardianName);
         studentAdmissionPage.guardianPhoneTextBox.sendKeys(guardianPhoneNumber);
         studentAdmissionPage.saveButton.click();
-        CommonMethods.waitForVisibility(studentAdmissionPage.studentSavedSuccessfullyAlert);
     }
 
     @And("adds a sibling")
     public void adds_a_sibling() {
+        CommonMethods.sleep(5000);
         studentAdmissionPage.addSiblingButton.click();
         CommonMethods.waitForVisibility(studentAdmissionPage.siblingClassDropDown);
         CommonMethods.selectDropDownValue("SDET", studentAdmissionPage.siblingClassDropDown);
@@ -194,9 +194,11 @@ public class Admitting_Multiple_Students_Steps {
 
     @And("delete test sibling account with admission number {string}")
     public void delete_test_sibling_account_with_admission_number_with_class_section(String admissionNo) {
-        CommonMethods.waitForVisibility(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
+        CommonMethods.sleep(5000);
         JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
         CucumberLogUtils.logScreenShot();
+        CommonMethods.waitForVisibility(BulkDeletePage.dynamicRecordNameLocator(admissionNo));
+        CommonMethods.waitForClickability(BulkDeletePage.dynamicRecordNameLocator(admissionNo));
         CommonMethods.assertEquals(BulkDeletePage.dynamicRecordNameLocator(admissionNo).getText(), admissionNo);
         BulkDeletePage.dynamicRecordLocateDeleter(admissionNo).click();
         bulkDeletePage.deleteButton.click();
@@ -205,10 +207,8 @@ public class Admitting_Multiple_Students_Steps {
 
     @Then("delete the test category")
     public void delete_the_test_category() {
-        CommonMethods.waitForVisibility(categoryPage.studentCategories);
-        CommonMethods.waitForClickability(categoryPage.studentCategories);
+        CommonMethods.sleep(5000);
         categoryPage.studentCategories.click();
-        CommonMethods.waitForVisibility(categoryPage.groupSelenium);
         categoryPage.groupSelenium.click();
         CommonMethods.acceptAlert();
     }

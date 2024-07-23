@@ -30,6 +30,7 @@ public class StudentDetailsPage {
      * @param admission the admission number to search for
      * @return the WebElement representing the edit link for the admission record
      */
+
     public static WebElement dynamicAdmissionRecordNameLocator(String admission) {
         return WebDriverUtils.driver.findElement(By.xpath("//td[contains(text(),'" + admission + "')]//parent::tr//td[2]/a"));
     }
@@ -44,6 +45,7 @@ public class StudentDetailsPage {
      * @param studentName the student name to search for
      * @return the WebElement representing the name record
      */
+
     public static WebElement dynamicNameRecordLocator(String studentName) {
         return WebDriverUtils.driver.findElement(By.xpath("//h3[@class='profile-username text-center'][normalize-space()='" + studentName + "']"));
     }
@@ -61,6 +63,7 @@ public class StudentDetailsPage {
      * @param rte           the RTE (Right to Education) status of the student
      * @param gender        the gender of the student
      */
+
     public static void boxProfileInformation(String admissionNo, String rollNumber, String classOption, String sectionOption, String rte, String gender) {
         String[] boxProfileInformationArray = {admissionNo, rollNumber, classOption + " (2020-21)", sectionOption, rte, gender};
         List<WebElement> boxProfileInformationElements = WebDriverUtils.driver.findElements(By.xpath("//ul[@class='list-group list-group-unbordered']/li/a"));
@@ -99,6 +102,7 @@ public class StudentDetailsPage {
      * @param bloodGroup         the blood group of the student
      * @param asOnDate           the date as of which the profile information is checked
      */
+
     public static void profileTabInformation(String admissionDate, String dateOfBirth, String category, String email, String mobileNumber, String height, String weight, String fatherName, String fatherPhone, String fatherOccupation, String motherName, String motherPhone, String motherOccupation, String guardianName, String guardianEmail, String guardianRelation, String guardianPhone, String guardianOccupation, String guardianAddress, String bloodGroup, String asOnDate) {
         String[] profileTabInformation = {admissionDate, dateOfBirth, category, email, mobileNumber, height, weight, fatherName, fatherPhone, fatherOccupation, motherName, motherPhone, motherOccupation, guardianName, guardianEmail, guardianRelation, guardianPhone, guardianOccupation, guardianAddress, bloodGroup, asOnDate};
         List<WebElement> profileTabInformationElements = WebDriverUtils.driver.findElements(By.xpath("//div[@class='tab-content']//tr/td[2][normalize-space()]"));

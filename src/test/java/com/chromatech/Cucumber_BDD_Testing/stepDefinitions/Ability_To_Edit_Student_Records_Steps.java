@@ -50,7 +50,10 @@ public class Ability_To_Edit_Student_Records_Steps {
 
     @Then("the student information is successfully saved with class {string}, section {string}, and admission number {string}")
     public void the_student_information_is_successfully_saved_with(String classOption, String sectionOption, String admissionNo) {
+        CommonMethods.sleep(10000);
         CucumberLogUtils.logScreenShot();
+        CommonMethods.waitForVisibility(studentDetailsPage.successfulRecordUpdateAlert);
+        CommonMethods.sleep(3000);
         CommonMethods.assertTrue(studentDetailsPage.successfulRecordUpdateAlert.isDisplayed());
         bulkDeletePage.bulkDeleteSubModule.click();
         CommonMethods.selectDropDownValue(classOption, bulkDeletePage.classDropDown);
