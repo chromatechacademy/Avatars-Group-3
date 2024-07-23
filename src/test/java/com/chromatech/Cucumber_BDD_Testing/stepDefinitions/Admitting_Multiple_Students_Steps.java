@@ -62,6 +62,7 @@ public class Admitting_Multiple_Students_Steps {
 
     @When("a CTSMS admin or faculty member is on the student admission page {string}")
     public void a_ctsms_admin_or_faculty_member_is_on_the_student_admission_page(String expectedAdmissionPageUrl) {
+        CommonMethods.sleep(2000);
         dashboardPage.studentAdmissionSubModule.click();
         CucumberLogUtils.logScreenShot();
         CommonMethods.assertEquals(WebDriverUtils.driver.getCurrentUrl(), expectedAdmissionPageUrl);

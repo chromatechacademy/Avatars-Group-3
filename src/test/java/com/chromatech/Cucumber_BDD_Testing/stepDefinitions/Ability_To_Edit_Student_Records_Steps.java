@@ -7,6 +7,7 @@ import com.chromatech.utils.JavascriptMethods;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.testng.Assert;
 
 public class Ability_To_Edit_Student_Records_Steps {
 
@@ -18,6 +19,7 @@ public class Ability_To_Edit_Student_Records_Steps {
 
     @And("fills out all required fields with admission number {string}, class {string}, section {string}, first name {string}, gender {string}, date of birth {string}, guardian name {string}, guardian phone number {string}")
     public void fills_out_all_required_fields_with_admission_number_class_section_first_name_gender_date_of_birth_guardian_name_guardian_phone_number(String admissionNo, String classOption, String sectionOption, String firstName, String genderOption, String dateOfBirth, String guardianName, String guardianPhoneNumber) {
+        CommonMethods.sleep(2000);
         studentAdmissionPage.admissionNoTextBox.sendKeys(admissionNo);
         CommonMethods.selectDropDownValue(classOption, studentAdmissionPage.classDropDown);
         CommonMethods.selectDropDownValue(sectionOption, studentAdmissionPage.sectionDropDown);
@@ -45,16 +47,18 @@ public class Ability_To_Edit_Student_Records_Steps {
         studentEditPage.editButton.click();
         studentEditPage.emailTextBox.sendKeys(email);
         studentEditPage.guardianPhoneNumberTextBox.sendKeys(guardianPhoneNumber);
+        CommonMethods.sleep(2000);
         studentEditPage.saveButton.click();
     }
 
-    @Then("the student information is successfully saved with class {string}, section {string}, and admission number {string}")
-    public void the_student_information_is_successfully_saved_with(String classOption, String sectionOption, String admissionNo) {
-        CommonMethods.sleep(10000);
+    @Then("the user should see message {string}")
+    public void the_user_should_see_message(String expectedSaveMessage) {
         CucumberLogUtils.logScreenShot();
-        CommonMethods.waitForVisibility(studentDetailsPage.successfulRecordUpdateAlert);
-        CommonMethods.sleep(3000);
-        CommonMethods.assertTrue(studentDetailsPage.successfulRecordUpdateAlert.isDisplayed());
+        Assert.assertEquals(studentDetailsPage.successfulRecordUpdateAlert.getText(), expectedSaveMessage);
+    }
+
+    @Then("user navigate to test students account {string}, section {string}, and admission number {string}")
+    public void user_navigate_to_test_students_account(String classOption, String sectionOption, String admissionNo) {
         bulkDeletePage.bulkDeleteSubModule.click();
         CommonMethods.selectDropDownValue(classOption, bulkDeletePage.classDropDown);
         CommonMethods.selectDropDownValue(sectionOption, bulkDeletePage.sectionDropDown);
