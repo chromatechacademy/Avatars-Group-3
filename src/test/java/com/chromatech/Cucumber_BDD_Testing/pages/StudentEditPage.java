@@ -23,7 +23,7 @@ public class StudentEditPage {
     @FindBy(xpath = "//button[@type='submit'][normalize-space()='Save']")
     public WebElement saveButton;
 
-    /* EDIT BUTTONad */
+    /* EDIT BUTTON */
     @FindBy(xpath = "//a[contains(@href, 'student/edit')]")
     public WebElement editButton;
 }
