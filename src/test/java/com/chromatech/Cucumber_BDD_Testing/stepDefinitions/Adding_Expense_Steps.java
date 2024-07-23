@@ -2,7 +2,6 @@ package com.chromatech.Cucumber_BDD_Testing.stepDefinitions;
 
 import com.chromatech.Cucumber_BDD_Testing.pages.AddingExpensePage;
 import com.chromatech.utils.CommonMethods;
-import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.WebDriverUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
