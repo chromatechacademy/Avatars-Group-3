@@ -8,7 +8,7 @@ Feature: Editing Student Records
     And clicks on Sign In button
     And user is directed to the CTSMS dashboard page "https://mexil.it/chroma/admin/admin/dashboard"
     And verifies a student with "<Admission No>" is not an existing student
-    And creates a test category "Group 3 Category"
+    And creates a test category "Selenium"
     When a CTSMS admin or faculty member is on the student admission page "https://mexil.it/chroma/student/create"
     And fills out all required fields with admission number "<Admission No>", class "<Class>", section "<Section>", first name "<First Name>", gender "<Gender>", date of birth "<Date of Birth>", guardian name "<Guardian Name>", guardian phone number "<Guardian Phone>"
     And clicks save
