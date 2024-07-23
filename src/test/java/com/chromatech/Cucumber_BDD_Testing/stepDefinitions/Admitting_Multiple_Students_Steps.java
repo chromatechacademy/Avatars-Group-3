@@ -52,6 +52,7 @@ public class Admitting_Multiple_Students_Steps {
 
     @And("creates a test category {string}")
     public void creates_a_test_category(String categoryName) {
+        CommonMethods.waitForClickability(categoryPage.studentCategories);
         categoryPage.studentCategories.click();
         categoryPage.categoryTextBox.sendKeys(categoryName);
         categoryPage.categorySaveButton.click();
@@ -68,6 +69,7 @@ public class Admitting_Multiple_Students_Steps {
 
     @And("creates a test sibling with admission number {string}, class {string}, section {string}, first name {string}, gender {string}, date of birth {string}, guardian name {string}, guardian phone number {string}")
     public void creates_a_test_sibling_with_admission_number_class_section_first_name_gender_date_of_birth_guardian_name_guardian_phone_number(String admissionNo, String classOption, String sectionOption, String firstName, String genderOption, String dateOfBirth, String guardianName, String guardianPhoneNumber) {
+        CommonMethods.waitForVisibility(studentAdmissionPage.admissionNoTextBox);
         studentAdmissionPage.admissionNoTextBox.sendKeys(admissionNo);
         CommonMethods.selectDropDownValue(classOption, studentAdmissionPage.classDropDown);
         CommonMethods.selectDropDownValue(sectionOption, studentAdmissionPage.sectionDropDown);
@@ -192,6 +194,7 @@ public class Admitting_Multiple_Students_Steps {
 
     @And("delete test sibling account with admission number {string}")
     public void delete_test_sibling_account_with_admission_number_with_class_section(String admissionNo) {
+        CommonMethods.waitForVisibility(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
         JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
         CucumberLogUtils.logScreenShot();
         CommonMethods.assertEquals(BulkDeletePage.dynamicRecordNameLocator(admissionNo).getText(), admissionNo);
@@ -202,9 +205,10 @@ public class Admitting_Multiple_Students_Steps {
 
     @Then("delete the test category")
     public void delete_the_test_category() {
+        CommonMethods.waitForVisibility(categoryPage.studentCategories);
         CommonMethods.waitForClickability(categoryPage.studentCategories);
         categoryPage.studentCategories.click();
-        CommonMethods.waitForClickability(categoryPage.groupSelenium);
+        CommonMethods.waitForVisibility(categoryPage.groupSelenium);
         categoryPage.groupSelenium.click();
         CommonMethods.acceptAlert();
     }
