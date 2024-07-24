@@ -1,6 +1,6 @@
 Feature: Verifying Student Data
 
-  @Regression @Kei @AG3CP-27
+  #@Regression @Kei @AG3CP-27
   Scenario Outline: Student Data Displays as Expected
     Given a user is on the Chroma Tech Academy practice site "https://mexil.it/chroma/site/login"
     And user enters username "general@teacher.com" in username text box

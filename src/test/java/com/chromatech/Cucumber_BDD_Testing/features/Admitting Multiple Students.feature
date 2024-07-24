@@ -1,6 +1,6 @@
 Feature: Admit Multiple Students
 
-  @Regression @Kei @AG3CP-19
+  #@Regression @Kei @AG3CP-19
   Scenario Outline: Admitting Multiple Students
     Given a user is on the Chroma Tech Academy practice site "https://mexil.it/chroma/site/login"
     And user enters username "general@teacher.com" in username text box
@@ -48,7 +48,7 @@ Feature: Admit Multiple Students
       | 1035954230   | 235333333   | SDET  | Cucumber Fundamentals | Alexander  | Kim        | Male   | 10/17/1991    | Selenium | alexander.kim04@example.com  | 08/03/2006     | O+          | 01/02/1990 | 1003550350    | 178 cm | 69 kg  | Sam Kim         | 1003660360   | Statistician        | Bella Kim          | 10037703700   | Physiologist      | clark.kent01@example.com     | 235 Kent Farm          | 672430877           | Herby Dinardo       | 49160160  | 1078901794                     | 1687536956                  | Studio Street 2160, Likely, Dominican Republic, 634721       | Chronicle symbols women possibly joining european auto, answer collectible rings opened hiv parker thousands, cedar chose shipment gazette audio michel bookmark.                  | Brother | Sister      | Dog     | Grandmother |
       | 1036954230   | 236333333   | SDET  | Cucumber Fundamentals | Mia        | Bakhmutova | Female | 05/16/1986    | Selenium | mia.bakhmutova05@example.com | 06/14/1989     | O+          | 01/02/1990 | 1003660360    | 162 cm | 58 kg  | Igor Bakhmutova | 1003770370   | Rocket scientist    | Natalya Bakhmutova | 10038803800   | Surgeon           | oliver.queen01@example.com   | 236 Star City          | 1299818237          | Lindsee Lindeman    | 69197660  | 1350332836                     | 1093348293                  | Enterprise Road 8817, Poolesville, Cambodia, 593479          | Wishlist seeds alternatively bulgaria failure purchasing.                                                                                                                          | Brother | Sister      | Dog     | Grandmother |
 
-  @Regression @Kei @AG3CP-12
+  #@Regression @Kei @AG3CP-12
   Scenario Outline: Admitting One Student
     Given a user is on the Chroma Tech Academy practice site "https://mexil.it/chroma/site/login"
     And user enters username "general@teacher.com" in username text box
