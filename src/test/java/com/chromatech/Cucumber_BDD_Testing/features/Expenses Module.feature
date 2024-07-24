@@ -1,6 +1,6 @@
 Feature: Expenses Module
 
-  #@Regression @AG3CP-54 @ValerieYa
+  @Regression @AG3CP-54 @ValerieYa
   Scenario: Expenses Module
     Given a user is on the Chroma Tech Academy practice site "https://mexil.it/chroma/site/login"
     And user enters username "general@teacher.com" in username text box

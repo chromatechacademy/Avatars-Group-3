@@ -1,6 +1,6 @@
 Feature: Editing Student Records
 
-  #@Regression @Kei @AG3CP-14
+  @Regression @Kei @AG3CP-14
   Scenario Outline: Successfully Make And Save Changes To A Student Record
     Given a user is on the Chroma Tech Academy practice site "https://mexil.it/chroma/site/login"
     And user enters username "general@teacher.com" in username text box
