@@ -105,7 +105,7 @@ public class CommonMethods extends WebDriverUtils {
         select.selectByIndex(index);
     }
 
-    /***
+    /**
      * Use this method to get first selected option of a select drop down
      *
      * @param dropDown
@@ -117,7 +117,7 @@ public class CommonMethods extends WebDriverUtils {
         return firstSelectedOption.getText();
     }
 
-    /***
+    /**
      * Use this method to return a boolean for drop downs containing multiple
      * selections
      *
@@ -129,7 +129,7 @@ public class CommonMethods extends WebDriverUtils {
         return select.isMultiple();
     }
 
-    /***
+    /**
      * Use this method to retrieve all options of a Select drop down as a
      * List<String>
      *
@@ -152,7 +152,6 @@ public class CommonMethods extends WebDriverUtils {
      *
      * @throws will throw NoAlertExeption if alert is not present.
      */
-
     public static void acceptAlert() {
 
         try {
@@ -168,7 +167,6 @@ public class CommonMethods extends WebDriverUtils {
      *
      * @throws will throw NoAlertExeption if alert is not present.
      */
-
     public static void dismissAlert() {
 
         try {
@@ -184,7 +182,6 @@ public class CommonMethods extends WebDriverUtils {
      *
      * @throws will throw NoAlertExeption if alert is not present.
      */
-
     public static String getAlertText() {
 
         try {
@@ -201,7 +198,6 @@ public class CommonMethods extends WebDriverUtils {
      *
      * @param nameOrId
      */
-
     public static void switchToFrame(String nameOrId) {
 
         try {
@@ -413,7 +409,6 @@ public class CommonMethods extends WebDriverUtils {
      * Use this method to pass an email concatenated with current date and time into
      * an email text box
      */
-
     public static String getEmail() {
         Date date = new Date();
         Timestamp ts = new Timestamp(date.getTime());
@@ -429,7 +424,6 @@ public class CommonMethods extends WebDriverUtils {
      * an email text box and you can pass same value (email+date+time) in another
      * steps.
      */
-
     public static String email = getEmail();
 
     /**
@@ -472,7 +466,6 @@ public class CommonMethods extends WebDriverUtils {
      *
      * @throws InterruptedException
      */
-
     public static void selectCheckboxDisplayed(List<WebElement> checkboxList, String attribute, String value)
             throws InterruptedException {
         for (WebElement checkbox : checkboxList) {
@@ -506,7 +499,7 @@ public class CommonMethods extends WebDriverUtils {
         }
     }
 
-    /***
+    /**
      * Use this method to hover over element
      *
      * @param element
@@ -521,8 +514,7 @@ public class CommonMethods extends WebDriverUtils {
         }
     }
 
-    /*
-     *
+    /**
      * Use below method to assert actual String value with an expected String value
      */
     public static void assertEquals(String actual, String expected) {
@@ -544,7 +536,6 @@ public class CommonMethods extends WebDriverUtils {
     }
 
     /**
-     *
      * Use this method to assert a boolean condition
      *
      * @param flag
@@ -561,7 +552,6 @@ public class CommonMethods extends WebDriverUtils {
      * This method will read a .json file and return it in a String type written in
      * json format - for passing REST payloads
      */
-
     public static String readJson(String fileName) {
 
         String jsonFile = null;
