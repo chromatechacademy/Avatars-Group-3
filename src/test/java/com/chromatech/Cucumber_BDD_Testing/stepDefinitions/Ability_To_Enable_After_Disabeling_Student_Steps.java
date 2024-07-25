@@ -1,21 +1,24 @@
 package com.chromatech.Cucumber_BDD_Testing.stepDefinitions;
 
-import com.chromatech.Cucumber_BDD_Testing.pages.DashboardPage;
-import com.chromatech.Cucumber_BDD_Testing.pages.DisbledStudentPage;
+import com.chromatech.Cucumber_BDD_Testing.pages.DisabledStudentPage;
+import com.chromatech.Cucumber_BDD_Testing.pages.StudentDetailsPage;
 import com.chromatech.utils.CommonMethods;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class Ability_To_Enable_After_Disabeling_Student_Steps {
 
-    DisbledStudentPage disbledStudentPage = new DisbledStudentPage();
+    DisabledStudentPage disabledStudentPage = new DisabledStudentPage();
+    StudentDetailsPage studentDetailsPage = new StudentDetailsPage();
 
     @When("clicks on Disable Student button")
     public void clicks_on_disable_student_button() {
-        disbledStudentPage.disableButton.click();
+        CommonMethods.sleep(5000);
+        disabledStudentPage.disableButton.click();
         CommonMethods.acceptAlert();
-        CommonMethods.selectDropDownValue(disbledStudentPage.reasonDropdown, "Loud behavior");
-        CommonMethods.waitForVisibility(disbledStudentPage.submitButton);
-        disbledStudentPage.submitButton.click();
+        CommonMethods.sleep(5000);
+        CommonMethods.waitForVisibility(disabledStudentPage.reasonDropdown);
+        CommonMethods.selectDropDownValue(disabledStudentPage.reasonDropdown, "Very Loud");
+        disabledStudentPage.commentInput.sendKeys("Very Loud");
+        disabledStudentPage.submitButton.click();
     }
 }
