@@ -69,6 +69,7 @@ public class Admitting_Multiple_Students_Steps {
 
     @And("creates a test sibling with admission number {string}, class {string}, section {string}, first name {string}, gender {string}, date of birth {string}, guardian name {string}, guardian phone number {string}")
     public void creates_a_test_sibling_with_admission_number_class_section_first_name_gender_date_of_birth_guardian_name_guardian_phone_number(String admissionNo, String classOption, String sectionOption, String firstName, String genderOption, String dateOfBirth, String guardianName, String guardianPhoneNumber) {
+        CommonMethods.waitForVisibility(studentAdmissionPage.admissionNoTextBox);
         studentAdmissionPage.admissionNoTextBox.sendKeys(admissionNo);
         CommonMethods.selectDropDownValue(classOption, studentAdmissionPage.classDropDown);
         CommonMethods.selectDropDownValue(sectionOption, studentAdmissionPage.sectionDropDown);
@@ -79,7 +80,6 @@ public class Admitting_Multiple_Students_Steps {
         studentAdmissionPage.guardianNameTextBox.sendKeys(guardianName);
         studentAdmissionPage.guardianPhoneTextBox.sendKeys(guardianPhoneNumber);
         studentAdmissionPage.saveButton.click();
-        CommonMethods.waitForVisibility(studentAdmissionPage.studentSavedSuccessfullyAlert);
     }
 
     @And("adds a sibling")

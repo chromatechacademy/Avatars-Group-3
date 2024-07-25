@@ -198,6 +198,9 @@ public class DashboardPage {
     @FindBy(xpath = "//ul[@class='treeview-menu']//a[normalize-space()='Student Details']")
     public WebElement studentDetailsSubModule;
 
+    /**
+     * This variable represents the WebElement for the "Disabled Students" sub-module on the Dashboard page.
+     */
     @FindBy(xpath = "//a[normalize-space()='Disabled Students']")
     public WebElement disabledStudentsSubModule;
 
