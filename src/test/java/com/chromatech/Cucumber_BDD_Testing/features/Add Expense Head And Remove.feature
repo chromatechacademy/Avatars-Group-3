@@ -9,8 +9,8 @@ Feature: Add Expense Head and Remove Expense Head
     And user is directed to the CTSMS dashboard page "https://mexil.it/chroma/admin/admin/dashboard"
     When user clicks the expense module text
     And  user clicks expense head module
-    And user enters the expense head in expense head page "Test @AGCP-26"
+    And user enters the expense head in expense head page "Test @AG3CP-26"
     And  user enters "TEST AG3CP-26 Description" in the description
     And user clicks save
     And the "Record Saved Succesfully" is showed
-    And expense head displayed in the list and able to delete it
+    And expense head is displayed in the list and able to delete it
