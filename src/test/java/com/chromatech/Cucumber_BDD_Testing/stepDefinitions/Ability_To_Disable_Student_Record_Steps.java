@@ -1,16 +1,11 @@
 package com.chromatech.Cucumber_BDD_Testing.stepDefinitions;
 
-import com.chromatech.Cucumber_BDD_Testing.pages.AbilityToDisableStudentRecordPage;
-import com.chromatech.Cucumber_BDD_Testing.pages.DashboardPage;
-import com.chromatech.Cucumber_BDD_Testing.pages.StudentAdmissionPage;
-import com.chromatech.Cucumber_BDD_Testing.pages.StudentDetailsPage;
+import com.chromatech.Cucumber_BDD_Testing.pages.*;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.JavascriptMethods;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.JavascriptExecutor;
 
 
 import static com.chromatech.utils.WebDriverUtils.driver;
@@ -21,6 +16,8 @@ public class Ability_To_Disable_Student_Record_Steps {
     AbilityToDisableStudentRecordPage abilityToDisableStudentRecordPage = new AbilityToDisableStudentRecordPage();
     DashboardPage dashboardPage = new DashboardPage();
     StudentDetailsPage studentDetailsPage = new StudentDetailsPage();
+    BulkDeletePage bulkDeletePage = new BulkDeletePage();
+
 
 
     @And("user clicks the student information tab")
@@ -69,17 +66,50 @@ public class Ability_To_Disable_Student_Record_Steps {
         studentDetailsPage.searchByKeywordTextBox.sendKeys(admissionNo);
         studentDetailsPage.searchByKeywordButton.click();
         abilityToDisableStudentRecordPage.studentResult.click();
+
+    }
+
+    @When("user clicks the disable thumbs down")
+    public void user_clicks_the_disable_thumbs_down() {
         abilityToDisableStudentRecordPage.disableSign.click();
-        CommonMethods.sleep(3000);
         CommonMethods.acceptAlert();
 
     }
 
-    @When("user select the dropDown reason {string} {string}")
-    public void user_select_the_drop_down_reason(String reasonDropDown, String text) {
-        CommonMethods.sleep(20000);
-        CommonMethods.waitForInvisibility(abilityToDisableStudentRecordPage.disableModal);
+    @When("user is directed into a pop up page and select the reason and enters comment {string} and save")
+    public void user_is_directed_into_a_pop_up_page_and_select_the_reason_and_enters_comment_and_save(String commentTest) {
+        CommonMethods.sleep(2000);
+        CommonMethods.waitForVisibility(abilityToDisableStudentRecordPage.reasonDropDown);
+        CommonMethods.sleep(2000);
+        CommonMethods.selectDropDownValue("TestDisableReason", abilityToDisableStudentRecordPage.reasonDropDown);
+        CommonMethods.sendKeys(abilityToDisableStudentRecordPage.comment, commentTest);
         abilityToDisableStudentRecordPage.reasonSaveButton.click();
+    }
+
+    @When("user clicks disabled students module and enters {string}")
+    public void user_clicks_disabled_students_module_and_enters(String admissionNo){
+        abilityToDisableStudentRecordPage.disabledStudentSubModule.click();
+        abilityToDisableStudentRecordPage.searchByKeyword.sendKeys(admissionNo);
+        CommonMethods.sleep(100);
+        abilityToDisableStudentRecordPage.searchButton.click();
+        CommonMethods.sleep(100);
+        abilityToDisableStudentRecordPage.resultName.click();
+        CommonMethods.sleep(100);
+        abilityToDisableStudentRecordPage.enableThumbsUp.click();
+        CommonMethods.acceptAlert();
+    }
+
+    @When("user clicks bulk delete to delete a student record")
+    public void user_clicks_bulk_delete_to_delete_a_student_record() {
+       bulkDeletePage.bulkDeleteSubModule.click();
+       CommonMethods.selectDropDownValue("SDET", bulkDeletePage.classDropDown);
+       CommonMethods.selectDropDownValue("Cucumber Fundamentals", bulkDeletePage.sectionDropDown);
+       bulkDeletePage.searchButton.click();
+       abilityToDisableStudentRecordPage.admissionNoDelete.click();
+        JavascriptMethods.scrollIntoView(abilityToDisableStudentRecordPage.admissionNoDelete);
+        bulkDeletePage.deleteButton.click();
+        CommonMethods.sleep(100);
+        CommonMethods.acceptAlert();
 
     }
 }

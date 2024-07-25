@@ -13,10 +13,10 @@ Feature: Ability To Disable Student Records
     And user clicks save button
     And Record Saved Successfully is displayed
     And user opens a student record in student details with admission number "<Admission No>"
-   # And user clicks disabled students module
-   # And user select the dropDown reason "TestDisableReason" "Disable Student"
-   # And user is on the disabled students page "https://mexil.it/chroma/student/disablestudentslist"
-   # And user selects the class dropDown "SDET" and section dropDown "Cucumber Fundamentals"
+    And user clicks the disable thumbs down
+    And user is directed into a pop up page and select the reason and enters comment "AG3CP-15" and save
+    And user clicks disabled students module and enters "<Admission No>"
+    And user clicks bulk delete to delete a student record
     Examples:
       | Admission No | Roll Number | Class | Section               | First Name | Last Name | Gender | Date of Birth | Category | Guardian Name | Guardian Phone |
       | 243162823940 | 3214561     | SDET  | Cucumber Fundamentals | Shawn      | David     | Male   | 01/27/1990    | Selenium | Jill Ward     | 703098765      |
