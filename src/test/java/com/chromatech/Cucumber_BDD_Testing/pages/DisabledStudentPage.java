@@ -27,5 +27,4 @@ public class DisabledStudentPage {
 
     @FindBy(xpath = "//a[@class='text-green']")
     public WebElement enableButton;
-
 }
