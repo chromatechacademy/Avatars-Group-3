@@ -13,7 +13,6 @@ public class CTSMS_Academics_Module_Steps {
     @When("the user clicks on the Academics Module")
     public void the_user_clicks_on_the_academics_module() {
         dashboardPage.academicsModule.click();
-
     }
 
     @Then("the following submodules are displayed: {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
@@ -26,6 +25,5 @@ public class CTSMS_Academics_Module_Steps {
         assertEquals(subjects, dashboardPage.subjectsSubModule.getText());
         assertEquals(classClass, dashboardPage.classClassSubModule.getText());
         assertEquals(sections, dashboardPage.sectionsSubModule.getText());
-
     }
 }
