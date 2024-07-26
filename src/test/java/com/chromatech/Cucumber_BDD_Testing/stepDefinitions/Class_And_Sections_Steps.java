@@ -20,6 +20,6 @@ public class Class_And_Sections_Steps {
 
     @Then("there are two classes, SDET and Cyber Security displayed with the following sections:")
     public void there_are_two_classes_sdet_and_cyber_security_displayed_with_the_following_sections(DataTable expectedClassesTable) {
-        CommonMethods.dataTableVsTable(expectedClassesTable, classesPage.classesTable);
+        CommonMethods.dataTableVsTable(expectedClassesTable, classesPage.classesTable, "div");
     }
 }

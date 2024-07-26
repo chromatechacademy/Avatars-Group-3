@@ -565,13 +565,14 @@ public class CommonMethods extends WebDriverUtils {
     }
 
     /**
-     * Compares the data from a given DataTable with the content of a table WebElement.
-     * It checks if the expected data matches the actual data in the table.
+     * Compares the data in a DataTable with the content of a table element identified by its tagName.
+     * It verifies if the sections of each class in the table match the expected sections in the DataTable.
      *
      * @param expectedDataTable The DataTable containing the expected data.
-     * @param actualTable       The WebElement representing the table to compare with.
+     * @param actualTable The WebElement representing the actual table.
+     * @param tagName The tag name used to locate the section elements in the actual table.
      */
-    public static void dataTableVsTable(DataTable expectedDataTable, WebElement actualTable) {
+    public static void dataTableVsTable(DataTable expectedDataTable, WebElement actualTable, String tagName) {
         List<Map<String, String>> expectedClassesList = expectedDataTable.asMaps(String.class, String.class);
 
         Map<String, List<String>> expectedSectionsMap = new HashMap<>();
@@ -592,7 +593,7 @@ public class CommonMethods extends WebDriverUtils {
             List<WebElement> cells = row.findElements(By.xpath(".//td"));
 
             String className = cells.get(0).getText();
-            List<WebElement> sectionElements = cells.get(1).findElements(By.tagName("div"));
+            List<WebElement> sectionElements = cells.get(1).findElements(By.tagName(tagName));
             List<String> sections = sectionElements.stream()
                     .map(WebElement::getText)
                     .collect(Collectors.toList());
