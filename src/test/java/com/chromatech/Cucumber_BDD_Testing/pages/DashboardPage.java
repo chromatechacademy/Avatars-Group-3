@@ -249,4 +249,22 @@ public class DashboardPage {
      */
     @FindBy(xpath = "//a[normalize-space()='Fees Reminder']")
     public WebElement feesReminderSubModule;
+
+    /**
+     * Represents the WebElement for the Add Income on the Dashboard page.
+     */
+    @FindBy(xpath = "//li[contains(@class,'active')]//li[1]/a")
+    public WebElement addIncomeSubModule;
+
+    /**
+     * Represents the WebElement for the Search Income on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Search Income']")
+    public WebElement searchIncomeSubModule;
+
+    /**
+     * Represents the WebElement for the Income Head on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Income Head']")
+    public WebElement incomeHeadSubModule;
 }
