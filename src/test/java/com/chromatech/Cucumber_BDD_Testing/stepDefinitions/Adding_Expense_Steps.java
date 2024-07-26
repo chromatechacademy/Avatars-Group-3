@@ -1,7 +1,9 @@
 package com.chromatech.Cucumber_BDD_Testing.stepDefinitions;
 
+import com.chromatech.Cucumber_BDD_Testing.pages.AddExpenseHeadAndRemovePage;
 import com.chromatech.Cucumber_BDD_Testing.pages.AddingExpensePage;
 import com.chromatech.utils.CommonMethods;
+import com.chromatech.utils.JavascriptMethods;
 import com.chromatech.utils.WebDriverUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -11,6 +13,7 @@ import io.cucumber.java.en.When;
 public class Adding_Expense_Steps {
 
     AddingExpensePage addingExpensePage = new AddingExpensePage();
+    AddExpenseHeadAndRemovePage addExpenseHeadAndRemovePage = new AddExpenseHeadAndRemovePage();
 
     @Given("the user is in the dashboard page {string}")
     public void the_user_is_in_the_dashboard_page(String expectedUrl) {

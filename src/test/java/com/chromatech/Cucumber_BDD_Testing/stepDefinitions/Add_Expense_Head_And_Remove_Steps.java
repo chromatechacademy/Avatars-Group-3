@@ -28,7 +28,7 @@ public class Add_Expense_Head_And_Remove_Steps {
 
     @And("expense head is displayed in the list and able to delete it")
     public void expense_head_is_displayed_in_the_list_and_able_to_delete_it() {
-        JavascriptMethods.scrollIntoView(addExpenseAndRemovePage.alertSuccessText);
+        JavascriptMethods.scrollIntoView(addExpenseAndRemovePage.expenseHeadResult);
         CommonMethods.isElementDisplayed(addExpenseAndRemovePage.expenseHeadResult);
         addExpenseAndRemovePage.deleteSign.click();
         CommonMethods.sleep(100);
