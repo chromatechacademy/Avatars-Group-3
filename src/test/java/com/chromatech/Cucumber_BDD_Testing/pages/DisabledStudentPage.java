@@ -10,14 +10,15 @@ public class DisabledStudentPage {
     public DisabledStudentPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
+
     /**
-     * This variable represents the thumbs down icon element on the Dashed Student Page..
+     * This variable represents the thumbs down icon element on the Dashed Student Page
      */
     @FindBy(xpath = "(//a[@class='text-red'])[1]")
     public WebElement disableButton;
 
     /**
-     * This class represents the Disabled Student Page.
+     * This class represents the Disabled Student Page
      */
     @FindBy(xpath = "//select[@name='reason']")
     public WebElement reasonDropdown;
@@ -29,13 +30,13 @@ public class DisabledStudentPage {
     public WebElement commentInput;
 
     /**
-     * This variable represents the submit button on the DisabledStudentPage.
+     * This variable represents the submit button on the DisabledStudentPage
      */
     @FindBy(xpath = "(//button[contains(text(), 'Save')])[3]")
     public WebElement submitButton;
 
     /**
-     * Represents the enable button element on the DisabledStudentPage.
+     * Represents the enable button element on the DisabledStudentPage
      */
     @FindBy(xpath = "//a[@class='text-green']")
     public WebElement enableButton;

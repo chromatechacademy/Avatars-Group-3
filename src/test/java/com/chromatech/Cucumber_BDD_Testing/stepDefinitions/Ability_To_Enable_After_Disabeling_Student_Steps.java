@@ -4,7 +4,6 @@ import com.chromatech.Cucumber_BDD_Testing.pages.DisabledStudentPage;
 import com.chromatech.utils.CommonMethods;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.testng.Assert;
 
 public class Ability_To_Enable_After_Disabeling_Student_Steps {
 
@@ -31,7 +30,7 @@ public class Ability_To_Enable_After_Disabeling_Student_Steps {
 
     @Then("the student record is successfully enabled")
     public void the_student_record_is_successfully_enabled() {
-        CommonMethods.sleep(3000);
-        Assert.assertTrue(disabledStudentPage.disableButton.isDisplayed());
+        CommonMethods.sleep(2000);
+        CommonMethods.assertTrue(disabledStudentPage.disableButton.isDisplayed());
     }
 }
