@@ -14,8 +14,8 @@ public class Fees_Collection_Module_Steps {
         dashboardPage.feesCollectionModule.click();
     }
 
-    @Then("the following submodules are displayed {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
-    public void the_following_submodules_are_displayed(String collectFees, String searchFeesPayment, String searchDueFees, String feesMaster, String feesGroup, String feesType, String feesDiscount, String feesCarryForward, String feesReminder) {
+    @Then("the following Fees Collection submodules are displayed {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
+    public void the_following_fees_collection_submodules_are_displayed(String collectFees, String searchFeesPayment, String searchDueFees, String feesMaster, String feesGroup, String feesType, String feesDiscount, String feesCarryForward, String feesReminder) {
         CucumberLogUtils.logScreenShot();
         CommonMethods.assertEquals(dashboardPage.collectFeesSubModule.getText(), collectFees);
         CommonMethods.assertEquals(dashboardPage.searchFeesPaymentSubModule.getText(), searchFeesPayment);
