@@ -7,6 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class Income_Module_Steps {
+
     DashboardPage dashboardPage = new DashboardPage();
 
     @When("the user clicks on the Income module")
