@@ -5,8 +5,6 @@ import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.JavascriptMethods;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.JavascriptExecutor;
-
 
 import static com.chromatech.utils.WebDriverUtils.driver;
 
@@ -17,8 +15,6 @@ public class Ability_To_Disable_Student_Record_Steps {
     DashboardPage dashboardPage = new DashboardPage();
     StudentDetailsPage studentDetailsPage = new StudentDetailsPage();
     BulkDeletePage bulkDeletePage = new BulkDeletePage();
-
-
 
     @And("user clicks the student information tab")
     public void user_clicks_the_student_information_tab() {
@@ -31,7 +27,6 @@ public class Ability_To_Disable_Student_Record_Steps {
         String actualUrl = driver.getCurrentUrl();
         CommonMethods.assertEquals(expectedUrl, actualUrl);
     }
-
 
     @And("the user fills out all fields {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
     public void the_user_fills_out_all_fields(String admissionNo, String rollNo, String Class, String Section, String firstname, String lastName, String gender, String dateOfBirth, String category, String guardianName, String guardianPhone) {
@@ -66,14 +61,12 @@ public class Ability_To_Disable_Student_Record_Steps {
         studentDetailsPage.searchByKeywordTextBox.sendKeys(admissionNo);
         studentDetailsPage.searchByKeywordButton.click();
         abilityToDisableStudentRecordPage.studentResult.click();
-
     }
 
     @When("user clicks the disable thumbs down")
     public void user_clicks_the_disable_thumbs_down() {
         abilityToDisableStudentRecordPage.disableSign.click();
         CommonMethods.acceptAlert();
-
     }
 
     @When("user is directed into a pop up page and select the reason and enters comment {string} and save")
@@ -87,7 +80,7 @@ public class Ability_To_Disable_Student_Record_Steps {
     }
 
     @When("user clicks disabled students module and enters {string}")
-    public void user_clicks_disabled_students_module_and_enters(String admissionNo){
+    public void user_clicks_disabled_students_module_and_enters(String admissionNo) {
         abilityToDisableStudentRecordPage.disabledStudentSubModule.click();
         abilityToDisableStudentRecordPage.searchByKeyword.sendKeys(admissionNo);
         CommonMethods.sleep(100);
@@ -101,16 +94,15 @@ public class Ability_To_Disable_Student_Record_Steps {
 
     @When("user clicks bulk delete to delete a student record")
     public void user_clicks_bulk_delete_to_delete_a_student_record() {
-       bulkDeletePage.bulkDeleteSubModule.click();
-       CommonMethods.selectDropDownValue("SDET", bulkDeletePage.classDropDown);
-       CommonMethods.selectDropDownValue("Cucumber Fundamentals", bulkDeletePage.sectionDropDown);
-       bulkDeletePage.searchButton.click();
-       abilityToDisableStudentRecordPage.admissionNoDelete.click();
+        bulkDeletePage.bulkDeleteSubModule.click();
+        CommonMethods.selectDropDownValue("SDET", bulkDeletePage.classDropDown);
+        CommonMethods.selectDropDownValue("Cucumber Fundamentals", bulkDeletePage.sectionDropDown);
+        bulkDeletePage.searchButton.click();
+        abilityToDisableStudentRecordPage.admissionNoDelete.click();
         JavascriptMethods.scrollIntoView(abilityToDisableStudentRecordPage.admissionNoDelete);
         bulkDeletePage.deleteButton.click();
         CommonMethods.sleep(100);
         CommonMethods.acceptAlert();
-
     }
 }
 

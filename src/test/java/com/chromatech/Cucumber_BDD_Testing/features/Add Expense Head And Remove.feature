@@ -1,6 +1,6 @@
 Feature: Add Expense Head and Remove Expense Head
 
-  @Regression @AG3CP-26 @Joyce
+  @Progression @AG3CP-26 @Joyce
   Scenario:Add Expense Head and Remove Expense Head
     Given a user is on the Chroma Tech Academy practice site "https://mexil.it/chroma/site/login"
     When user enters username "general@teacher.com" in username text box

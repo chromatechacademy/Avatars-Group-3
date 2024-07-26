@@ -1,16 +1,8 @@
 package com.chromatech.Cucumber_BDD_Testing.pages;
 
-import com.chromatech.utils.WebDriverUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.sql.Driver;
 
 import static com.chromatech.utils.WebDriverUtils.driver;
 
@@ -39,7 +31,7 @@ public class AbilityToDisableStudentRecordPage {
     @FindBy(xpath = "//select[@name='reason']")
     public WebElement reasonDropDown;
 
-    /*COMMENT*/
+    /*COMMENT BOX*/
     @FindBy(xpath = "//textarea[@name='note']")
     public WebElement comment;
 
@@ -66,8 +58,4 @@ public class AbilityToDisableStudentRecordPage {
     /*BULK DELETE RESULT NAME*/
     @FindBy(xpath = "//td[normalize-space()='243162823940']/ancestor::tr")
     public WebElement admissionNoDelete;
-
-
-
-
 }
