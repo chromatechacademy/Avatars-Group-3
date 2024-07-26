@@ -1,18 +1,14 @@
 package com.chromatech.Cucumber_BDD_Testing.stepDefinitions;
 
 import com.chromatech.Cucumber_BDD_Testing.pages.DisabledStudentPage;
-import com.chromatech.Cucumber_BDD_Testing.pages.StudentDetailsPage;
 import com.chromatech.utils.CommonMethods;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-
 
 public class Ability_To_Enable_After_Disabeling_Student_Steps {
 
     DisabledStudentPage disabledStudentPage = new DisabledStudentPage();
-    Select select = new Select(disabledStudentPage.reasonDropdown);
 
     @When("clicks on Disable Student button")
     public void clicks_on_disable_student_button() {
@@ -21,7 +17,7 @@ public class Ability_To_Enable_After_Disabeling_Student_Steps {
         CommonMethods.acceptAlert();
         CommonMethods.sleep(1000);
         disabledStudentPage.reasonDropdown.click();
-        select.selectByVisibleText("Very Loud");
+        CommonMethods.selectDropDownValue("Very Loud", disabledStudentPage.reasonDropdown);
         CommonMethods.sleep(2000);
         disabledStudentPage.submitButton.click();
     }
