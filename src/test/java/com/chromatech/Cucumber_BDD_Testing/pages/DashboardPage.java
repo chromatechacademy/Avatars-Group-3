@@ -228,5 +228,7 @@ public class DashboardPage {
     @FindBy(xpath = "//a[normalize-space()='Disable Reason']")
     public WebElement disableReasonSubModule;
 
+@FindBy(xpath = "//input[@id='section']")
+    public WebElement section;
 
 }
