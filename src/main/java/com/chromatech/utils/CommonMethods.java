@@ -6,11 +6,10 @@ import java.nio.file.Paths;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
+import io.cucumber.datatable.DataTable;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -23,6 +22,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 public class CommonMethods extends WebDriverUtils {
 
@@ -564,4 +564,60 @@ public class CommonMethods extends WebDriverUtils {
         return jsonFile;
     }
 
+    /**
+     * Compares the data from a given DataTable with the content of a table WebElement.
+     * It checks if the expected data matches the actual data in the table.
+     *
+     * @param expectedDataTable The DataTable containing the expected data.
+     * @param actualTable       The WebElement representing the table to compare with.
+     */
+    public static void dataTableVsTable(DataTable expectedDataTable, WebElement actualTable) {
+        List<Map<String, String>> expectedClassesList = expectedDataTable.asMaps(String.class, String.class);
+
+        Map<String, List<String>> expectedSectionsMap = new HashMap<>();
+        for (Map<String, String> row : expectedClassesList) {
+            String className = row.get("Class");
+
+            List<String> sections = new ArrayList<>(Arrays.asList(row.get("Sections").split(", ")));
+            if (expectedSectionsMap.containsKey(className)) {
+                expectedSectionsMap.get(className).addAll(sections);
+            } else {
+                expectedSectionsMap.put(className, sections);
+            }
+        }
+
+        List<WebElement> rows = actualTable.findElements(By.xpath(".//tbody/tr"));
+        Map<String, List<String>> actualClasses = new HashMap<>();
+        for (WebElement row : rows) {
+            List<WebElement> cells = row.findElements(By.xpath(".//td"));
+
+            String className = cells.get(0).getText();
+            List<WebElement> sectionElements = cells.get(1).findElements(By.tagName("div"));
+            List<String> sections = sectionElements.stream()
+                    .map(WebElement::getText)
+                    .collect(Collectors.toList());
+
+            if (expectedSectionsMap.containsKey(className)) {
+                actualClasses.put(className, sections);
+            }
+        }
+
+        SoftAssert softAssert = new SoftAssert();
+        for (Map.Entry<String, List<String>> entry : expectedSectionsMap.entrySet()) {
+            String className = entry.getKey();
+            List<String> expectedSections = entry.getValue();
+
+            Collections.sort(expectedSections);
+
+            List<String> actualSections = actualClasses.get(className);
+            if (actualSections != null) {
+                Collections.sort(actualSections);
+                softAssert.assertEquals(actualSections, expectedSections, "Mismatch in sections for class: " + className);
+            } else {
+                System.out.println("No actual sections found for " + className);
+            }
+        }
+
+        softAssert.assertAll();
+    }
 }
