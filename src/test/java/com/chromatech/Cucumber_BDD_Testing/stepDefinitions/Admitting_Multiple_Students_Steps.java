@@ -1,6 +1,5 @@
 package com.chromatech.Cucumber_BDD_Testing.stepDefinitions;
 
-import com.chromatech.Cucumber_BDD_Testing.Constants.AppConstants;
 import com.chromatech.Cucumber_BDD_Testing.pages.*;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
@@ -26,7 +25,6 @@ public class Admitting_Multiple_Students_Steps {
         bulkDeletePage.classDropDown.click();
         bulkDeletePage.sectionDropDown.click();
         bulkDeletePage.searchButton.click();
-        CommonMethods.sleep(10000);
         try {
             JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
             if ((BulkDeletePage.dynamicRecordLocateDeleter(admissionNo).isDisplayed())) {
@@ -53,7 +51,7 @@ public class Admitting_Multiple_Students_Steps {
 
     @And("creates a test category {string}")
     public void creates_a_test_category(String categoryName) {
-        CommonMethods.sleep(5000);
+        CommonMethods.sleep(100);
         categoryPage.studentCategories.click();
         categoryPage.categoryTextBox.sendKeys(categoryName);
         categoryPage.categorySaveButton.click();
@@ -85,7 +83,7 @@ public class Admitting_Multiple_Students_Steps {
 
     @And("adds a sibling")
     public void adds_a_sibling() {
-        CommonMethods.sleep(5000);
+        CommonMethods.sleep(100);
         studentAdmissionPage.addSiblingButton.click();
         CommonMethods.waitForVisibility(studentAdmissionPage.siblingClassDropDown);
         CommonMethods.selectDropDownValue("SDET", studentAdmissionPage.siblingClassDropDown);
@@ -125,10 +123,7 @@ public class Admitting_Multiple_Students_Steps {
 
     @And("uploads family member photos")
     public void uploads_family_member_photos() {
-        studentAdmissionPage.studentPhoto.sendKeys(AppConstants.photoFilepath);
-        studentAdmissionPage.fatherPhoto.sendKeys(AppConstants.photoFilepath);
-        studentAdmissionPage.motherPhoto.sendKeys(AppConstants.photoFilepath);
-        studentAdmissionPage.guardianPhoto.sendKeys(AppConstants.photoFilepath);
+        studentAdmissionPage.uploadDocuments();
     }
 
     @And("clicks the Add More Details button")
@@ -164,10 +159,7 @@ public class Admitting_Multiple_Students_Steps {
         studentAdmissionPage.titleTwoTextBox.sendKeys(titleTwo);
         studentAdmissionPage.titleThreeTextBox.sendKeys(titleThree);
         studentAdmissionPage.titleFourTextBox.sendKeys(titleFour);
-        studentAdmissionPage.documentOne.sendKeys(AppConstants.photoFilepath);
-        studentAdmissionPage.documentTwo.sendKeys(AppConstants.photoFilepath);
-        studentAdmissionPage.documentThree.sendKeys(AppConstants.photoFilepath);
-        studentAdmissionPage.documentFour.sendKeys(AppConstants.photoFilepath);
+        studentAdmissionPage.uploadFamilyPhotos();
     }
 
     @When("clicks save")
@@ -181,6 +173,7 @@ public class Admitting_Multiple_Students_Steps {
         CommonMethods.selectDropDownValue(classOption, bulkDeletePage.classDropDown);
         CommonMethods.selectDropDownValue(sectionOption, bulkDeletePage.sectionDropDown);
         bulkDeletePage.searchButton.click();
+        JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
         CucumberLogUtils.logScreenShot();
         CommonMethods.assertEquals(BulkDeletePage.dynamicRecordNameLocator(admissionNo).getText(), admissionNo);
     }
@@ -194,7 +187,7 @@ public class Admitting_Multiple_Students_Steps {
 
     @And("delete test sibling account with admission number {string}")
     public void delete_test_sibling_account_with_admission_number_with_class_section(String admissionNo) {
-        CommonMethods.sleep(5000);
+        CommonMethods.sleep(100);
         JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
         CucumberLogUtils.logScreenShot();
         CommonMethods.waitForVisibility(BulkDeletePage.dynamicRecordNameLocator(admissionNo));
@@ -207,7 +200,7 @@ public class Admitting_Multiple_Students_Steps {
 
     @Then("delete the test category")
     public void delete_the_test_category() {
-        CommonMethods.sleep(5000);
+        CommonMethods.sleep(100);
         categoryPage.studentCategories.click();
         categoryPage.groupSelenium.click();
         CommonMethods.acceptAlert();

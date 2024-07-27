@@ -43,7 +43,7 @@ public class Adding_Expense_Steps {
     @Then("user clicks save")
     public void user_clicks_save() throws InterruptedException {
         addingExpensePage.expenseHeadSavebutton.click();
-        Thread.sleep(3000);
+        CommonMethods.sleep(100);
     }
 
     @Then("user clicks add expense sub module text")
