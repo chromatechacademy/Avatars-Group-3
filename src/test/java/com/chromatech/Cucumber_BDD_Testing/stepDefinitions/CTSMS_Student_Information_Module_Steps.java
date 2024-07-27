@@ -13,10 +13,9 @@ public class CTSMS_Student_Information_Module_Steps {
     @When("the user clicks on the Student Information Module")
     public void the_user_clicks_on_the_student_information_module() {
         dashboardPage.studentInformationModule.click();
-
     }
 
-    @Then("the following submodules are displayed: {string}, {string}, {string}, {string}, {string}, {string}, {string},")
+    @Then("the following submodules are displayed: {string}, {string}, {string}, {string}, {string}, {string}, {string}")
     public void the_following_submodules_are_displayed(String studentDetails, String studentAdmission, String disabledStudents, String bulkDelete, String studentCategories, String studentHouse, String disableReason) {
         assertEquals(studentDetails, dashboardPage.studentDetailsSubModule.getText());
         assertEquals(studentAdmission, dashboardPage.studentAdmissionSubModule.getText());
