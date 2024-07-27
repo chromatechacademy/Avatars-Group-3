@@ -2,13 +2,11 @@ package com.chromatech.Cucumber_BDD_Testing.stepDefinitions;
 
 import com.chromatech.Cucumber_BDD_Testing.pages.AddingExpensePage;
 import com.chromatech.utils.CommonMethods;
-import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.WebDriverUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.testng.Assert;
 
 public class Adding_Expense_Steps {
 
@@ -17,7 +15,7 @@ public class Adding_Expense_Steps {
     @Given("the user is in the dashboard page {string}")
     public void the_user_is_in_the_dashboard_page(String expectedUrl) {
         String actualUrl = WebDriverUtils.driver.getCurrentUrl();
-        Assert.assertEquals(actualUrl, expectedUrl);
+        CommonMethods.assertEquals(actualUrl, expectedUrl);
     }
 
     @When("user clicks the expense module text")
@@ -41,9 +39,9 @@ public class Adding_Expense_Steps {
     }
 
     @Then("user clicks save")
-    public void user_clicks_save() throws InterruptedException {
+    public void user_clicks_save() {
         addingExpensePage.expenseHeadSavebutton.click();
-        CommonMethods.sleep(100);
+        CommonMethods.sleep(1000);
     }
 
     @Then("user clicks add expense sub module text")
@@ -54,7 +52,7 @@ public class Adding_Expense_Steps {
     @And("user navigates on the add expense page site {string}")
     public void user_navigates_on_the_add_expense_page_site(String expectedUrl) {
         String actualUrl = WebDriverUtils.driver.getCurrentUrl();
-        Assert.assertEquals(actualUrl, expectedUrl);
+        CommonMethods.assertEquals(actualUrl, expectedUrl);
     }
 
     @And("user select dropdown {string}")
@@ -95,7 +93,7 @@ public class Adding_Expense_Steps {
     @And("the user is the directed to the CTMS search page {string}")
     public void the_user_is_the_directed_to_the_ctms_search_page(String expectedUrl) {
         String actualUrl = WebDriverUtils.driver.getCurrentUrl();
-        Assert.assertEquals(actualUrl, expectedUrl);
+        CommonMethods.assertEquals(actualUrl, expectedUrl);
     }
 
     @And("user user enters the name in the expense list {string}")
@@ -110,7 +108,7 @@ public class Adding_Expense_Steps {
 
     @When("the following expense result name {string}")
     public void the_following_expense_result_name(String name) {
-        Assert.assertEquals(addingExpensePage.searchExpenseResult.getText(), addingExpensePage.searchExpenseResult.getText());
+        CommonMethods.assertEquals(addingExpensePage.searchExpenseResult.getText(), addingExpensePage.searchExpenseResult.getText());
     }
 
     @And("user clicks add expense to delete the expense")
