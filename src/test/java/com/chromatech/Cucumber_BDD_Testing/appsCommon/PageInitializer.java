@@ -14,6 +14,7 @@ public class PageInitializer {
     public static StudentDetailsPage studentDetailsPage;
     public static StudentEditPage studentEditPage;
     public static BulkDeletePage bulkDeletePage;
+    public static AddAndDeleteSectionsPage addAndDeleteSectionsPage;
 
     public static void initializeAllPages() {
         studentAdmissionPage = new StudentAdmissionPage();
@@ -21,5 +22,6 @@ public class PageInitializer {
         studentDetailsPage = new StudentDetailsPage();
         studentEditPage = new StudentEditPage();
         bulkDeletePage = new BulkDeletePage();
+        addAndDeleteSectionsPage = new AddAndDeleteSectionsPage();
     }
 }

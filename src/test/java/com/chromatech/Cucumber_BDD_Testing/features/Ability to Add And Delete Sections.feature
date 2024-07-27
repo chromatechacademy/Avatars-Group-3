@@ -12,5 +12,5 @@ Feature: Ability to add and delete sections
     And the following submodules are displayed: "Class Timetable", "Teachers Timetable", "Assign Class Teacher", "Promote Students", "Subject Group", "Subjects", "Class", "Sections"
     When the user navigates to the sections submodule
     And the user adds a section
-    Then the section is added
+    Then the section is added "TESTING MD"
     And the user can also delete the section
