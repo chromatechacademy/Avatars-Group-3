@@ -1,12 +1,12 @@
 package com.chromatech.Cucumber_BDD_Testing.pages;
 
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer;
 import com.chromatech.utils.WebDriverUtils;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AddingExpensePage {
+public class AddingExpensePage extends PageInitializer {
     public AddingExpensePage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }

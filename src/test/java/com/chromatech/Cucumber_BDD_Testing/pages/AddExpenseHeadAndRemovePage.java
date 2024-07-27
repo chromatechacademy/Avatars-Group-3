@@ -1,13 +1,14 @@
 package com.chromatech.Cucumber_BDD_Testing.pages;
 
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer;
 import com.chromatech.utils.WebDriverUtils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AddExpenseHeadAndRemovePage {
+public class AddExpenseHeadAndRemovePage extends PageInitializer {
 
-    public AddExpenseHeadAndRemovePage() {
+    public AddExpenseHeadAndRemovePage () {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
 

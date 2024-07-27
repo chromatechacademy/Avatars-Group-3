@@ -1,5 +1,7 @@
 package com.chromatech.Cucumber_BDD_Testing.stepDefinitions;
 
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer;
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.StepsImplementation;
 import com.chromatech.Cucumber_BDD_Testing.pages.AddExpenseHeadAndRemovePage;
 import com.chromatech.Cucumber_BDD_Testing.pages.AddingExpensePage;
 import com.chromatech.utils.CommonMethods;
@@ -7,10 +9,9 @@ import com.chromatech.utils.JavascriptMethods;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 
-public class Add_Expense_Head_And_Remove_Steps {
+import static com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer.addExpenseAndRemovePage;
 
-        AddingExpensePage addingExpensePage = new AddingExpensePage();
-        AddExpenseHeadAndRemovePage addExpenseAndRemovePage = new AddExpenseHeadAndRemovePage();
+public class Add_Expense_Head_And_Remove_Steps extends PageInitializer{
 
     @When("user enters the expense head in expense head page {string}")
     public void user_enters_the_expense_head_in_expense_head_page(String expenseHead) {
@@ -28,10 +29,6 @@ public class Add_Expense_Head_And_Remove_Steps {
 
     @And("expense head is displayed in the list and able to delete it")
     public void expense_head_is_displayed_in_the_list_and_able_to_delete_it() {
-        JavascriptMethods.scrollIntoView(addExpenseAndRemovePage.expenseHeadResult);
-        CommonMethods.isElementDisplayed(addExpenseAndRemovePage.expenseHeadResult);
-        addExpenseAndRemovePage.deleteSign.click();
-        CommonMethods.sleep(100);
-        CommonMethods.acceptAlert();
+        StepsImplementation.expense_head_is_displayed_in_the_list_and_able_to_delete_it();
     }
 }

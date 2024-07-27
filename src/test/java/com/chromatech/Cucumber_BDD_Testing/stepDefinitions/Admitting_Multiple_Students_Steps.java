@@ -52,11 +52,7 @@ public class Admitting_Multiple_Students_Steps {
 
     @And("creates a test category {string}")
     public void creates_a_test_category(String categoryName) {
-<<<<<<< HEAD
-        CommonMethods.sleep(100);
-=======
         CommonMethods.sleep(1000);
->>>>>>> 1725b6566d2f73c95fa3d56eb843cbc722955d28
         categoryPage.studentCategories.click();
         categoryPage.categoryTextBox.sendKeys(categoryName);
         categoryPage.categorySaveButton.click();
@@ -88,11 +84,7 @@ public class Admitting_Multiple_Students_Steps {
 
     @And("adds a sibling")
     public void adds_a_sibling() {
-<<<<<<< HEAD
-        CommonMethods.sleep(100);
-=======
         CommonMethods.sleep(1000);
->>>>>>> 1725b6566d2f73c95fa3d56eb843cbc722955d28
         studentAdmissionPage.addSiblingButton.click();
         CommonMethods.waitForVisibility(studentAdmissionPage.siblingClassDropDown);
         CommonMethods.selectDropDownValue("SDET", studentAdmissionPage.siblingClassDropDown);
@@ -201,11 +193,7 @@ public class Admitting_Multiple_Students_Steps {
 
     @And("delete test sibling account with admission number {string}")
     public void delete_test_sibling_account_with_admission_number_with_class_section(String admissionNo) {
-<<<<<<< HEAD
-        CommonMethods.sleep(100);
-=======
         CommonMethods.sleep(1000);
->>>>>>> 1725b6566d2f73c95fa3d56eb843cbc722955d28
         JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
         CucumberLogUtils.logScreenShot();
         CommonMethods.waitForVisibility(BulkDeletePage.dynamicRecordNameLocator(admissionNo));
@@ -218,11 +206,7 @@ public class Admitting_Multiple_Students_Steps {
 
     @Then("delete the test category")
     public void delete_the_test_category() {
-<<<<<<< HEAD
-        CommonMethods.sleep(100);
-=======
         CommonMethods.sleep(1000);
->>>>>>> 1725b6566d2f73c95fa3d56eb843cbc722955d28
         categoryPage.studentCategories.click();
         categoryPage.groupSelenium.click();
         CommonMethods.acceptAlert();

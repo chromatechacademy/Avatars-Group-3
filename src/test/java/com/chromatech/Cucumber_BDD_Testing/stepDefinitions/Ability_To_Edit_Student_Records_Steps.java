@@ -32,11 +32,7 @@ public class Ability_To_Edit_Student_Records_Steps extends PageInitializer {
         studentEditPage.editButton.click();
         studentEditPage.emailTextBox.sendKeys(email);
         studentEditPage.guardianPhoneNumberTextBox.sendKeys(guardianPhoneNumber);
-<<<<<<< HEAD
-        CommonMethods.sleep(100);
-=======
         CommonMethods.sleep(1000);
->>>>>>> 1725b6566d2f73c95fa3d56eb843cbc722955d28
         studentEditPage.saveButton.click();
     }
 
