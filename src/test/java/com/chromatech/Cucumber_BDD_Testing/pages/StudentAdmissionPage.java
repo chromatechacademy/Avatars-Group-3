@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -132,25 +131,6 @@ public class StudentAdmissionPage {
     @FindBy(xpath = "//textarea[@id='guardian_address']")
     public WebElement guardianAddressTextBox;
 
-
-    public void uploadDocuments() {
-        List<WebElement> fileXpaths = WebDriverUtils.driver.findElements(By.xpath("//input[@id='file']"));
-        List<String> photoFilepaths = new ArrayList<>();
-        for (int i = 0; i < fileXpaths.size(); i++) {
-            photoFilepaths.add(AppConstants.photoFilepath);
-            fileXpaths.get(i).sendKeys(photoFilepaths.get(i));
-        }
-    }
-
-    public void uploadFamilyPhotos() {
-        List<WebElement> docXpaths = WebDriverUtils.driver.findElements(By.xpath("//input[contains(@id,'doc')]"));
-        List<String> docFilePaths = new ArrayList<>();
-        for (int i = 0; i < docXpaths.size(); i++) {
-            docFilePaths.add(AppConstants.photoFilepath);
-            docXpaths.get(i).sendKeys(docFilePaths.get(i));
-        }
-    }
-
     /* ADD MORE DETAILS BAR */
     @FindBy(xpath = "//a[normalize-space()='Add More Details']")
     public WebElement addMoreDetailsBox;
@@ -207,17 +187,33 @@ public class StudentAdmissionPage {
     @FindBy(xpath = "//input[@name='first_title']")
     public WebElement titleOneTextBox;
 
+//    /* TITLE ONE PHOTO UPLOAD ELEMENT */
+    @FindBy(xpath = "//input[@name='first_doc']")
+    public WebElement documentOne;
+
     /* TITLE TWO TEXT BOX */
     @FindBy(xpath = "//input[@name='second_title']")
     public WebElement titleTwoTextBox;
+
+//    /* TITLE TWO PHOTO UPLOAD ELEMENT */
+    @FindBy(xpath = "//input[@name='second_doc']")
+    public WebElement documentTwo;
 
     /* TITLE THREE TEXT BOX */
     @FindBy(xpath = "//input[@name='fourth_title']")
     public WebElement titleThreeTextBox;
 
+    /* TITLE THREE PHOTO UPLOAD ELEMENT */
+    @FindBy(xpath = "//input[@name='fourth_doc']")
+    public WebElement documentThree;
+
     /* TITLE FOUR TEXT BOX */
     @FindBy(xpath = "//input[@name='fifth_title']")
     public WebElement titleFourTextBox;
+
+    /* TITLE FOUR PHOTO UPLOAD ELEMENT */
+    @FindBy(xpath = "//input[@name='fifth_doc']")
+    public WebElement documentFour;
 
     /* ADD SIBLING BUTTON */
     @FindBy(xpath = "//button[normalize-space()='Add Sibling']")
