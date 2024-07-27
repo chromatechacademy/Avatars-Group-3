@@ -6,9 +6,7 @@ import com.chromatech.Cucumber_BDD_Testing.pages.StudentDetailsPage;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.JavascriptMethods;
-
 import static com.chromatech.utils.CommonMethods.assertEquals;
-
 import com.chromatech.utils.WebDriverUtils;
 import org.openqa.selenium.NoSuchElementException;
 
@@ -110,8 +108,7 @@ public class StepsImplementation extends PageInitializer {
      * @param email               The email to be entered for the student.
      * @param guardianPhoneNumber The guardian phone number to be entered for the student.
      */
-    public static void makes_and_saves_changes_to_the_student_information_with(String email, String
-            guardianPhoneNumber) {
+    public static void makes_and_saves_changes_to_the_student_information_with(String email, String guardianPhoneNumber) {
         studentEditPage.editButton.click();
         studentEditPage.emailTextBox.sendKeys(email);
         studentEditPage.guardianPhoneNumberTextBox.sendKeys(guardianPhoneNumber);
@@ -424,7 +421,6 @@ public class StepsImplementation extends PageInitializer {
     }
 
     /**
-     * <<<<<<< HEAD
      * Asserts that the following submodules are displayed on the dashboard page.
      *
      * @param classTimetable     The expected text for the class timetable submodule.
@@ -496,6 +492,11 @@ public class StepsImplementation extends PageInitializer {
         assertEquals(disableReason, dashboardPage.disableReasonSubModule.getText());
     }
 
+    /**
+     * Deletes a sibling account with the specified admission number and class section.
+     *
+     * @param admissionNo The admission number of the sibling account to be deleted.
+     */
     public static void delete_test_sibling_account_with_admission_number_with_class_section(String admissionNo) {
         CommonMethods.sleep(1000);
         JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
@@ -510,7 +511,7 @@ public class StepsImplementation extends PageInitializer {
 
     /**
      * Deletes the test category.
-     * <p>
+     *
      * This method deletes the test category by performing the following steps:
      * 1. Sleeps for 1000 milliseconds to allow the page to load.
      * 2. Clicks on the student categories button on the category page.

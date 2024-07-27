@@ -20,10 +20,11 @@ public class Ability_To_Add_And_Delete_Sections_Steps extends PageInitializer {
 
     @Then("the section is added {string}")
     public void the_section_is_added(String testingMD) {
+
     }
 
     @And("the user can also delete the section")
     public void the_user_can_also_delete_the_section() {
-        StepsImplementation.the_user_adds_a_section();
+        StepsImplementation.the_user_can_also_delete_the_section();
     }
 }
