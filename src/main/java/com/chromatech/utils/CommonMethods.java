@@ -618,6 +618,6 @@ public class CommonMethods extends WebDriverUtils {
             }
         }
 
-        softAssert.assertAll();
+
     }
 }

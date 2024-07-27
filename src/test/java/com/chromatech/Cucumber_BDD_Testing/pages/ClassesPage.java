@@ -11,6 +11,7 @@ public class ClassesPage {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
 
+    /* CLASSES TABLE */
     @FindBy(xpath = "//table[@role='grid']")
     public WebElement classesTable;
 }
