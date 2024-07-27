@@ -45,7 +45,7 @@ public class Ability_To_Edit_Student_Records_Steps {
         studentEditPage.editButton.click();
         studentEditPage.emailTextBox.sendKeys(email);
         studentEditPage.guardianPhoneNumberTextBox.sendKeys(guardianPhoneNumber);
-        CommonMethods.sleep(100);
+        CommonMethods.sleep(1000);
         studentEditPage.saveButton.click();
     }
 
