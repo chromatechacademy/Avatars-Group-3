@@ -1,21 +1,17 @@
 package com.chromatech.Cucumber_BDD_Testing.stepDefinitions;
 
-import com.chromatech.Cucumber_BDD_Testing.pages.ClassesPage;
-import com.chromatech.Cucumber_BDD_Testing.pages.DashboardPage;
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer;
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.StepsImplementation;
 import com.chromatech.utils.CommonMethods;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Class_And_Sections_Steps {
-
-    DashboardPage dashboardPage = new DashboardPage();
-    ClassesPage classesPage = new ClassesPage();
+public class Class_And_Sections_Steps extends PageInitializer {
 
     @When("the user navigates to the Class submodule")
     public void the_user_navigates_to_the_class_submodule() {
-        dashboardPage.academicsModule.click();
-        dashboardPage.classClassSubModule.click();
+        StepsImplementation.the_user_navigates_to_the_class_submodule();
     }
 
     @Then("there are two classes, SDET and Cyber Security displayed with the following sections:")
