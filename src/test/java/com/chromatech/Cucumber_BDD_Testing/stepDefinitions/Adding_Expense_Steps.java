@@ -41,7 +41,6 @@ public class Adding_Expense_Steps {
     @Then("user clicks save")
     public void user_clicks_save() {
         addingExpensePage.expenseHeadSavebutton.click();
-        CommonMethods.sleep(100);
         CommonMethods.sleep(1000);
     }
 
