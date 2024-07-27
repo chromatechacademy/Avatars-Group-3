@@ -199,7 +199,7 @@ public class StudentAdmissionPage {
     @FindBy(xpath = "//input[@name='first_title']")
     public WebElement titleOneTextBox;
 
-    //    /* TITLE ONE PHOTO UPLOAD ELEMENT */
+    /* TITLE ONE PHOTO UPLOAD ELEMENT */
     @FindBy(xpath = "//input[@name='first_doc']")
     public WebElement documentOne;
 
@@ -207,7 +207,7 @@ public class StudentAdmissionPage {
     @FindBy(xpath = "//input[@name='second_title']")
     public WebElement titleTwoTextBox;
 
-    //    /* TITLE TWO PHOTO UPLOAD ELEMENT */
+    /* TITLE TWO PHOTO UPLOAD ELEMENT */
     @FindBy(xpath = "//input[@name='second_doc']")
     public WebElement documentTwo;
 
