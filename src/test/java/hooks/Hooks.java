@@ -5,7 +5,6 @@ import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.WebDriverUtils;
 import com.chromatech.Cucumber_BDD_Testing.Constants.screenRecording.ScreenRecorderUtil;
 import io.cucumber.java.After;
-import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 
@@ -17,17 +16,11 @@ public class Hooks {
         WebDriverUtils.setUp();
         PageInitializer.initializeAllPages();
         ScreenRecorderUtil.startRecording(scenario.getName());
-
     }
 
     @After
     public void end() throws Exception {
         WebDriverUtils.tearDown();
         ScreenRecorderUtil.stopRecording();
-    }
-
-    @AfterStep
-    public void afterStepSS() {
-        CucumberLogUtils.logScreenShot();
     }
 }
