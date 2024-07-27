@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class ClassesPage {
+
     public ClassesPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
@@ -22,8 +23,8 @@ public class ClassesPage {
     @FindBy (xpath ="//body[1]/div[1]/div[1]/section[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[3]/a[2]")
     public WebElement deleteClassButton;
 
-
-
-
+    /* CLASSES TABLE */
+    @FindBy(xpath = "//table[@role='grid']")
+    public WebElement classesTable;
 
 }

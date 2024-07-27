@@ -8,7 +8,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class Expenses_Module_Steps {
-    LoginPage loginPage = new LoginPage();
+
     DashboardPage dashboardPage = new DashboardPage();
 
     @When("the user clicks on the Expenses module")
