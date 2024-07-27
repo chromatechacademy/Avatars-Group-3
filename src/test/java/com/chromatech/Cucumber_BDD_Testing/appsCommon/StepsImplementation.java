@@ -2,7 +2,6 @@ package com.chromatech.Cucumber_BDD_Testing.appsCommon;
 
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.JavascriptMethods;
-
 import static com.chromatech.utils.CommonMethods.assertEquals;
 
 public class StepsImplementation extends PageInitializer {
