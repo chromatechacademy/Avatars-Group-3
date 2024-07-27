@@ -1,6 +1,6 @@
 Feature: Class and Sections
 
-  @Regression @Chris @AGP3CP-11
+  @BUG_OPEN @Chris @AGP3CP-11
   Scenario: Verify classes and sections displayed
     Given a user is on the Chroma Tech Academy practice site "https://mexil.it/chroma/site/login"
     And user enters username "general@teacher.com" in username text box
