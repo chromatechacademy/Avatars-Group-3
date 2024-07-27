@@ -6,7 +6,9 @@ import com.chromatech.Cucumber_BDD_Testing.pages.StudentDetailsPage;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.JavascriptMethods;
+
 import static com.chromatech.utils.CommonMethods.assertEquals;
+
 import com.chromatech.utils.WebDriverUtils;
 import org.openqa.selenium.NoSuchElementException;
 
@@ -494,33 +496,32 @@ public class StepsImplementation extends PageInitializer {
         assertEquals(studentHouse, dashboardPage.studentHouseSubModule.getText());
         assertEquals(disableReason, dashboardPage.disableReasonSubModule.getText());
     }
-}
 
-public static void delete_test_sibling_account_with_admission_number_with_class_section(String admissionNo) {
-    CommonMethods.sleep(1000);
-    JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
-    CucumberLogUtils.logScreenShot();
-    CommonMethods.waitForVisibility(BulkDeletePage.dynamicRecordNameLocator(admissionNo));
-    CommonMethods.waitForClickability(BulkDeletePage.dynamicRecordNameLocator(admissionNo));
-    CommonMethods.assertEquals(BulkDeletePage.dynamicRecordNameLocator(admissionNo).getText(), admissionNo);
-    BulkDeletePage.dynamicRecordLocateDeleter(admissionNo).click();
-    bulkDeletePage.deleteButton.click();
-    CommonMethods.acceptAlert();
-}
+    public static void delete_test_sibling_account_with_admission_number_with_class_section(String admissionNo) {
+        CommonMethods.sleep(1000);
+        JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
+        CucumberLogUtils.logScreenShot();
+        CommonMethods.waitForVisibility(BulkDeletePage.dynamicRecordNameLocator(admissionNo));
+        CommonMethods.waitForClickability(BulkDeletePage.dynamicRecordNameLocator(admissionNo));
+        CommonMethods.assertEquals(BulkDeletePage.dynamicRecordNameLocator(admissionNo).getText(), admissionNo);
+        BulkDeletePage.dynamicRecordLocateDeleter(admissionNo).click();
+        bulkDeletePage.deleteButton.click();
+        CommonMethods.acceptAlert();
+    }
 
-/**
- * Deletes the test category.
- * <p>
- * This method deletes the test category by performing the following steps:
- * 1. Sleeps for 1000 milliseconds to allow the page to load.
- * 2. Clicks on the student categories button on the category page.
- * 3. Clicks on the group Selenium category.
- * 4. Accepts the alert dialog box that appears.
- */
-public static void delete_the_test_category() {
-    CommonMethods.sleep(1000);
-    categoryPage.studentCategories.click();
-    categoryPage.groupSelenium.click();
-    CommonMethods.acceptAlert();
-}
+    /**
+     * Deletes the test category.
+     * <p>
+     * This method deletes the test category by performing the following steps:
+     * 1. Sleeps for 1000 milliseconds to allow the page to load.
+     * 2. Clicks on the student categories button on the category page.
+     * 3. Clicks on the group Selenium category.
+     * 4. Accepts the alert dialog box that appears.
+     */
+    public static void delete_the_test_category() {
+        CommonMethods.sleep(1000);
+        categoryPage.studentCategories.click();
+        categoryPage.groupSelenium.click();
+        CommonMethods.acceptAlert();
+    }
 }
