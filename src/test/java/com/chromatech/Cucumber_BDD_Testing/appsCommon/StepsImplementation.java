@@ -6,7 +6,9 @@ import com.chromatech.Cucumber_BDD_Testing.pages.StudentDetailsPage;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.JavascriptMethods;
+
 import static com.chromatech.utils.CommonMethods.assertEquals;
+
 import com.chromatech.utils.WebDriverUtils;
 import org.openqa.selenium.NoSuchElementException;
 
@@ -201,8 +203,7 @@ public class StepsImplementation extends PageInitializer {
      *
      * @param expectedAdmissionPageUrl The expected URL of the student admission page.
      */
-    public static void a_ctsms_admin_or_faculty_member_is_on_the_student_admission_page(String
-                                                                                                expectedAdmissionPageUrl) {
+    public static void a_ctsms_admin_or_faculty_member_is_on_the_student_admission_page(String expectedAdmissionPageUrl) {
         dashboardPage.studentAdmissionSubModule.click();
         CucumberLogUtils.logScreenShot();
         CommonMethods.assertEquals(WebDriverUtils.driver.getCurrentUrl(), expectedAdmissionPageUrl);
