@@ -1,6 +1,6 @@
 Feature: Enable and disable student
 
-  @Regression @Nahun @AG3CP-16
+  @Progression @Nahun @AG3CP-16
   Scenario Outline: Ability to enable and disable student
     Given a user is on the Chroma Tech Academy practice site "https://mexil.it/chroma/site/login"
     When user enters username "general@teacher.com" in username text box
