@@ -1,10 +1,9 @@
 package com.chromatech.Cucumber_BDD_Testing.stepDefinitions;
 
 import com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer;
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.StepsImplementation;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
-import static com.chromatech.utils.CommonMethods.assertEquals;
 
 public class CTSMS_Academics_Module_Steps extends PageInitializer {
 
@@ -15,13 +14,6 @@ public class CTSMS_Academics_Module_Steps extends PageInitializer {
 
     @Then("the following submodules are displayed: {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
     public void the_following_submodules_are_displayed(String classTimetable, String teachersTimetable, String assignClassTeacher, String promoteStudent, String subjectGroup, String subjects, String classClass, String sections) {
-        assertEquals(classTimetable, dashboardPage.classTimetableSubModule.getText());
-        assertEquals(teachersTimetable, dashboardPage.teachersTimetableSubModule.getText());
-        assertEquals(assignClassTeacher, dashboardPage.assignClassTeacherSubModule.getText());
-        assertEquals(promoteStudent, dashboardPage.promoteStudentSubModule.getText());
-        assertEquals(subjectGroup, dashboardPage.subjectGroupSubModule.getText());
-        assertEquals(subjects, dashboardPage.subjectsSubModule.getText());
-        assertEquals(classClass, dashboardPage.classClassSubModule.getText());
-        assertEquals(sections, dashboardPage.sectionsSubModule.getText());
+        StepsImplementation.the_following_submodules_are_displayed(classTimetable, teachersTimetable, assignClassTeacher, promoteStudent, subjectGroup, subjects, classClass, sections);
     }
 }
