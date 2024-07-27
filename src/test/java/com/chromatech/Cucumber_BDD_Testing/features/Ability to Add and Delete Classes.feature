@@ -7,9 +7,8 @@ Feature: Ability to Add and Delete Classes
     And enters password "123456" in password text box
     And clicks on Sign In button
     When user is directed to the CTSMS dashboard page "https://mexil.it/chroma/admin/admin/dashboard"
-    And clicks on the Academics module
-    And clicks on the Class submodule
-    And adds a class "Testing111"
+    And verifies that there is no class with such name
+    And navigates to Classes Page and adds a class "Testing111"
     And chooses Manual Testing in the checkbox
     And clicks Save button
     And clicks Delete button

@@ -9,21 +9,10 @@ public class Ability_To_Add_And_Delete_Classes_Steps {
     DashboardPage dashboardPage = new DashboardPage();
     ClassesPage classesPage = new ClassesPage();
 
-    @When("clicks on the Academics module")
-    public void clicks_on_the_academics_module() {
+    @When("navigates to Classes Page and adds a class {string}")
+    public void navigates_to_classes_page_and_adds_a_class(String string) {
         dashboardPage.academicsModule.click();
-    }
-
-    @When("clicks on the Class submodule")
-    public void clicks_on_the_class_submodule() {
         dashboardPage.classClassSubModule.click();
-
-    }
-
-    @When("adds a class {string}")
-    public void adds_a_class(String string) {
-
-
     }
 
     @When("chooses Manual Testing in the checkbox")
