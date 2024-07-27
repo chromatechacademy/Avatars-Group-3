@@ -127,6 +127,22 @@ public class StudentAdmissionPage {
     @FindBy(xpath = "//textarea[@id='guardian_address']")
     public WebElement guardianAddressTextBox;
 
+    /* STUDENT PHOTO UPLOAD ELEMENT */
+    @FindBy(xpath = "(//input[@id='file'])[1]")
+    public WebElement studentPhoto;
+
+    /* FATHER PHOTO UPLOAD ELEMENT */
+    @FindBy(xpath = "(//input[@id='file'])[2]")
+    public WebElement fatherPhoto;
+
+    /* MOTHER PHOTO UPLOAD ELEMENT */
+    @FindBy(xpath = "(//input[@id='file'])[3]")
+    public WebElement motherPhoto;
+
+    /* GUARDIAN PHOTO UPLOAD ELEMENT */
+    @FindBy(xpath = "(//input[@id='file'])[4]")
+    public WebElement guardianPhoto;
+
     /* ADD MORE DETAILS BAR */
     @FindBy(xpath = "//a[normalize-space()='Add More Details']")
     public WebElement addMoreDetailsBox;
@@ -183,7 +199,7 @@ public class StudentAdmissionPage {
     @FindBy(xpath = "//input[@name='first_title']")
     public WebElement titleOneTextBox;
 
-//    /* TITLE ONE PHOTO UPLOAD ELEMENT */
+    //    /* TITLE ONE PHOTO UPLOAD ELEMENT */
     @FindBy(xpath = "//input[@name='first_doc']")
     public WebElement documentOne;
 
@@ -191,7 +207,7 @@ public class StudentAdmissionPage {
     @FindBy(xpath = "//input[@name='second_title']")
     public WebElement titleTwoTextBox;
 
-//    /* TITLE TWO PHOTO UPLOAD ELEMENT */
+    //    /* TITLE TWO PHOTO UPLOAD ELEMENT */
     @FindBy(xpath = "//input[@name='second_doc']")
     public WebElement documentTwo;
 

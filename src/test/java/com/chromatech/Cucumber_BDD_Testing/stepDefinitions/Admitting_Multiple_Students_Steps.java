@@ -1,5 +1,6 @@
 package com.chromatech.Cucumber_BDD_Testing.stepDefinitions;
 
+import com.chromatech.Cucumber_BDD_Testing.Constants.AppConstants;
 import com.chromatech.Cucumber_BDD_Testing.pages.*;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
@@ -123,7 +124,10 @@ public class Admitting_Multiple_Students_Steps {
 
     @And("uploads family member photos")
     public void uploads_family_member_photos() {
-        studentAdmissionPage.uploadDocuments();
+        studentAdmissionPage.studentPhoto.sendKeys(AppConstants.photoFilepath);
+        studentAdmissionPage.fatherPhoto.sendKeys(AppConstants.photoFilepath);
+        studentAdmissionPage.motherPhoto.sendKeys(AppConstants.photoFilepath);
+        studentAdmissionPage.guardianPhoto.sendKeys(AppConstants.photoFilepath);
     }
 
     @And("clicks the Add More Details button")
@@ -159,7 +163,10 @@ public class Admitting_Multiple_Students_Steps {
         studentAdmissionPage.titleTwoTextBox.sendKeys(titleTwo);
         studentAdmissionPage.titleThreeTextBox.sendKeys(titleThree);
         studentAdmissionPage.titleFourTextBox.sendKeys(titleFour);
-        studentAdmissionPage.uploadFamilyPhotos();
+        studentAdmissionPage.documentOne.sendKeys(AppConstants.photoFilepath);
+        studentAdmissionPage.documentTwo.sendKeys(AppConstants.photoFilepath);
+        studentAdmissionPage.documentThree.sendKeys(AppConstants.photoFilepath);
+        studentAdmissionPage.documentFour.sendKeys(AppConstants.photoFilepath);
     }
 
     @When("clicks save")
