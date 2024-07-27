@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public class ConfigReader {
 
-    /*
+    /**
      * THIS IS A STANDARD CONFIG READER CLASS
      */
     static Properties prop;

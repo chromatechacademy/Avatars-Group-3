@@ -53,6 +53,7 @@ public class Admitting_Multiple_Students_Steps {
     @And("creates a test category {string}")
     public void creates_a_test_category(String categoryName) {
         CommonMethods.sleep(100);
+        CommonMethods.sleep(1000);
         categoryPage.studentCategories.click();
         categoryPage.categoryTextBox.sendKeys(categoryName);
         categoryPage.categorySaveButton.click();
@@ -85,6 +86,7 @@ public class Admitting_Multiple_Students_Steps {
     @And("adds a sibling")
     public void adds_a_sibling() {
         CommonMethods.sleep(100);
+        CommonMethods.sleep(1000);
         studentAdmissionPage.addSiblingButton.click();
         CommonMethods.waitForVisibility(studentAdmissionPage.siblingClassDropDown);
         CommonMethods.selectDropDownValue("SDET", studentAdmissionPage.siblingClassDropDown);
@@ -195,6 +197,7 @@ public class Admitting_Multiple_Students_Steps {
     @And("delete test sibling account with admission number {string}")
     public void delete_test_sibling_account_with_admission_number_with_class_section(String admissionNo) {
         CommonMethods.sleep(100);
+        CommonMethods.sleep(1000);
         JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
         CucumberLogUtils.logScreenShot();
         CommonMethods.assertEquals(BulkDeletePage.dynamicRecordNameLocator(admissionNo).getText(), admissionNo);
@@ -207,6 +210,7 @@ public class Admitting_Multiple_Students_Steps {
     public void delete_the_test_category() {
         CommonMethods.sleep(100);
         CommonMethods.waitForClickability(categoryPage.studentCategories);
+        CommonMethods.sleep(1000);
         categoryPage.studentCategories.click();
         CommonMethods.waitForClickability(categoryPage.groupSelenium);
         categoryPage.groupSelenium.click();
