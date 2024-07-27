@@ -1,6 +1,6 @@
 Feature: Adding Expense
 
-  @Progression @AG3CP-28 @Joyce
+  @Regression @AG3CP-28 @Joyce
   Scenario:Adding Expense
     Given a user is on the Chroma Tech Academy practice site "https://mexil.it/chroma/site/login"
     When user enters username "general@teacher.com" in username text box
