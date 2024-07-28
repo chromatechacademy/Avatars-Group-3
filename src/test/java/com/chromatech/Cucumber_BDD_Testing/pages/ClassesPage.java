@@ -15,12 +15,21 @@ public class ClassesPage {
     public WebElement classNameTextBox;
 
     @FindBy (xpath ="//input[@value='229']")
-    public WebElement manualTestindDropDownButton;
+    public WebElement manualTestingDropDownButton;
 
     @FindBy (xpath = "//button[@type='submit'][normalize-space()='Save']")
     public WebElement saveButton;
 
-    @FindBy (xpath ="//body[1]/div[1]/div[1]/section[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[3]/a[2]")
+    /*EMPTY TABLE ROW*/
+    @FindBy(xpath = "//td[@class='dataTables_empty']")
+    public WebElement emptyTableRow;
+
+    /*SEARCH CLASS TEXTBOX*/
+    @FindBy(xpath =" //input[@placeholder='Search...']")
+    public WebElement searchClassTextBox;
+
+    /*DELETE NEW CLASS BUTTON*/
+    @FindBy(xpath="//tbody/tr[1]/td[3]/a[2]")
     public WebElement deleteClassButton;
 
     /* CLASSES TABLE */
