@@ -429,7 +429,6 @@ public class StepsImplementation extends PageInitializer {
     }
 
     /**
-     * <<<<<<< HEAD
      * Asserts that the following submodules are displayed on the dashboard page.
      *
      * @param classTimetable     The expected text for the class timetable submodule.
