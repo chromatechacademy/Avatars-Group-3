@@ -6,9 +6,10 @@ import com.chromatech.Cucumber_BDD_Testing.pages.StudentDetailsPage;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.JavascriptMethods;
-import static com.chromatech.utils.CommonMethods.assertEquals;
 import com.chromatech.utils.WebDriverUtils;
 import org.openqa.selenium.NoSuchElementException;
+
+import static com.chromatech.utils.CommonMethods.assertEquals;
 
 public class StepsImplementation extends PageInitializer {
 
@@ -108,8 +109,7 @@ public class StepsImplementation extends PageInitializer {
      * @param email               The email to be entered for the student.
      * @param guardianPhoneNumber The guardian phone number to be entered for the student.
      */
-    public static void makes_and_saves_changes_to_the_student_information_with(String email, String
-            guardianPhoneNumber) {
+    public static void makes_and_saves_changes_to_the_student_information_with(String email, String guardianPhoneNumber) {
         studentEditPage.editButton.click();
         studentEditPage.emailTextBox.sendKeys(email);
         studentEditPage.guardianPhoneNumberTextBox.sendKeys(guardianPhoneNumber);
@@ -134,8 +134,7 @@ public class StepsImplementation extends PageInitializer {
      * @param sectionOption The section option of the student's account.
      * @param admissionNo   The admission number of the student's account.
      */
-    public static void user_navigate_to_test_students_account(String classOption, String sectionOption, String
-            admissionNo) {
+    public static void user_navigate_to_test_students_account(String classOption, String sectionOption, String admissionNo) {
         bulkDeletePage.bulkDeleteSubModule.click();
         CommonMethods.selectDropDownValue(classOption, bulkDeletePage.classDropDown);
         CommonMethods.selectDropDownValue(sectionOption, bulkDeletePage.sectionDropDown);
@@ -201,8 +200,7 @@ public class StepsImplementation extends PageInitializer {
      *
      * @param expectedAdmissionPageUrl The expected URL of the student admission page.
      */
-    public static void a_ctsms_admin_or_faculty_member_is_on_the_student_admission_page(String
-                                                                                                expectedAdmissionPageUrl) {
+    public static void a_ctsms_admin_or_faculty_member_is_on_the_student_admission_page(String expectedAdmissionPageUrl) {
         dashboardPage.studentAdmissionSubModule.click();
         CucumberLogUtils.logScreenShot();
         CommonMethods.assertEquals(WebDriverUtils.driver.getCurrentUrl(), expectedAdmissionPageUrl);
@@ -220,9 +218,7 @@ public class StepsImplementation extends PageInitializer {
      * @param guardianName        The guardian name of the sibling.
      * @param guardianPhoneNumber The guardian phone number of the sibling.
      */
-    public static void creates_a_test_sibling_with_admission_number_class_section_first_name_gender_date_of_birth_guardian_name_guardian_phone_number
-    (String admissionNo, String classOption, String sectionOption, String firstName, String genderOption, String
-            dateOfBirth, String guardianName, String guardianPhoneNumber) {
+    public static void creates_a_test_sibling_with_admission_number_class_section_first_name_gender_date_of_birth_guardian_name_guardian_phone_number(String admissionNo, String classOption, String sectionOption, String firstName, String genderOption, String dateOfBirth, String guardianName, String guardianPhoneNumber) {
         CommonMethods.waitForVisibility(studentAdmissionPage.admissionNoTextBox);
         studentAdmissionPage.admissionNoTextBox.sendKeys(admissionNo);
         CommonMethods.selectDropDownValue(classOption, studentAdmissionPage.classDropDown);
@@ -285,12 +281,7 @@ public class StepsImplementation extends PageInitializer {
      * @param guardianEmail    The guardian's email of the student.
      * @param guardianAddress  The guardian's address of the student.
      */
-    public static void the_user_fills_out_all_fields(String admissionNo, String rollNumber, String
-            classOption, String sectionOption, String firstName, String lastName, String genderOption, String
-                                                             dateOfBirth, String categoryOption, String email, String admissionDate, String bloodGroupOption, String
-                                                             asOnDate, String mobileNumber, String height, String weight, String fatherName, String fatherPhone, String
-                                                             fatherOccupation, String motherName, String motherPhone, String motherOccupation, String guardianEmail, String
-                                                             guardianAddress) {
+    public static void the_user_fills_out_all_fields(String admissionNo, String rollNumber, String classOption, String sectionOption, String firstName, String lastName, String genderOption, String dateOfBirth, String categoryOption, String email, String admissionDate, String bloodGroupOption, String asOnDate, String mobileNumber, String height, String weight, String fatherName, String fatherPhone, String fatherOccupation, String motherName, String motherPhone, String motherOccupation, String guardianEmail, String guardianAddress) {
         studentAdmissionPage.admissionNoTextBox.sendKeys(admissionNo);
         studentAdmissionPage.rollNumberTextBox.sendKeys(rollNumber);
         CommonMethods.selectDropDownValue(classOption, studentAdmissionPage.classDropDown);
@@ -363,8 +354,7 @@ public class StepsImplementation extends PageInitializer {
      * @param previousSchoolDetails The details of the student's previous school.
      * @param note                  Additional note or comment.
      */
-    public static void adds_miscellaneous_details(String bankAccountNumber, String bankName, String
-            ifscCode, String nationalIDNumber, String localIDNumber, String previousSchoolDetails, String note) {
+    public static void adds_miscellaneous_details(String bankAccountNumber, String bankName, String ifscCode, String nationalIDNumber, String localIDNumber, String previousSchoolDetails, String note) {
         studentAdmissionPage.bankAccountNumberTextBox.sendKeys(bankAccountNumber);
         studentAdmissionPage.bankNameTextBox.sendKeys(bankName);
         studentAdmissionPage.ifscCodeTextBox.sendKeys(ifscCode);
@@ -401,8 +391,7 @@ public class StepsImplementation extends PageInitializer {
      * @param sectionOption the section option for filtering students
      * @param admissionNo   the admission number of the student to admit
      */
-    public static void the_user_should_be_able_to_admit_students_with_unique_admission_numbers(String
-                                                                                                       classOption, String sectionOption, String admissionNo) {
+    public static void the_user_should_be_able_to_admit_students_with_unique_admission_numbers(String classOption, String sectionOption, String admissionNo) {
         bulkDeletePage.bulkDeleteSubModule.click();
         CommonMethods.selectDropDownValue(classOption, bulkDeletePage.classDropDown);
         CommonMethods.selectDropDownValue(sectionOption, bulkDeletePage.sectionDropDown);
@@ -435,9 +424,7 @@ public class StepsImplementation extends PageInitializer {
      * @param classClass         The expected text for the class class submodule.
      * @param sections           The expected text for the sections submodule.
      */
-    public static void the_following_submodules_are_displayed(String classTimetable, String
-            teachersTimetable, String assignClassTeacher, String promoteStudent, String subjectGroup, String
-                                                                      subjects, String classClass, String sections) {
+    public static void the_following_submodules_are_displayed(String classTimetable, String teachersTimetable, String assignClassTeacher, String promoteStudent, String subjectGroup, String subjects, String classClass, String sections) {
         assertEquals(classTimetable, dashboardPage.classTimetableSubModule.getText());
         assertEquals(teachersTimetable, dashboardPage.teachersTimetableSubModule.getText());
         assertEquals(assignClassTeacher, dashboardPage.assignClassTeacherSubModule.getText());
@@ -460,8 +447,7 @@ public class StepsImplementation extends PageInitializer {
      * @param homework           The expected text for the homework module.
      * @param reports            The expected text for the reports module.
      */
-    public static void the_following_modules_are_displayed(String studentInformation, String feesCollection, String
-            Income, String expenses, String academics, String humanResource, String homework, String reports) {
+    public static void the_following_modules_are_displayed(String studentInformation, String feesCollection, String Income, String expenses, String academics, String humanResource, String homework, String reports) {
         CommonMethods.assertEquals(dashboardPage.studentInformationModule.getText(), studentInformation);
         CommonMethods.assertEquals(dashboardPage.feesCollectionModule.getText(), feesCollection);
         CommonMethods.assertEquals(dashboardPage.incomeModule.getText(), Income);
@@ -483,9 +469,7 @@ public class StepsImplementation extends PageInitializer {
      * @param studentHouse      The expected text for the student house submodule.
      * @param disableReason     The expected text for the disable reason submodule.
      */
-    public static void the_following_submodules_are_displayed(String studentDetails, String
-            studentAdmission, String disabledStudents, String bulkDelete, String studentCategories, String
-                                                                      studentHouse, String disableReason) {
+    public static void the_following_submodules_are_displayed(String studentDetails, String studentAdmission, String disabledStudents, String bulkDelete, String studentCategories, String studentHouse, String disableReason) {
         assertEquals(studentDetails, dashboardPage.studentDetailsSubModule.getText());
         assertEquals(studentAdmission, dashboardPage.studentAdmissionSubModule.getText());
         assertEquals(disabledStudents, dashboardPage.disabledStudentsSubModule.getText());
@@ -494,33 +478,32 @@ public class StepsImplementation extends PageInitializer {
         assertEquals(studentHouse, dashboardPage.studentHouseSubModule.getText());
         assertEquals(disableReason, dashboardPage.disableReasonSubModule.getText());
     }
-}
 
-public static void delete_test_sibling_account_with_admission_number_with_class_section(String admissionNo) {
-    CommonMethods.sleep(1000);
-    JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
-    CucumberLogUtils.logScreenShot();
-    CommonMethods.waitForVisibility(BulkDeletePage.dynamicRecordNameLocator(admissionNo));
-    CommonMethods.waitForClickability(BulkDeletePage.dynamicRecordNameLocator(admissionNo));
-    CommonMethods.assertEquals(BulkDeletePage.dynamicRecordNameLocator(admissionNo).getText(), admissionNo);
-    BulkDeletePage.dynamicRecordLocateDeleter(admissionNo).click();
-    bulkDeletePage.deleteButton.click();
-    CommonMethods.acceptAlert();
-}
+    public static void delete_test_sibling_account_with_admission_number_with_class_section(String admissionNo) {
+        CommonMethods.sleep(1000);
+        JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
+        CucumberLogUtils.logScreenShot();
+        CommonMethods.waitForVisibility(BulkDeletePage.dynamicRecordNameLocator(admissionNo));
+        CommonMethods.waitForClickability(BulkDeletePage.dynamicRecordNameLocator(admissionNo));
+        CommonMethods.assertEquals(BulkDeletePage.dynamicRecordNameLocator(admissionNo).getText(), admissionNo);
+        BulkDeletePage.dynamicRecordLocateDeleter(admissionNo).click();
+        bulkDeletePage.deleteButton.click();
+        CommonMethods.acceptAlert();
+    }
 
-/**
- * Deletes the test category.
- * <p>
- * This method deletes the test category by performing the following steps:
- * 1. Sleeps for 1000 milliseconds to allow the page to load.
- * 2. Clicks on the student categories button on the category page.
- * 3. Clicks on the group Selenium category.
- * 4. Accepts the alert dialog box that appears.
- */
-public static void delete_the_test_category() {
-    CommonMethods.sleep(1000);
-    categoryPage.studentCategories.click();
-    categoryPage.groupSelenium.click();
-    CommonMethods.acceptAlert();
-}
+    /**
+     * Deletes the test category.
+     * <p>
+     * This method deletes the test category by performing the following steps:
+     * 1. Sleeps for 1000 milliseconds to allow the page to load.
+     * 2. Clicks on the student categories button on the category page.
+     * 3. Clicks on the group Selenium category.
+     * 4. Accepts the alert dialog box that appears.
+     */
+    public static void delete_the_test_category() {
+        CommonMethods.sleep(1000);
+        categoryPage.studentCategories.click();
+        categoryPage.groupSelenium.click();
+        CommonMethods.acceptAlert();
+    }
 }

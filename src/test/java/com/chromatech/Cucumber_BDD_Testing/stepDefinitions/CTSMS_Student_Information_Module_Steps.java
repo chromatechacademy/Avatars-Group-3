@@ -16,13 +16,6 @@ public class CTSMS_Student_Information_Module_Steps extends PageInitializer {
 
     @Then("the following submodules are displayed: {string}, {string}, {string}, {string}, {string}, {string}, {string}")
     public void the_following_submodules_are_displayed(String studentDetails, String studentAdmission, String disabledStudents, String bulkDelete, String studentCategories, String studentHouse, String disableReason) {
-//        assertEquals(studentDetails, dashboardPage.studentDetailsSubModule.getText());
-//        assertEquals(studentAdmission, dashboardPage.studentAdmissionSubModule.getText());
-//        assertEquals(disabledStudents, dashboardPage.disabledStudentsSubModule.getText());
-//        assertEquals(bulkDelete, dashboardPage.bulkDeleteSubModule.getText());
-//        assertEquals(studentCategories, dashboardPage.studentCategoriesSubModule.getText());
-//        assertEquals(studentHouse, dashboardPage.studentHouseSubModule.getText());
-//        assertEquals(disableReason, dashboardPage.disableReasonSubModule.getText());
         StepsImplementation.the_following_submodules_are_displayed(studentDetails, studentAdmission, disabledStudents, bulkDelete, studentCategories, studentHouse, disableReason);
 
     }

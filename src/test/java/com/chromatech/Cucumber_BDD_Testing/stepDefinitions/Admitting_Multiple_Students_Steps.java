@@ -2,6 +2,10 @@ package com.chromatech.Cucumber_BDD_Testing.stepDefinitions;
 
 import com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer;
 import com.chromatech.Cucumber_BDD_Testing.appsCommon.StepsImplementation;
+import com.chromatech.Cucumber_BDD_Testing.pages.BulkDeletePage;
+import com.chromatech.utils.CommonMethods;
+import com.chromatech.utils.CucumberLogUtils;
+import com.chromatech.utils.JavascriptMethods;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -21,7 +25,6 @@ public class Admitting_Multiple_Students_Steps extends PageInitializer {
 
     @And("creates a test category {string}")
     public void creates_a_test_category(String categoryName) {
-<<<<<<< HEAD
         CommonMethods.sleep(100);
         CommonMethods.sleep(1000);
         categoryPage.studentCategories.click();
@@ -29,9 +32,7 @@ public class Admitting_Multiple_Students_Steps extends PageInitializer {
         categoryPage.categorySaveButton.click();
         CucumberLogUtils.logScreenShot();
         CommonMethods.assertEquals(categoryPage.categorySelenium.getText(), categoryName);
-=======
         StepsImplementation.creates_a_test_category(categoryName);
->>>>>>> 47ef03aaf73cd1eedc66d292c9471b113189515a
     }
 
     @When("a CTSMS admin or faculty member is on the student admission page {string}")
@@ -46,7 +47,6 @@ public class Admitting_Multiple_Students_Steps extends PageInitializer {
 
     @And("adds a sibling")
     public void adds_a_sibling() {
-<<<<<<< HEAD
         CommonMethods.sleep(100);
         CommonMethods.sleep(1000);
         studentAdmissionPage.addSiblingButton.click();
@@ -55,9 +55,7 @@ public class Admitting_Multiple_Students_Steps extends PageInitializer {
         CommonMethods.selectDropDownValue("Cucumber Fundamentals", studentAdmissionPage.siblingSectionDropDown);
         CommonMethods.selectDropDownValue("Group Three Sibling ()", studentAdmissionPage.siblingStudentIDDropDown);
         studentAdmissionPage.addSiblingInformationButton.click();
-=======
         StepsImplementation.adds_a_sibling();
->>>>>>> 47ef03aaf73cd1eedc66d292c9471b113189515a
     }
 
     @And("the user fills out all fields {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
@@ -97,7 +95,6 @@ public class Admitting_Multiple_Students_Steps extends PageInitializer {
 
     @Then("the user should be able to admit students with unique admission numbers {string}, {string}, {string}")
     public void the_user_should_be_able_to_admit_students_with_unique_admission_numbers(String classOption, String sectionOption, String admissionNo) {
-<<<<<<< HEAD
         bulkDeletePage.bulkDeleteSubModule.click();
         CommonMethods.selectDropDownValue(classOption, bulkDeletePage.classDropDown);
         CommonMethods.selectDropDownValue(sectionOption, bulkDeletePage.sectionDropDown);
@@ -105,9 +102,7 @@ public class Admitting_Multiple_Students_Steps extends PageInitializer {
         JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
         CucumberLogUtils.logScreenShot();
         CommonMethods.assertEquals(BulkDeletePage.dynamicRecordNameLocator(admissionNo).getText(), admissionNo);
-=======
         StepsImplementation.the_user_should_be_able_to_admit_students_with_unique_admission_numbers(classOption, sectionOption, admissionNo);
->>>>>>> 47ef03aaf73cd1eedc66d292c9471b113189515a
     }
 
     @And("delete test account with {string}")
@@ -117,7 +112,6 @@ public class Admitting_Multiple_Students_Steps extends PageInitializer {
 
     @And("delete test sibling account with admission number {string}")
     public void delete_test_sibling_account_with_admission_number_with_class_section(String admissionNo) {
-<<<<<<< HEAD
         CommonMethods.sleep(100);
         CommonMethods.sleep(1000);
         JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
@@ -126,23 +120,18 @@ public class Admitting_Multiple_Students_Steps extends PageInitializer {
         BulkDeletePage.dynamicRecordLocateDeleter(admissionNo).click();
         bulkDeletePage.deleteButton.click();
         CommonMethods.acceptAlert();
-=======
         StepsImplementation.delete_test_sibling_account_with_admission_number_with_class_section(admissionNo);
->>>>>>> 47ef03aaf73cd1eedc66d292c9471b113189515a
+
     }
 
     @Then("delete the test category")
     public void delete_the_test_category() {
-<<<<<<< HEAD
         CommonMethods.sleep(100);
         CommonMethods.waitForClickability(categoryPage.studentCategories);
         CommonMethods.sleep(1000);
         categoryPage.studentCategories.click();
         CommonMethods.waitForClickability(categoryPage.groupSelenium);
         categoryPage.groupSelenium.click();
-        CommonMethods.acceptAlert();
-=======
         StepsImplementation.delete_the_test_category();
->>>>>>> 47ef03aaf73cd1eedc66d292c9471b113189515a
     }
 }
