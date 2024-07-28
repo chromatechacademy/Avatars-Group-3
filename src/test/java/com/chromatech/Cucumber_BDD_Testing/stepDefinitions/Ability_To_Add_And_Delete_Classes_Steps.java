@@ -4,11 +4,11 @@ import com.chromatech.Cucumber_BDD_Testing.pages.ClassesPage;
 import com.chromatech.Cucumber_BDD_Testing.pages.DashboardPage;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 
 public class Ability_To_Add_And_Delete_Classes_Steps {
+
     DashboardPage dashboardPage = new DashboardPage();
     ClassesPage classesPage = new ClassesPage();
 
@@ -39,10 +39,6 @@ public class Ability_To_Add_And_Delete_Classes_Steps {
     @When("clicks Delete button")
     public void clicks_delete_button() {
         classesPage.deleteClassButton.click();
-    }
-
-    @Then("the user clicks Confirm button to delete the class Testing111")
-    public void the_user_clicks_confirm_button_to_delete_the_class_testing111() {
         CommonMethods.acceptAlert();
     }
 }

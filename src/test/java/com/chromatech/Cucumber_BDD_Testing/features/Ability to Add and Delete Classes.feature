@@ -1,6 +1,6 @@
 Feature: Ability to Add and Delete Classes
 
-  @Progression @AG3CP-78 @ValerieYa
+  @Regression @AG3CP-78 @ValerieYa
   Scenario: Ability to Add and Delete Classes
     Given a user is on the Chroma Tech Academy practice site "https://mexil.it/chroma/site/login"
     And user enters username "general@teacher.com" in username text box
@@ -12,4 +12,3 @@ Feature: Ability to Add and Delete Classes
     And chooses Manual Testing in the checkbox
     And clicks Save button
     And clicks Delete button
-    Then the user clicks Confirm button to delete the class Testing111

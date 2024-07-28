@@ -16,11 +16,11 @@ public class ClassesPage {
     public WebElement classNameTextBox;
 
     /*MANUAL TESTING DROPDOWN CHECKBOX*/
-    @FindBy (xpath ="//input[@value='229']")
+    @FindBy(xpath = "//input[@value='229']")
     public WebElement manualTestingDropDownCheckBox;
 
     /*SAVE CLASS BUTTON*/
-    @FindBy (xpath = "//button[@type='submit'][normalize-space()='Save']")
+    @FindBy(xpath = "//button[@type='submit'][normalize-space()='Save']")
     public WebElement saveButton;
 
     /*EMPTY TABLE ROW*/
@@ -28,11 +28,11 @@ public class ClassesPage {
     public WebElement emptyTableRow;
 
     /*SEARCH CLASS TEXTBOX*/
-    @FindBy(xpath =" //input[@placeholder='Search...']")
+    @FindBy(xpath = " //input[@placeholder='Search...']")
     public WebElement searchClassTextBox;
 
     /*DELETE NEW CLASS BUTTON*/
-    @FindBy(xpath="(//tbody/tr/td[normalize-space()='SDET'])/following-sibling::td[2]/a[2]")
+    @FindBy(xpath = "(//a[@data-placement='left'])[2]")
     public WebElement deleteClassButton;
 
     /* CLASSES TABLE */
