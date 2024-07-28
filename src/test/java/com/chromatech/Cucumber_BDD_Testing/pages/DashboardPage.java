@@ -197,6 +197,48 @@ public class DashboardPage {
     public WebElement studentDetailsSubModule;
 
     /**
+     * Represents the WebElement for the Search Income on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Search Income']")
+    public WebElement searchIncomeSubModule;
+
+    /**
+     * Represents the WebElement for the Income Head on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Income Head']")
+    public WebElement incomeHeadSubModule;
+
+    /**
+     * This variable represents the WebElement for the "Disabled Students" sub-module on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Disabled Students']")
+    public WebElement disabledStudentsSubModule;
+
+    /**
+     * This variable represents the WebElement for the "Bulk Delete" link in the DashboardPage class.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Bulk Delete']")
+    public WebElement bulkDeleteSubModule;
+
+    /**
+     * WebElement representing the "Student Categories" sub-module in the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Student Categories']")
+    public WebElement studentCategoriesSubModule;
+
+    /**
+     * Represents the WebElement for the "Student House" sub-module on the DashboardPage
+     */
+    @FindBy(xpath = "//a[normalize-space()='Student House']")
+    public WebElement studentHouseSubModule;
+
+    /**
+     * WebElement representing the "Disable Reason" sub module in the DashboardPage.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Disable Reason']")
+    public WebElement disableReasonSubModule;
+
+    /**
      * Represents the WebElement for the Collect Fees on the Dashboard page.
      */
     @FindBy(xpath = "//ul[@class='treeview-menu menu-open']//a[normalize-space()='Collect Fees']")
