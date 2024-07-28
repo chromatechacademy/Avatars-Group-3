@@ -42,9 +42,17 @@ public class StepsImplementation extends PageInitializer {
     /**
      * Adds a section by entering the section name in the section text box and clicking the save button.
      */
-    public static void the_user_adds_a_section() {
-        addAndDeleteSectionsPage.sectionTextBox.sendKeys("TESTING MD");
+    public static void the_user_adds_a_section(String section) {
+        addAndDeleteSectionsPage.sectionTextBox.sendKeys(section);
         addAndDeleteSectionsPage.clickSaveButton.click();
+    }
+
+    /**
+     * This method adds a section and verifies if the section is successfully added.
+     */
+    public static void the_section_is_added() {
+        CommonMethods.sleep(1000);
+        CommonMethods.assertTrue(addAndDeleteSectionsPage.successMessage.isDisplayed());
     }
 
     /**
@@ -401,8 +409,7 @@ public class StepsImplementation extends PageInitializer {
      * @param sectionOption the section option for filtering students
      * @param admissionNo   the admission number of the student to admit
      */
-    public static void the_user_should_be_able_to_admit_students_with_unique_admission_numbers(String
-                                                                                                       classOption, String sectionOption, String admissionNo) {
+    public static void the_user_should_be_able_to_admit_students_with_unique_admission_numbers(String classOption, String sectionOption, String admissionNo) {
         bulkDeletePage.bulkDeleteSubModule.click();
         CommonMethods.selectDropDownValue(classOption, bulkDeletePage.classDropDown);
         CommonMethods.selectDropDownValue(sectionOption, bulkDeletePage.sectionDropDown);
@@ -423,7 +430,6 @@ public class StepsImplementation extends PageInitializer {
     }
 
     /**
-     * <<<<<<< HEAD
      * Asserts that the following submodules are displayed on the dashboard page.
      *
      * @param classTimetable     The expected text for the class timetable submodule.
@@ -435,9 +441,7 @@ public class StepsImplementation extends PageInitializer {
      * @param classClass         The expected text for the class class submodule.
      * @param sections           The expected text for the sections submodule.
      */
-    public static void the_following_submodules_are_displayed(String classTimetable, String
-            teachersTimetable, String assignClassTeacher, String promoteStudent, String subjectGroup, String
-                                                                      subjects, String classClass, String sections) {
+    public static void the_following_submodules_are_displayed(String classTimetable, String teachersTimetable, String assignClassTeacher, String promoteStudent, String subjectGroup, String subjects, String classClass, String sections) {
         assertEquals(classTimetable, dashboardPage.classTimetableSubModule.getText());
         assertEquals(teachersTimetable, dashboardPage.teachersTimetableSubModule.getText());
         assertEquals(assignClassTeacher, dashboardPage.assignClassTeacherSubModule.getText());
@@ -460,8 +464,7 @@ public class StepsImplementation extends PageInitializer {
      * @param homework           The expected text for the homework module.
      * @param reports            The expected text for the reports module.
      */
-    public static void the_following_modules_are_displayed(String studentInformation, String feesCollection, String
-            Income, String expenses, String academics, String humanResource, String homework, String reports) {
+    public static void the_following_modules_are_displayed(String studentInformation, String feesCollection, String Income, String expenses, String academics, String humanResource, String homework, String reports) {
         CommonMethods.assertEquals(dashboardPage.studentInformationModule.getText(), studentInformation);
         CommonMethods.assertEquals(dashboardPage.feesCollectionModule.getText(), feesCollection);
         CommonMethods.assertEquals(dashboardPage.incomeModule.getText(), Income);
@@ -483,9 +486,7 @@ public class StepsImplementation extends PageInitializer {
      * @param studentHouse      The expected text for the student house submodule.
      * @param disableReason     The expected text for the disable reason submodule.
      */
-    public static void the_following_submodules_are_displayed(String studentDetails, String
-            studentAdmission, String disabledStudents, String bulkDelete, String studentCategories, String
-                                                                      studentHouse, String disableReason) {
+    public static void the_following_submodules_are_displayed(String studentDetails, String studentAdmission, String disabledStudents, String bulkDelete, String studentCategories, String studentHouse, String disableReason) {
         assertEquals(studentDetails, dashboardPage.studentDetailsSubModule.getText());
         assertEquals(studentAdmission, dashboardPage.studentAdmissionSubModule.getText());
         assertEquals(disabledStudents, dashboardPage.disabledStudentsSubModule.getText());
@@ -494,33 +495,36 @@ public class StepsImplementation extends PageInitializer {
         assertEquals(studentHouse, dashboardPage.studentHouseSubModule.getText());
         assertEquals(disableReason, dashboardPage.disableReasonSubModule.getText());
     }
-}
 
-public static void delete_test_sibling_account_with_admission_number_with_class_section(String admissionNo) {
-    CommonMethods.sleep(1000);
-    JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
-    CucumberLogUtils.logScreenShot();
-    CommonMethods.waitForVisibility(BulkDeletePage.dynamicRecordNameLocator(admissionNo));
-    CommonMethods.waitForClickability(BulkDeletePage.dynamicRecordNameLocator(admissionNo));
-    CommonMethods.assertEquals(BulkDeletePage.dynamicRecordNameLocator(admissionNo).getText(), admissionNo);
-    BulkDeletePage.dynamicRecordLocateDeleter(admissionNo).click();
-    bulkDeletePage.deleteButton.click();
-    CommonMethods.acceptAlert();
-}
+    /**
+     * Deletes the test sibling account with the given admission number and class section.
+     *
+     * @param admissionNo The admission number of the test sibling account.
+     */
+    public static void delete_test_sibling_account_with_admission_number_with_class_section(String admissionNo) {
+        CommonMethods.sleep(1000);
+        JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
+        CucumberLogUtils.logScreenShot();
+        CommonMethods.waitForVisibility(BulkDeletePage.dynamicRecordNameLocator(admissionNo));
+        CommonMethods.waitForClickability(BulkDeletePage.dynamicRecordNameLocator(admissionNo));
+        CommonMethods.assertEquals(BulkDeletePage.dynamicRecordNameLocator(admissionNo).getText(), admissionNo);
+        BulkDeletePage.dynamicRecordLocateDeleter(admissionNo).click();
+        bulkDeletePage.deleteButton.click();
+        CommonMethods.acceptAlert();
+    }
 
-/**
- * Deletes the test category.
- * <p>
- * This method deletes the test category by performing the following steps:
- * 1. Sleeps for 1000 milliseconds to allow the page to load.
- * 2. Clicks on the student categories button on the category page.
- * 3. Clicks on the group Selenium category.
- * 4. Accepts the alert dialog box that appears.
- */
-public static void delete_the_test_category() {
-    CommonMethods.sleep(1000);
-    categoryPage.studentCategories.click();
-    categoryPage.groupSelenium.click();
-    CommonMethods.acceptAlert();
-}
+    /**
+     * Deletes the test category.
+     * This method deletes the test category by performing the following steps:
+     * 1. Sleeps for 1000 milliseconds to allow the page to load.
+     * 2. Clicks on the student categories button on the category page.
+     * 3. Clicks on the group Selenium category.
+     * 4. Accepts the alert dialog box that appears.
+     */
+    public static void delete_the_test_category() {
+        CommonMethods.sleep(1000);
+        categoryPage.studentCategories.click();
+        categoryPage.groupSelenium.click();
+        CommonMethods.acceptAlert();
+    }
 }

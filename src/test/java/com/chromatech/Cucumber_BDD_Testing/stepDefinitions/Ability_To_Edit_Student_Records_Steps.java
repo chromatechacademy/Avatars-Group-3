@@ -20,19 +20,14 @@ public class Ability_To_Edit_Student_Records_Steps extends PageInitializer {
 
     @And("makes and saves changes to the student information with {string}, and {string}")
     public void makes_and_saves_changes_to_the_student_information_with(String email, String guardianPhoneNumber) {
-<<<<<<< HEAD
         studentEditPage.editButton.click();
         studentEditPage.emailTextBox.sendKeys(email);
         studentEditPage.guardianPhoneNumberTextBox.sendKeys(guardianPhoneNumber);
-<<<<<<< HEAD
-=======
         CommonMethods.sleep(100);
->>>>>>> 8d38ba8949de9122e036399004a9f20c0f37d9d3
         CommonMethods.sleep(1000);
         studentEditPage.saveButton.click();
-=======
+
         StepsImplementation.makes_and_saves_changes_to_the_student_information_with(email, guardianPhoneNumber);
->>>>>>> 47ef03aaf73cd1eedc66d292c9471b113189515a
     }
 
     @Then("the user should see message {string}")

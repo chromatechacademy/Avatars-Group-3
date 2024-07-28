@@ -22,6 +22,7 @@ public class Admitting_Multiple_Students_Steps extends PageInitializer {
     @And("creates a test category {string}")
     public void creates_a_test_category(String categoryName) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
         CommonMethods.sleep(100);
@@ -33,8 +34,9 @@ public class Admitting_Multiple_Students_Steps extends PageInitializer {
         CucumberLogUtils.logScreenShot();
         CommonMethods.assertEquals(categoryPage.categorySelenium.getText(), categoryName);
 =======
+=======
+>>>>>>> 92774d7e95853af40d64e2c0b71fe21051bddbc8
         StepsImplementation.creates_a_test_category(categoryName);
->>>>>>> 47ef03aaf73cd1eedc66d292c9471b113189515a
     }
 
     @When("a CTSMS admin or faculty member is on the student admission page {string}")
@@ -50,6 +52,7 @@ public class Admitting_Multiple_Students_Steps extends PageInitializer {
     @And("adds a sibling")
     public void adds_a_sibling() {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
         CommonMethods.sleep(100);
@@ -62,8 +65,9 @@ public class Admitting_Multiple_Students_Steps extends PageInitializer {
         CommonMethods.selectDropDownValue("Group Three Sibling ()", studentAdmissionPage.siblingStudentIDDropDown);
         studentAdmissionPage.addSiblingInformationButton.click();
 =======
+=======
+>>>>>>> 92774d7e95853af40d64e2c0b71fe21051bddbc8
         StepsImplementation.adds_a_sibling();
->>>>>>> 47ef03aaf73cd1eedc66d292c9471b113189515a
     }
 
     @And("the user fills out all fields {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
@@ -103,17 +107,7 @@ public class Admitting_Multiple_Students_Steps extends PageInitializer {
 
     @Then("the user should be able to admit students with unique admission numbers {string}, {string}, {string}")
     public void the_user_should_be_able_to_admit_students_with_unique_admission_numbers(String classOption, String sectionOption, String admissionNo) {
-<<<<<<< HEAD
-        bulkDeletePage.bulkDeleteSubModule.click();
-        CommonMethods.selectDropDownValue(classOption, bulkDeletePage.classDropDown);
-        CommonMethods.selectDropDownValue(sectionOption, bulkDeletePage.sectionDropDown);
-        bulkDeletePage.searchButton.click();
-        JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
-        CucumberLogUtils.logScreenShot();
-        CommonMethods.assertEquals(BulkDeletePage.dynamicRecordNameLocator(admissionNo).getText(), admissionNo);
-=======
         StepsImplementation.the_user_should_be_able_to_admit_students_with_unique_admission_numbers(classOption, sectionOption, admissionNo);
->>>>>>> 47ef03aaf73cd1eedc66d292c9471b113189515a
     }
 
     @And("delete test account with {string}")
@@ -123,6 +117,7 @@ public class Admitting_Multiple_Students_Steps extends PageInitializer {
 
     @And("delete test sibling account with admission number {string}")
     public void delete_test_sibling_account_with_admission_number_with_class_section(String admissionNo) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -136,12 +131,14 @@ public class Admitting_Multiple_Students_Steps extends PageInitializer {
         bulkDeletePage.deleteButton.click();
         CommonMethods.acceptAlert();
 =======
+=======
+>>>>>>> 92774d7e95853af40d64e2c0b71fe21051bddbc8
         StepsImplementation.delete_test_sibling_account_with_admission_number_with_class_section(admissionNo);
->>>>>>> 47ef03aaf73cd1eedc66d292c9471b113189515a
     }
 
     @Then("delete the test category")
     public void delete_the_test_category() {
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -154,7 +151,8 @@ public class Admitting_Multiple_Students_Steps extends PageInitializer {
         categoryPage.groupSelenium.click();
         CommonMethods.acceptAlert();
 =======
+=======
+>>>>>>> 92774d7e95853af40d64e2c0b71fe21051bddbc8
         StepsImplementation.delete_the_test_category();
->>>>>>> 47ef03aaf73cd1eedc66d292c9471b113189515a
     }
 }

@@ -17,3 +17,4 @@ org.eclipse.*
 .apt_generated_tests
 bin
 .idea
+test-recordings
