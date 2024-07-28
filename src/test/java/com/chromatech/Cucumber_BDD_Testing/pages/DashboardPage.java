@@ -128,7 +128,7 @@ public class DashboardPage {
     /**
      * This variable represents a WebElement for the class timetable sub-module link on the Dashboard page.
      */
-    @FindBy(xpath = "//a[normalize-space()='Class Timetable']")
+    @FindBy(xpath = "(//a[normalize-space()='Class Timetable'])[2]")
     public WebElement classTimetableSubModule;
 
     /**

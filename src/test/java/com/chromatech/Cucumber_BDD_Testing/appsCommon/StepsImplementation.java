@@ -442,14 +442,14 @@ public class StepsImplementation extends PageInitializer {
      * @param sections           The expected text for the sections submodule.
      */
     public static void the_following_submodules_are_displayed(String classTimetable, String teachersTimetable, String assignClassTeacher, String promoteStudent, String subjectGroup, String subjects, String classClass, String sections) {
-        assertEquals(classTimetable, dashboardPage.classTimetableSubModule.getText());
-        assertEquals(teachersTimetable, dashboardPage.teachersTimetableSubModule.getText());
-        assertEquals(assignClassTeacher, dashboardPage.assignClassTeacherSubModule.getText());
-        assertEquals(promoteStudent, dashboardPage.promoteStudentSubModule.getText());
-        assertEquals(subjectGroup, dashboardPage.subjectGroupSubModule.getText());
-        assertEquals(subjects, dashboardPage.subjectsSubModule.getText());
-        assertEquals(classClass, dashboardPage.classClassSubModule.getText());
-        assertEquals(sections, dashboardPage.sectionsSubModule.getText());
+        CommonMethods.assertEquals(classTimetable, dashboardPage.classTimetableSubModule.getText());
+        CommonMethods.assertEquals(teachersTimetable, dashboardPage.teachersTimetableSubModule.getText());
+        CommonMethods.assertEquals(assignClassTeacher, dashboardPage.assignClassTeacherSubModule.getText());
+        CommonMethods.assertEquals(promoteStudent, dashboardPage.promoteStudentSubModule.getText());
+        CommonMethods.assertEquals(subjectGroup, dashboardPage.subjectGroupSubModule.getText());
+        CommonMethods.assertEquals(subjects, dashboardPage.subjectsSubModule.getText());
+        CommonMethods.assertEquals(classClass, dashboardPage.classClassSubModule.getText());
+        CommonMethods.assertEquals(sections, dashboardPage.sectionsSubModule.getText());
     }
 
     /**
