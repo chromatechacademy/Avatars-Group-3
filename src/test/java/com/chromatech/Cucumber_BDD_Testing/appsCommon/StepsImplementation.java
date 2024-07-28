@@ -511,7 +511,6 @@ public class StepsImplementation extends PageInitializer {
 
     /**
      * Deletes the test category.
-     * <p>
      * This method deletes the test category by performing the following steps:
      * 1. Sleeps for 1000 milliseconds to allow the page to load.
      * 2. Clicks on the student categories button on the category page.
