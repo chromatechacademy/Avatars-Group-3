@@ -6,10 +6,9 @@ import com.chromatech.Cucumber_BDD_Testing.pages.StudentDetailsPage;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.JavascriptMethods;
+import static com.chromatech.utils.CommonMethods.assertEquals;
 import com.chromatech.utils.WebDriverUtils;
 import org.openqa.selenium.NoSuchElementException;
-
-import static com.chromatech.utils.CommonMethods.assertEquals;
 
 public class StepsImplementation extends PageInitializer {
 
