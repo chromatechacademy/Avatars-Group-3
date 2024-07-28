@@ -6,10 +6,9 @@ import java.nio.file.Paths;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
+import io.cucumber.datatable.DataTable;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -105,7 +104,7 @@ public class CommonMethods extends WebDriverUtils {
         select.selectByIndex(index);
     }
 
-    /***
+    /**
      * Use this method to get first selected option of a select drop down
      *
      * @param dropDown
@@ -117,7 +116,7 @@ public class CommonMethods extends WebDriverUtils {
         return firstSelectedOption.getText();
     }
 
-    /***
+    /**
      * Use this method to return a boolean for drop downs containing multiple
      * selections
      *
@@ -129,7 +128,7 @@ public class CommonMethods extends WebDriverUtils {
         return select.isMultiple();
     }
 
-    /***
+    /**
      * Use this method to retrieve all options of a Select drop down as a
      * List<String>
      *
@@ -152,7 +151,6 @@ public class CommonMethods extends WebDriverUtils {
      *
      * @throws will throw NoAlertExeption if alert is not present.
      */
-
     public static void acceptAlert() {
 
         try {
@@ -168,7 +166,6 @@ public class CommonMethods extends WebDriverUtils {
      *
      * @throws will throw NoAlertExeption if alert is not present.
      */
-
     public static void dismissAlert() {
 
         try {
@@ -184,7 +181,6 @@ public class CommonMethods extends WebDriverUtils {
      *
      * @throws will throw NoAlertExeption if alert is not present.
      */
-
     public static String getAlertText() {
 
         try {
@@ -201,7 +197,6 @@ public class CommonMethods extends WebDriverUtils {
      *
      * @param nameOrId
      */
-
     public static void switchToFrame(String nameOrId) {
 
         try {
@@ -413,7 +408,6 @@ public class CommonMethods extends WebDriverUtils {
      * Use this method to pass an email concatenated with current date and time into
      * an email text box
      */
-
     public static String getEmail() {
         Date date = new Date();
         Timestamp ts = new Timestamp(date.getTime());
@@ -429,7 +423,6 @@ public class CommonMethods extends WebDriverUtils {
      * an email text box and you can pass same value (email+date+time) in another
      * steps.
      */
-
     public static String email = getEmail();
 
     /**
@@ -472,7 +465,6 @@ public class CommonMethods extends WebDriverUtils {
      *
      * @throws InterruptedException
      */
-
     public static void selectCheckboxDisplayed(List<WebElement> checkboxList, String attribute, String value)
             throws InterruptedException {
         for (WebElement checkbox : checkboxList) {
@@ -506,7 +498,7 @@ public class CommonMethods extends WebDriverUtils {
         }
     }
 
-    /***
+    /**
      * Use this method to hover over element
      *
      * @param element
@@ -521,8 +513,7 @@ public class CommonMethods extends WebDriverUtils {
         }
     }
 
-    /*
-     *
+    /**
      * Use below method to assert actual String value with an expected String value
      */
     public static void assertEquals(String actual, String expected) {
@@ -544,7 +535,6 @@ public class CommonMethods extends WebDriverUtils {
     }
 
     /**
-     *
      * Use this method to assert a boolean condition
      *
      * @param flag
@@ -561,7 +551,6 @@ public class CommonMethods extends WebDriverUtils {
      * This method will read a .json file and return it in a String type written in
      * json format - for passing REST payloads
      */
-
     public static String readJson(String fileName) {
 
         String jsonFile = null;
@@ -573,4 +562,58 @@ public class CommonMethods extends WebDriverUtils {
         return jsonFile;
     }
 
+    /**
+     * Compares the data in a DataTable with the content of a table element identified by its tagName.
+     * It verifies if the sections of each class in the table match the expected sections in the DataTable.
+     *
+     * @param expectedDataTable The DataTable containing the expected data.
+     * @param actualTable The WebElement representing the actual table.
+     * @param tagName The tag name used to locate the section elements in the actual table.
+     */
+    public static void dataTableVsTable(DataTable expectedDataTable, WebElement actualTable, String tagName) {
+        List<Map<String, String>> expectedClassesList = expectedDataTable.asMaps(String.class, String.class);
+
+        Map<String, List<String>> expectedSectionsMap = new HashMap<>();
+        for (Map<String, String> row : expectedClassesList) {
+            String className = row.get("Class");
+
+            List<String> sections = new ArrayList<>(Arrays.asList(row.get("Sections").split(", ")));
+            if (expectedSectionsMap.containsKey(className)) {
+                expectedSectionsMap.get(className).addAll(sections);
+            } else {
+                expectedSectionsMap.put(className, sections);
+            }
+        }
+
+        List<WebElement> rows = actualTable.findElements(By.xpath(".//tbody/tr"));
+        Map<String, List<String>> actualClasses = new HashMap<>();
+        for (WebElement row : rows) {
+            List<WebElement> cells = row.findElements(By.xpath(".//td"));
+
+            String className = cells.get(0).getText();
+            List<WebElement> sectionElements = cells.get(1).findElements(By.tagName(tagName));
+            List<String> sections = sectionElements.stream()
+                    .map(WebElement::getText)
+                    .collect(Collectors.toList());
+
+            if (expectedSectionsMap.containsKey(className)) {
+                actualClasses.put(className, sections);
+            }
+        }
+
+        for (Map.Entry<String, List<String>> entry : expectedSectionsMap.entrySet()) {
+            String className = entry.getKey();
+            List<String> expectedSections = entry.getValue();
+
+            Collections.sort(expectedSections);
+
+            List<String> actualSections = actualClasses.get(className);
+            if (actualSections != null) {
+                Collections.sort(actualSections);
+                Assert.assertEquals(actualSections, expectedSections, "Mismatch in sections for class: " + className);
+            } else {
+                System.out.println("No actual sections found for " + className);
+            }
+        }
+    }
 }
