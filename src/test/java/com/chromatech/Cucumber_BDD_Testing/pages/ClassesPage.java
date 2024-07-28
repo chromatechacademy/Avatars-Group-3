@@ -11,12 +11,15 @@ public class ClassesPage {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
 
+    /*CLASS NAME TEXTBOX*/
     @FindBy(xpath = "//input[@id='class']")
     public WebElement classNameTextBox;
 
+    /*MANUAL TESTING DROPDOWN CHECKBOX*/
     @FindBy (xpath ="//input[@value='229']")
-    public WebElement manualTestingDropDownButton;
+    public WebElement manualTestingDropDownCheckBox;
 
+    /*SAVE CLASS BUTTON*/
     @FindBy (xpath = "//button[@type='submit'][normalize-space()='Save']")
     public WebElement saveButton;
 
@@ -29,11 +32,10 @@ public class ClassesPage {
     public WebElement searchClassTextBox;
 
     /*DELETE NEW CLASS BUTTON*/
-    @FindBy(xpath="//tbody/tr[1]/td[3]/a[2]")
+    @FindBy(xpath="(//tbody/tr/td[normalize-space()='SDET'])/following-sibling::td[2]/a[2]")
     public WebElement deleteClassButton;
 
     /* CLASSES TABLE */
     @FindBy(xpath = "//table[@role='grid']")
     public WebElement classesTable;
-
 }
