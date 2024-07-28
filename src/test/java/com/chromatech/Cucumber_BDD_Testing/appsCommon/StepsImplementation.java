@@ -410,8 +410,7 @@ public class StepsImplementation extends PageInitializer {
      * @param sectionOption the section option for filtering students
      * @param admissionNo   the admission number of the student to admit
      */
-    public static void the_user_should_be_able_to_admit_students_with_unique_admission_numbers(String
-                                                                                                       classOption, String sectionOption, String admissionNo) {
+    public static void the_user_should_be_able_to_admit_students_with_unique_admission_numbers(String classOption, String sectionOption, String admissionNo) {
         bulkDeletePage.bulkDeleteSubModule.click();
         CommonMethods.selectDropDownValue(classOption, bulkDeletePage.classDropDown);
         CommonMethods.selectDropDownValue(sectionOption, bulkDeletePage.sectionDropDown);
@@ -443,9 +442,7 @@ public class StepsImplementation extends PageInitializer {
      * @param classClass         The expected text for the class class submodule.
      * @param sections           The expected text for the sections submodule.
      */
-    public static void the_following_submodules_are_displayed(String classTimetable, String
-            teachersTimetable, String assignClassTeacher, String promoteStudent, String subjectGroup, String
-                                                                      subjects, String classClass, String sections) {
+    public static void the_following_submodules_are_displayed(String classTimetable, String teachersTimetable, String assignClassTeacher, String promoteStudent, String subjectGroup, String subjects, String classClass, String sections) {
         assertEquals(classTimetable, dashboardPage.classTimetableSubModule.getText());
         assertEquals(teachersTimetable, dashboardPage.teachersTimetableSubModule.getText());
         assertEquals(assignClassTeacher, dashboardPage.assignClassTeacherSubModule.getText());
@@ -468,8 +465,7 @@ public class StepsImplementation extends PageInitializer {
      * @param homework           The expected text for the homework module.
      * @param reports            The expected text for the reports module.
      */
-    public static void the_following_modules_are_displayed(String studentInformation, String feesCollection, String
-            Income, String expenses, String academics, String humanResource, String homework, String reports) {
+    public static void the_following_modules_are_displayed(String studentInformation, String feesCollection, String Income, String expenses, String academics, String humanResource, String homework, String reports) {
         CommonMethods.assertEquals(dashboardPage.studentInformationModule.getText(), studentInformation);
         CommonMethods.assertEquals(dashboardPage.feesCollectionModule.getText(), feesCollection);
         CommonMethods.assertEquals(dashboardPage.incomeModule.getText(), Income);
@@ -491,9 +487,7 @@ public class StepsImplementation extends PageInitializer {
      * @param studentHouse      The expected text for the student house submodule.
      * @param disableReason     The expected text for the disable reason submodule.
      */
-    public static void the_following_submodules_are_displayed(String studentDetails, String
-            studentAdmission, String disabledStudents, String bulkDelete, String studentCategories, String
-                                                                      studentHouse, String disableReason) {
+    public static void the_following_submodules_are_displayed(String studentDetails, String studentAdmission, String disabledStudents, String bulkDelete, String studentCategories, String studentHouse, String disableReason) {
         assertEquals(studentDetails, dashboardPage.studentDetailsSubModule.getText());
         assertEquals(studentAdmission, dashboardPage.studentAdmissionSubModule.getText());
         assertEquals(disabledStudents, dashboardPage.disabledStudentsSubModule.getText());
