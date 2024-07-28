@@ -497,6 +497,11 @@ public class StepsImplementation extends PageInitializer {
         assertEquals(disableReason, dashboardPage.disableReasonSubModule.getText());
     }
 
+    /**
+     * Deletes the test sibling account with the given admission number and class section.
+     *
+     * @param admissionNo The admission number of the test sibling account.
+     */
     public static void delete_test_sibling_account_with_admission_number_with_class_section(String admissionNo) {
         CommonMethods.sleep(1000);
         JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
