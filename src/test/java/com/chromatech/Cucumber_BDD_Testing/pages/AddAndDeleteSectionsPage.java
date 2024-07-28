@@ -34,5 +34,4 @@ public class AddAndDeleteSectionsPage {
      */
     @FindBy(xpath = "//div[contains(text(),'Record Saved Successfully')]")
     public WebElement successMessage;
-
 }

@@ -6,9 +6,7 @@ import com.chromatech.Cucumber_BDD_Testing.pages.StudentDetailsPage;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.JavascriptMethods;
-
 import static com.chromatech.utils.CommonMethods.assertEquals;
-
 import com.chromatech.utils.WebDriverUtils;
 import org.openqa.selenium.NoSuchElementException;
 
@@ -49,6 +47,9 @@ public class StepsImplementation extends PageInitializer {
         addAndDeleteSectionsPage.clickSaveButton.click();
     }
 
+    /**
+     * This method adds a section and verifies if the section is successfully added.
+     */
     public static void the_section_is_added() {
         CommonMethods.sleep(1000);
         CommonMethods.assertTrue(addAndDeleteSectionsPage.successMessage.isDisplayed());
@@ -495,6 +496,11 @@ public class StepsImplementation extends PageInitializer {
         assertEquals(disableReason, dashboardPage.disableReasonSubModule.getText());
     }
 
+    /**
+     * Deletes the test sibling account with the given admission number and class section.
+     *
+     * @param admissionNo The admission number of the test sibling account.
+     */
     public static void delete_test_sibling_account_with_admission_number_with_class_section(String admissionNo) {
         CommonMethods.sleep(1000);
         JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));

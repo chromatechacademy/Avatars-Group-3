@@ -20,7 +20,7 @@ public class Hooks {
 
     @After
     public void end() throws Exception {
-        WebDriverUtils.tearDown();
         ScreenRecorderUtil.stopRecording();
+        WebDriverUtils.tearDown();
     }
 }
