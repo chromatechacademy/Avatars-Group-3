@@ -1,6 +1,6 @@
 Feature: Ability to add and delete sections
 
-  @Progression @AG3CP-17 @Mustafa
+  @Regression @AG3CP-17 @Mustafa
   Scenario: Add and delete a section
     Given a user is on the Chroma Tech Academy practice site "https://mexil.it/chroma/site/login"
     And user enters username "general@teacher.com" in username text box
