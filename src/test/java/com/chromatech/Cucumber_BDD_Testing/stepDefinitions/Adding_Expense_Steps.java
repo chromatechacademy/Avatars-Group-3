@@ -38,6 +38,7 @@ public class Adding_Expense_Steps extends PageInitializer {
     @Then("user clicks save")
     public void user_clicks_save() {
         addingExpensePage.expenseHeadSavebutton.click();
+        CommonMethods.sleep(1000);
     }
 
     @Then("user clicks add expense sub module text")

@@ -128,7 +128,7 @@ public class DashboardPage {
     /**
      * This variable represents a WebElement for the class timetable sub-module link on the Dashboard page.
      */
-    @FindBy(xpath = "//a[@href='https://mexil.it/chroma/admin/timetable/classreport']")
+    @FindBy(xpath = "//a[normalize-space()='Class Timetable']")
     public WebElement classTimetableSubModule;
 
     /**
@@ -192,7 +192,39 @@ public class DashboardPage {
     @FindBy(xpath = "//a[normalize-space()='Expense Head']")
     public WebElement expenseHeadSubModule;
 
-    /* Represents the WebElement for the Student Details submodule on the Dashboard page */
+    /**
+     * Represents the WebElement for the Student Details submodule on the Dashboard page
+     */
     @FindBy(xpath = "//ul[@class='treeview-menu']//a[normalize-space()='Student Details']")
     public WebElement studentDetailsSubModule;
+
+    /**
+     * This variable represents the WebElement for the "Disabled Students" sub-module on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Disabled Students']")
+    public WebElement disabledStudentsSubModule;
+
+    /**
+     * This variable represents the WebElement for the "Bulk Delete" link in the DashboardPage class.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Bulk Delete']")
+    public WebElement bulkDeleteSubModule;
+
+    /**
+     * WebElement representing the "Student Categories" sub-module in the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Student Categories']")
+    public WebElement studentCategoriesSubModule;
+
+    /**
+     * Represents the WebElement for the "Student House" sub-module on the DashboardPage
+     */
+    @FindBy(xpath = "//a[normalize-space()='Student House']")
+    public WebElement studentHouseSubModule;
+
+    /**
+     * WebElement representing the "Disable Reason" sub module in the DashboardPage.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Disable Reason']")
+    public WebElement disableReasonSubModule;
 }

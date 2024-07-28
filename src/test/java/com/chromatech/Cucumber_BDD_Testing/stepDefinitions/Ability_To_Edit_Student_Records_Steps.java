@@ -2,11 +2,6 @@ package com.chromatech.Cucumber_BDD_Testing.stepDefinitions;
 
 import com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer;
 import com.chromatech.Cucumber_BDD_Testing.appsCommon.StepsImplementation;
-import com.chromatech.Cucumber_BDD_Testing.pages.BulkDeletePage;
-import com.chromatech.Cucumber_BDD_Testing.pages.StudentDetailsPage;
-import com.chromatech.utils.CommonMethods;
-import com.chromatech.utils.CucumberLogUtils;
-import com.chromatech.utils.JavascriptMethods;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -20,34 +15,21 @@ public class Ability_To_Edit_Student_Records_Steps extends PageInitializer {
 
     @When("a CTSMS user opens a student record with admission number {string}")
     public void a_ctsms_user_opens_a_student_record_with_admission_number(String admissionNo) {
-        dashboardPage.studentDetailsSubModule.click();
-        studentDetailsPage.searchByKeywordTextBox.sendKeys(admissionNo);
-        studentDetailsPage.searchByKeywordButton.click();
-        JavascriptMethods.scrollIntoView(StudentDetailsPage.dynamicAdmissionRecordNameLocator(admissionNo));
-        StudentDetailsPage.dynamicAdmissionRecordNameLocator(admissionNo).click();
+        StepsImplementation.a_ctsms_user_opens_a_student_record_with_admission_number(admissionNo);
     }
 
     @And("makes and saves changes to the student information with {string}, and {string}")
     public void makes_and_saves_changes_to_the_student_information_with(String email, String guardianPhoneNumber) {
-        studentEditPage.editButton.click();
-        studentEditPage.emailTextBox.sendKeys(email);
-        studentEditPage.guardianPhoneNumberTextBox.sendKeys(guardianPhoneNumber);
-        CommonMethods.sleep(1000);
-        studentEditPage.saveButton.click();
+        StepsImplementation.makes_and_saves_changes_to_the_student_information_with(email, guardianPhoneNumber);
     }
 
     @Then("the user should see message {string}")
     public void the_user_should_see_message(String expectedSaveMessage) {
-        CucumberLogUtils.logScreenShot();
-        CommonMethods.assertEquals(studentDetailsPage.successfulRecordUpdateAlert.getText(), expectedSaveMessage);
+        StepsImplementation.the_user_should_see_message(expectedSaveMessage);
     }
 
     @Then("user navigate to test students account {string}, section {string}, and admission number {string}")
     public void user_navigate_to_test_students_account(String classOption, String sectionOption, String admissionNo) {
-        bulkDeletePage.bulkDeleteSubModule.click();
-        CommonMethods.selectDropDownValue(classOption, bulkDeletePage.classDropDown);
-        CommonMethods.selectDropDownValue(sectionOption, bulkDeletePage.sectionDropDown);
-        bulkDeletePage.searchButton.click();
-        JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
+        StepsImplementation.user_navigate_to_test_students_account(classOption, sectionOption, admissionNo);
     }
 }
