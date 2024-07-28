@@ -10,7 +10,7 @@ public class Ability_To_Edit_Student_Records_Steps extends PageInitializer {
 
     @And("fills out all required fields with admission number {string}, class {string}, section {string}, first name {string}, gender {string}, date of birth {string}, guardian name {string}, guardian phone number {string}")
     public void fills_out_all_required_fields_with_admission_number_class_section_first_name_gender_date_of_birth_guardian_name_guardian_phone_number(String admissionNo, String classOption, String sectionOption, String firstName, String genderOption, String dateOfBirth, String guardianName, String guardianPhoneNumber) {
-        stepsImplementation.fills_out_all_required_fields_with_admission_number_class_section_first_name_gender_date_of_birth_guardian_name_guardian_phone_number(admissionNo, classOption, sectionOption, firstName, genderOption, dateOfBirth, guardianName, guardianPhoneNumber);
+        StepsImplementation.fills_out_all_required_fields_with_admission_number_class_section_first_name_gender_date_of_birth_guardian_name_guardian_phone_number(admissionNo, classOption, sectionOption, firstName, genderOption, dateOfBirth, guardianName, guardianPhoneNumber);
     }
 
     @When("a CTSMS user opens a student record with admission number {string}")
@@ -20,13 +20,6 @@ public class Ability_To_Edit_Student_Records_Steps extends PageInitializer {
 
     @And("makes and saves changes to the student information with {string}, and {string}")
     public void makes_and_saves_changes_to_the_student_information_with(String email, String guardianPhoneNumber) {
-        studentEditPage.editButton.click();
-        studentEditPage.emailTextBox.sendKeys(email);
-        studentEditPage.guardianPhoneNumberTextBox.sendKeys(guardianPhoneNumber);
-        CommonMethods.sleep(100);
-        CommonMethods.sleep(1000);
-        studentEditPage.saveButton.click();
-
         StepsImplementation.makes_and_saves_changes_to_the_student_information_with(email, guardianPhoneNumber);
     }
 

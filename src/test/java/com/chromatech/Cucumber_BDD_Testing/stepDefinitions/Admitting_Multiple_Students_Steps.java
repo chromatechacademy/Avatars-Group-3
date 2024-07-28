@@ -21,21 +21,6 @@ public class Admitting_Multiple_Students_Steps extends PageInitializer {
 
     @And("creates a test category {string}")
     public void creates_a_test_category(String categoryName) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-        CommonMethods.sleep(100);
->>>>>>> 8d38ba8949de9122e036399004a9f20c0f37d9d3
-        CommonMethods.sleep(1000);
-        categoryPage.studentCategories.click();
-        categoryPage.categoryTextBox.sendKeys(categoryName);
-        categoryPage.categorySaveButton.click();
-        CucumberLogUtils.logScreenShot();
-        CommonMethods.assertEquals(categoryPage.categorySelenium.getText(), categoryName);
-=======
-=======
->>>>>>> 92774d7e95853af40d64e2c0b71fe21051bddbc8
         StepsImplementation.creates_a_test_category(categoryName);
     }
 
@@ -51,22 +36,6 @@ public class Admitting_Multiple_Students_Steps extends PageInitializer {
 
     @And("adds a sibling")
     public void adds_a_sibling() {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-        CommonMethods.sleep(100);
->>>>>>> 8d38ba8949de9122e036399004a9f20c0f37d9d3
-        CommonMethods.sleep(1000);
-        studentAdmissionPage.addSiblingButton.click();
-        CommonMethods.waitForVisibility(studentAdmissionPage.siblingClassDropDown);
-        CommonMethods.selectDropDownValue("SDET", studentAdmissionPage.siblingClassDropDown);
-        CommonMethods.selectDropDownValue("Cucumber Fundamentals", studentAdmissionPage.siblingSectionDropDown);
-        CommonMethods.selectDropDownValue("Group Three Sibling ()", studentAdmissionPage.siblingStudentIDDropDown);
-        studentAdmissionPage.addSiblingInformationButton.click();
-=======
-=======
->>>>>>> 92774d7e95853af40d64e2c0b71fe21051bddbc8
         StepsImplementation.adds_a_sibling();
     }
 
@@ -117,42 +86,11 @@ public class Admitting_Multiple_Students_Steps extends PageInitializer {
 
     @And("delete test sibling account with admission number {string}")
     public void delete_test_sibling_account_with_admission_number_with_class_section(String admissionNo) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-        CommonMethods.sleep(100);
->>>>>>> 8d38ba8949de9122e036399004a9f20c0f37d9d3
-        CommonMethods.sleep(1000);
-        JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
-        CucumberLogUtils.logScreenShot();
-        CommonMethods.assertEquals(BulkDeletePage.dynamicRecordNameLocator(admissionNo).getText(), admissionNo);
-        BulkDeletePage.dynamicRecordLocateDeleter(admissionNo).click();
-        bulkDeletePage.deleteButton.click();
-        CommonMethods.acceptAlert();
-=======
-=======
->>>>>>> 92774d7e95853af40d64e2c0b71fe21051bddbc8
         StepsImplementation.delete_test_sibling_account_with_admission_number_with_class_section(admissionNo);
     }
 
     @Then("delete the test category")
     public void delete_the_test_category() {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-        CommonMethods.sleep(100);
-        CommonMethods.waitForClickability(categoryPage.studentCategories);
->>>>>>> 8d38ba8949de9122e036399004a9f20c0f37d9d3
-        CommonMethods.sleep(1000);
-        categoryPage.studentCategories.click();
-        CommonMethods.waitForClickability(categoryPage.groupSelenium);
-        categoryPage.groupSelenium.click();
-        CommonMethods.acceptAlert();
-=======
-=======
->>>>>>> 92774d7e95853af40d64e2c0b71fe21051bddbc8
         StepsImplementation.delete_the_test_category();
     }
 }
