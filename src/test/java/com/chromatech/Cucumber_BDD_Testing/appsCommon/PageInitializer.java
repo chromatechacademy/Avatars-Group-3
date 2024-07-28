@@ -19,6 +19,7 @@ public class PageInitializer {
     public static CategoryPage categoryPage;
     public static AddExpenseHeadAndRemovePage addExpenseAndRemovePage;
     public static AddingExpensePage addingExpensePage;
+    public static  AbilityToDisableStudentRecordPage abilityToDisableStudentRecordPage;
 
     public static void initializeAllPages() {
         studentAdmissionPage = new StudentAdmissionPage();
@@ -31,5 +32,6 @@ public class PageInitializer {
         categoryPage = new CategoryPage();
         addExpenseAndRemovePage = new AddExpenseHeadAndRemovePage();
         addingExpensePage = new AddingExpensePage();
+        abilityToDisableStudentRecordPage = new AbilityToDisableStudentRecordPage();
     }
 }

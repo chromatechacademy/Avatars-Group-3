@@ -8,6 +8,7 @@ import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.JavascriptMethods;
 
 import static com.chromatech.utils.CommonMethods.assertEquals;
+import static com.chromatech.utils.WebDriverUtils.driver;
 
 import com.chromatech.utils.WebDriverUtils;
 import org.openqa.selenium.NoSuchElementException;
@@ -584,5 +585,157 @@ public class StepsImplementation extends PageInitializer {
     public static void delete_the_expense_list_is_displayed_name() {
         addingExpensePage.deleteExpense.click();
         CommonMethods.acceptAlert();
+    }
+
+    /**
+     * Clicks the 'Student Information' tab in the dashboard.
+     * This method navigates to the 'Student Admission' sub-module.
+     */
+    public static void user_clicks_the_student_information_tab() {
+        dashboardPage.studentInformationModule.click();
+        dashboardPage.studentAdmissionSubModule.click();
+    }
+
+    /**
+     * Checks if the user is on the student admission page.
+     *
+     * @param expectedUrl the expected URL of the student admission page
+     */
+    public static void user_is_on_the_student_admission_page(String expectedUrl) {
+        String actualUrl = driver.getCurrentUrl();
+        CommonMethods.assertEquals(expectedUrl, actualUrl);
+    }
+
+    /**
+     *
+     * @param admissionNo
+     * @param rollNo
+     * @param Class
+     * @param Section
+     * @param firstname
+     * @param lastName
+     * @param gender
+     * @param dateOfBirth
+     * @param category
+     * @param guardianName
+     * @param guardianPhone
+     */
+
+    public static void the_user_fills_out_all_fields_in_admission_page(String admissionNo, String rollNo, String Class, String Section, String firstname, String lastName, String gender, String dateOfBirth, String category, String guardianName, String guardianPhone) {
+        studentAdmissionPage.admissionNoTextBox.sendKeys(admissionNo);
+        studentAdmissionPage.rollNumberTextBox.sendKeys(rollNo);
+        CommonMethods.selectDropDownValue(Class, studentAdmissionPage.classDropDown);
+        CommonMethods.selectDropDownValue(Section, studentAdmissionPage.sectionDropDown);
+        studentAdmissionPage.firstNameTextBox.sendKeys(firstname);
+        studentAdmissionPage.lastNameTextBox.sendKeys(lastName);
+        CommonMethods.selectDropDownValue(gender, studentAdmissionPage.genderDropDown);
+        JavascriptMethods.selectDateByJS(studentAdmissionPage.dateOfBirthTextBox, dateOfBirth);
+        CommonMethods.selectDropDownValue(category, studentAdmissionPage.categoryDropDown);
+        JavascriptMethods.scrollIntoView(studentAdmissionPage.categoryDropDown);
+        studentAdmissionPage.motherRadioButton.click();
+        studentAdmissionPage.guardianNameTextBox.sendKeys(guardianName);
+        studentAdmissionPage.guardianPhoneTextBox.sendKeys(guardianPhone);
+    }
+
+    /**
+     * Opens a student record in the student details module based on the provided admission number.
+     * This method performs the following steps:
+     * - Clicks on the student details submodule in the dashboard page.
+     * - Enters the provided admission number in the search textbox.
+     * - Clicks on the search button.
+     * - Clicks on the student result in the ability to disable student record page.
+     *
+     * @param admissionNo the admission number of the student
+     */
+
+    public static void user_opens_a_student_record_in_student_details_with_admission_number(String admissionNo) {
+        dashboardPage.studentDetailsSubModule.click();
+        studentDetailsPage.searchByKeywordTextBox.sendKeys(admissionNo);
+        studentDetailsPage.searchByKeywordButton.click();
+        abilityToDisableStudentRecordPage.studentResult.click();
+    }
+
+    /**
+     * This method is used to simulate a user clicking on the "Disable Thumbs Down" button.
+     * By clicking this button, the user can disable the option for other users to give thumbs down on a particular record.
+     * This method performs the necessary actions to click the button and accept any alert that may appear.
+     *
+     * @return void
+     *
+     */
+    public static void user_clicks_the_disable_thumbs_down() {
+        abilityToDisableStudentRecordPage.disableSign.click();
+        CommonMethods.acceptAlert();
+    }
+
+    /**
+     * Directs the user into a pop-up page, where they can select a reason and enter a comment, then save it.
+     *
+     * @param commentTest The comment to be entered by the user.
+     */
+    public static void user_is_directed_into_a_pop_up_page_and_select_the_reason_and_enters_comment_and_save(String commentTest) {
+        CommonMethods.sleep(5000);
+        CommonMethods.waitForVisibility(abilityToDisableStudentRecordPage.reasonDropDown);
+        CommonMethods.sleep(5000);
+        CommonMethods.selectDropDownValue("TestDisableReason", abilityToDisableStudentRecordPage.reasonDropDown);
+        CommonMethods.sendKeys(abilityToDisableStudentRecordPage.comment, commentTest);
+        abilityToDisableStudentRecordPage.reasonSaveButton.click();
+    }
+
+    /**
+     * This method represents the action of a user clicking on the disabled students module,
+     * entering the admission number of a student, and performing certain actions.
+     *
+     * @param admissionNo the admission number of the student to be searched
+     */
+    public static void user_clicks_disabled_students_module_and_enters(String admissionNo) {
+        abilityToDisableStudentRecordPage.disabledStudentSubModule.click();
+        abilityToDisableStudentRecordPage.searchByKeyword.sendKeys(admissionNo);
+        CommonMethods.sleep(100);
+        abilityToDisableStudentRecordPage.searchButton.click();
+        CommonMethods.sleep(100);
+        abilityToDisableStudentRecordPage.resultName.click();
+        CommonMethods.sleep(100);
+        abilityToDisableStudentRecordPage.enableThumbsUp.click();
+        CommonMethods.acceptAlert();
+    }
+
+    /**
+     * This method represents the user action of clicking on the "Bulk Delete" button in order
+     * to delete a student record. It performs the following steps:
+     *
+     * 1. Clicks on the bulk delete submodule.
+     * 2. Selects the desired class from the class drop-down.
+     * 3. Selects the desired section from the section drop-down.
+     * 4. Clicks on the search button.
+     * 5. Selects the student record by clicking on the admission number delete checkbox.
+     * 6. Scrolls the page to the selected student record.
+     * 7. Clicks on the delete button.
+     * 8. Waits for a short period of time.
+     * 9. Accepts any alert window that may appear.
+     */
+    public static void user_clicks_bulk_delete_to_delete_a_student_record() {
+        bulkDeletePage.bulkDeleteSubModule.click();
+        CommonMethods.selectDropDownValue("SDET", bulkDeletePage.classDropDown);
+        CommonMethods.selectDropDownValue("Cucumber Fundamentals", bulkDeletePage.sectionDropDown);
+        bulkDeletePage.searchButton.click();
+        abilityToDisableStudentRecordPage.admissionNoDelete.click();
+        JavascriptMethods.scrollIntoView(abilityToDisableStudentRecordPage.admissionNoDelete);
+        bulkDeletePage.deleteButton.click();
+        CommonMethods.sleep(100);
+        CommonMethods.acceptAlert();
+    }
+
+    /**
+     * This method simulates a user clicking on the save button on the student admission page.
+     * It performs two actions:
+     *   1. It calls the click method from the CommonMethods class, passing in the save button element.
+     *      This ensures that any required pre-click actions are performed on the save button.
+     *   2. It directly clicks on the save button element on the student admission page.
+     *      This triggers the save operation on the page.
+     */
+    public static void user_clicks_save_button() {
+        CommonMethods.click(studentAdmissionPage.saveButton);
+        studentAdmissionPage.saveButton.click();
     }
 }
