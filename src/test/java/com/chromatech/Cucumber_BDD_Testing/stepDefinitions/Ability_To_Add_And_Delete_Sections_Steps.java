@@ -24,7 +24,7 @@ public class Ability_To_Add_And_Delete_Sections_Steps extends PageInitializer {
     }
 
     @And("the user can also delete the section")
-    public static void the_user_can_also_delete_the_section() {
+    public void the_user_can_also_delete_the_section() {
         StepsImplementation.the_user_can_also_delete_the_section();
     }
 }
