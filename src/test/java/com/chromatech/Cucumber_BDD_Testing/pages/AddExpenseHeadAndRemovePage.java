@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class AddExpenseHeadAndRemovePage extends PageInitializer {
 
-    public AddExpenseHeadAndRemovePage () {
+    public AddExpenseHeadAndRemovePage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
 

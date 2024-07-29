@@ -48,7 +48,7 @@ public class Adding_Expense_Steps extends PageInitializer {
 
     @And("user navigates on the add expense page site {string}")
     public void user_navigates_on_the_add_expense_page_site(String expectedUrl) {
-      StepsImplementation.user_navigates_on_the_add_expense_page_site(expectedUrl);
+        StepsImplementation.user_navigates_on_the_add_expense_page_site(expectedUrl);
     }
 
     @And("user select dropdown {string}")

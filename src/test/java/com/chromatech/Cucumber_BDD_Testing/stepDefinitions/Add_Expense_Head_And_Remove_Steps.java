@@ -11,12 +11,13 @@ import io.cucumber.java.en.When;
 
 import static com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer.addExpenseAndRemovePage;
 
-public class Add_Expense_Head_And_Remove_Steps extends PageInitializer{
+public class Add_Expense_Head_And_Remove_Steps extends PageInitializer {
 
     @When("user enters the expense head in expense head page {string}")
     public void user_enters_the_expense_head_in_expense_head_page(String expenseHead) {
         addingExpensePage.expenseHeadBox.sendKeys(expenseHead);
     }
+
     @When("user enters {string} in the description")
     public void user_enters_in_the_description(String description) {
         addingExpensePage.expenseHeadDescriptionBox.sendKeys(description);

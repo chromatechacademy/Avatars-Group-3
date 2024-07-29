@@ -15,12 +15,12 @@ public class Ability_To_Disable_Student_Record_Steps extends PageInitializer {
 
     @When("user is on the student admission page {string}")
     public void user_is_on_the_student_admission_page(String expectedUrl) {
-       StepsImplementation.user_is_on_the_student_admission_page(expectedUrl);
+        StepsImplementation.user_is_on_the_student_admission_page(expectedUrl);
     }
 
     @When("the user fills out all fields in admission page {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
     public void the_user_fills_out_all_fields_in_admission_page(String admissionNo, String rollNo, String Class, String Section, String firstname, String lastName, String gender, String dateOfBirth, String category, String guardianName, String guardianPhone) {
-        StepsImplementation.the_user_fills_out_all_fields_in_admission_page(admissionNo, rollNo, Class,Section, firstname, lastName, gender, dateOfBirth, category,  guardianName, guardianPhone);
+        StepsImplementation.the_user_fills_out_all_fields_in_admission_page(admissionNo, rollNo, Class, Section, firstname, lastName, gender, dateOfBirth, category, guardianName, guardianPhone);
     }
 
     @When("user clicks save button")
@@ -35,17 +35,17 @@ public class Ability_To_Disable_Student_Record_Steps extends PageInitializer {
 
     @When("user opens a student record in student details with admission number {string}")
     public void user_opens_a_student_record_in_student_details_with_admission_number(String admissionNo) {
-       StepsImplementation.user_opens_a_student_record_in_student_details_with_admission_number(admissionNo);
+        StepsImplementation.user_opens_a_student_record_in_student_details_with_admission_number(admissionNo);
     }
 
     @When("user clicks the disable thumbs down")
     public void user_clicks_the_disable_thumbs_down() {
-       StepsImplementation.user_clicks_the_disable_thumbs_down();
+        StepsImplementation.user_clicks_the_disable_thumbs_down();
     }
 
     @When("user is directed into a pop up page and select the reason and enters comment {string} and save")
     public void user_is_directed_into_a_pop_up_page_and_select_the_reason_and_enters_comment_and_save(String commentTest) {
-      StepsImplementation.user_is_directed_into_a_pop_up_page_and_select_the_reason_and_enters_comment_and_save(commentTest);
+        StepsImplementation.user_is_directed_into_a_pop_up_page_and_select_the_reason_and_enters_comment_and_save(commentTest);
     }
 
     @When("user clicks disabled students module and enters {string}")

@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import static com.chromatech.utils.WebDriverUtils.driver;
 
 public class AbilityToDisableStudentRecordPage extends PageInitializer {
+
     public AbilityToDisableStudentRecordPage() {
         PageFactory.initElements(driver, this);
     }

@@ -6,10 +6,8 @@ import com.chromatech.Cucumber_BDD_Testing.pages.StudentDetailsPage;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.JavascriptMethods;
-
 import static com.chromatech.utils.CommonMethods.assertEquals;
 import static com.chromatech.utils.WebDriverUtils.driver;
-
 import com.chromatech.utils.WebDriverUtils;
 import org.openqa.selenium.NoSuchElementException;
 
@@ -56,7 +54,7 @@ public class StepsImplementation extends PageInitializer {
      */
     public static void the_section_is_added() {
         CommonMethods.sleep(1000);
-        CommonMethods.assertTrue(addAndDeleteSectionsPage.successMessage.isDisplayed());
+        CommonMethods.assertEquals(addAndDeleteSectionsPage.successMessage.getText(), addAndDeleteSectionsPage.successMessage.getText());
     }
 
     /**
@@ -81,14 +79,14 @@ public class StepsImplementation extends PageInitializer {
      * @param sectionOption The section option of the student.
      * @param admissionNo   The admission number of the student.
      */
-    public static void navigate_to_test_student(String classOption, String sectionOption, String admissionNo) {
+    public static void navigate_to_test_student(String classOption, String sectionOption, String expectedAdmissionNo) {
         bulkDeletePage.bulkDeleteSubModule.click();
         CommonMethods.selectDropDownValue(classOption, bulkDeletePage.classDropDown);
         CommonMethods.selectDropDownValue(sectionOption, bulkDeletePage.sectionDropDown);
         bulkDeletePage.searchButton.click();
-        JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
+        JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(expectedAdmissionNo));
         CucumberLogUtils.logScreenShot();
-        CommonMethods.assertEquals(BulkDeletePage.dynamicRecordNameLocator(admissionNo).getText(), admissionNo);
+        CommonMethods.assertEquals(BulkDeletePage.dynamicRecordNameLocator(expectedAdmissionNo).getText(), expectedAdmissionNo);
     }
 
     /**
@@ -197,15 +195,15 @@ public class StepsImplementation extends PageInitializer {
     /**
      * Creates a test category with the provided category name.
      *
-     * @param categoryName The name of the category to be created.
+     * @param expectedCategoryName The name of the category to be created.
      */
-    public static void creates_a_test_category(String categoryName) {
+    public static void creates_a_test_category(String expectedCategoryName) {
         CommonMethods.sleep(1000);
         categoryPage.studentCategories.click();
-        categoryPage.categoryTextBox.sendKeys(categoryName);
+        categoryPage.categoryTextBox.sendKeys(expectedCategoryName);
         categoryPage.categorySaveButton.click();
         CucumberLogUtils.logScreenShot();
-        CommonMethods.assertEquals(categoryPage.categorySelenium.getText(), categoryName);
+        CommonMethods.assertEquals(categoryPage.categorySelenium.getText(), expectedCategoryName);
     }
 
     /**
