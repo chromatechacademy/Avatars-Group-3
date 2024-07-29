@@ -1,24 +1,15 @@
 package com.chromatech.Cucumber_BDD_Testing.stepDefinitions;
 
-import com.chromatech.Cucumber_BDD_Testing.pages.ClassesPage;
-import com.chromatech.Cucumber_BDD_Testing.pages.DashboardPage;
-import com.chromatech.utils.CommonMethods;
-import com.chromatech.utils.CucumberLogUtils;
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer;
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.StepsImplementation;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Ability_To_Add_And_Delete_Classes_Steps {
-
-    DashboardPage dashboardPage = new DashboardPage();
-    ClassesPage classesPage = new ClassesPage();
+public class Ability_To_Add_And_Delete_Classes_Steps extends PageInitializer {
 
     @When("verifies that there is no class with the name {string} in the Class submodule")
     public void verifies_that_there_is_no_class_with_the_name_in_the_class_submodule(String className) {
-        dashboardPage.academicsModule.click();
-        dashboardPage.classClassSubModule.click();
-        classesPage.searchClassTextBox.sendKeys(className);
-        CucumberLogUtils.logScreenShot();
-        CommonMethods.assertTrue(classesPage.emptyTableRow.isDisplayed());
+        StepsImplementation.verifies_that_there_is_no_class_with_the_name_in_the_class_submodule(className);
     }
 
     @When("navigates to the Classes Page and adds the class {string}")
@@ -38,7 +29,6 @@ public class Ability_To_Add_And_Delete_Classes_Steps {
 
     @Then("clicks Delete button")
     public void clicks_delete_button() {
-        classesPage.deleteClassButton.click();
-        CommonMethods.acceptAlert();
+        StepsImplementation.clicks_delete_button();
     }
 }

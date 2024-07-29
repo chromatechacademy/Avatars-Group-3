@@ -553,4 +553,107 @@ public class StepsImplementation extends PageInitializer {
         disabledStudentPage.enableButton.click();
         CommonMethods.acceptAlert();
     }
+
+    /**
+     * Checks whether the user is directed to the CTSMS dashboard page.
+     *
+     * @param expectedUrl the expected URL of the dashboard page
+     */
+    public static void user_is_directed_to_the_ctsms_dashboard_page(String expectedUrl) {
+        String actualUrl = WebDriverUtils.driver.getCurrentUrl();
+        CommonMethods.assertEquals(expectedUrl, actualUrl);
+    }
+
+    /**
+     * Verifies that there is no class with the specified name in the "class" submodule of the dashboard page.
+     *
+     * @param className The name of the class to search for.
+     */
+    public static void verifies_that_there_is_no_class_with_the_name_in_the_class_submodule(String className) {
+        dashboardPage.academicsModule.click();
+        dashboardPage.classClassSubModule.click();
+        classesPage.searchClassTextBox.sendKeys(className);
+        CucumberLogUtils.logScreenShot();
+        CommonMethods.assertTrue(classesPage.emptyTableRow.isDisplayed());
+    }
+
+    /**
+     * This method is used to click on the delete button.
+     * After clicking the button, it accepts any alert that pops up.
+     */
+    public static void clicks_delete_button() {
+        classesPage.deleteClassButton.click();
+        CommonMethods.acceptAlert();
+    }
+
+    /**
+     * Takes a screenshot and asserts that the error message is displayed to the user.
+     */
+    public static void the_user_should_see_an_error_message() {
+        CucumberLogUtils.logScreenShot();
+        CommonMethods.assertTrue(loginPage.errorMessage.isDisplayed());
+    }
+
+    /**
+     * Checks whether the following income submodules are displayed on the dashboard page: addIncome, searchIncome, and incomeHead.
+     *
+     * @param addIncome   The expected text for the addIncome submodule.
+     * @param searchIncome  The expected text for the searchIncome submodule.
+     * @param incomeHead  The expected text for the incomeHead submodule.
+     */
+    public static void the_following_income_submodules_are_displayed(String addIncome, String searchIncome, String incomeHead) {
+        CucumberLogUtils.logScreenShot();
+        CommonMethods.assertEquals(dashboardPage.addIncomeSubModule.getText(), addIncome);
+        CommonMethods.assertEquals(dashboardPage.searchIncomeSubModule.getText(), searchIncome);
+        CommonMethods.assertEquals(dashboardPage.incomeHeadSubModule.getText(), incomeHead);
+    }
+
+    /**
+     * Verifies that the following fees collection submodules are displayed:
+     * - Collect Fees
+     * - Search Fees Payment
+     * - Search Due Fees
+     * - Fees Master
+     * - Fees Group
+     * - Fees Type
+     * - Fees Discount
+     * - Fees Carry Forward
+     * - Fees Reminder
+     *
+     * @param collectFees         The expected text for the Collect Fees submodule.
+     * @param searchFeesPayment   The expected text for the Search Fees Payment submodule.
+     * @param searchDueFees       The expected text for the Search Due Fees submodule.
+     * @param feesMaster          The expected text for the Fees Master submodule.
+     * @param feesGroup           The expected text for the Fees Group submodule.
+     * @param feesType            The expected text for the Fees Type submodule.
+     * @param feesDiscount        The expected text for the Fees Discount submodule.
+     * @param feesCarryForward    The expected text for the Fees Carry Forward submodule.
+     * @param feesReminder        The expected text for the Fees Reminder submodule.
+     */
+    public static void the_following_fees_collection_submodules_are_displayed(String collectFees, String searchFeesPayment, String searchDueFees, String feesMaster, String feesGroup, String feesType, String feesDiscount, String feesCarryForward, String feesReminder) {
+        CucumberLogUtils.logScreenShot();
+        CommonMethods.assertEquals(dashboardPage.collectFeesSubModule.getText(), collectFees);
+        CommonMethods.assertEquals(dashboardPage.searchFeesPaymentSubModule.getText(), searchFeesPayment);
+        CommonMethods.assertEquals(dashboardPage.searchDueFeesSubModule.getText(), searchDueFees);
+        CommonMethods.assertEquals(dashboardPage.feesMasterSubModule.getText(), feesMaster);
+        CommonMethods.assertEquals(dashboardPage.feesGroupSubModule.getText(), feesGroup);
+        CommonMethods.assertEquals(dashboardPage.feesTypeSubModule.getText(), feesType);
+        CommonMethods.assertEquals(dashboardPage.feesDiscountSubModule.getText(), feesDiscount);
+        CommonMethods.assertEquals(dashboardPage.feesCarryForwardSubModule.getText(), feesCarryForward);
+        CommonMethods.assertEquals(dashboardPage.feesReminderSubModule.getText(), feesReminder);
+    }
+
+    /**
+     * Verifies that the following submodules are displayed on the dashboard page.
+     *
+     * @param addExpense The expected text for the add expense submodule.
+     * @param searchExpense The expected text for the search expense submodule.
+     * @param expenseHead The expected text for the expense head submodule.
+     */
+    public static void the_following_submodules_are_displayed(String addExpense, String searchExpense, String expenseHead) {
+        CucumberLogUtils.logScreenShot();
+        CommonMethods.assertEquals(dashboardPage.addExpenseSubModule.getText(), addExpense);
+        CommonMethods.assertEquals(dashboardPage.searchExpenseSubModule.getText(), searchExpense);
+        CommonMethods.assertEquals(dashboardPage.expenseHeadSubModule.getText(), expenseHead);
+    }
 }
