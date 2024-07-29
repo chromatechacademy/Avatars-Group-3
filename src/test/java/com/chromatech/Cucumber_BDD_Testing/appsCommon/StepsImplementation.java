@@ -6,7 +6,6 @@ import com.chromatech.Cucumber_BDD_Testing.pages.StudentDetailsPage;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.JavascriptMethods;
-import static com.chromatech.utils.CommonMethods.assertEquals;
 import com.chromatech.utils.WebDriverUtils;
 import org.openqa.selenium.NoSuchElementException;
 
@@ -432,24 +431,25 @@ public class StepsImplementation extends PageInitializer {
     /**
      * Asserts that the following submodules are displayed on the dashboard page.
      *
-     * @param classTimetable     The expected text for the class timetable submodule.
-     * @param teachersTimetable  The expected text for the teachers timetable submodule.
-     * @param assignClassTeacher The expected text for the assign class teacher submodule.
-     * @param promoteStudent     The expected text for the promote student submodule.
-     * @param subjectGroup       The expected text for the subject group submodule.
-     * @param subjects           The expected text for the subjects submodule.
-     * @param classClass         The expected text for the class class submodule.
-     * @param sections           The expected text for the sections submodule.
+     * @param expectedClassTimetable     The expected text for the class timetable submodule.
+     * @param expectedTeachersTimetable  The expected text for the teachers timetable submodule.
+     * @param expectedAssignClassTeacher The expected text for the assign class teacher submodule.
+     * @param expectedPromoteStudent     The expected text for the promote student submodule.
+     * @param expectedSubjectGroup       The expected text for the subject group submodule.
+     * @param expectedSubjects           The expected text for the subjects submodule.
+     * @param expectedClassClass         The expected text for the class class submodule.
+     * @param expectedSections           The expected text for the sections submodule.
      */
-    public static void the_following_submodules_are_displayed(String classTimetable, String teachersTimetable, String assignClassTeacher, String promoteStudent, String subjectGroup, String subjects, String classClass, String sections) {
-        CommonMethods.assertEquals(classTimetable, dashboardPage.classTimetableSubModule.getText());
-        CommonMethods.assertEquals(teachersTimetable, dashboardPage.teachersTimetableSubModule.getText());
-        CommonMethods.assertEquals(assignClassTeacher, dashboardPage.assignClassTeacherSubModule.getText());
-        CommonMethods.assertEquals(promoteStudent, dashboardPage.promoteStudentSubModule.getText());
-        CommonMethods.assertEquals(subjectGroup, dashboardPage.subjectGroupSubModule.getText());
-        CommonMethods.assertEquals(subjects, dashboardPage.subjectsSubModule.getText());
-        CommonMethods.assertEquals(classClass, dashboardPage.classClassSubModule.getText());
-        CommonMethods.assertEquals(sections, dashboardPage.sectionsSubModule.getText());
+    public static void the_following_submodules_are_displayed(String expectedClassTimetable, String expectedTeachersTimetable, String expectedAssignClassTeacher, String expectedPromoteStudent, String expectedSubjectGroup, String expectedSubjects, String expectedClassClass, String expectedSections) {
+        CucumberLogUtils.logScreenShot();
+        CommonMethods.assertEquals(expectedClassTimetable, dashboardPage.classTimetableSubModule.getText());
+        CommonMethods.assertEquals(expectedTeachersTimetable, dashboardPage.teachersTimetableSubModule.getText());
+        CommonMethods.assertEquals(expectedAssignClassTeacher, dashboardPage.assignClassTeacherSubModule.getText());
+        CommonMethods.assertEquals(expectedPromoteStudent, dashboardPage.promoteStudentSubModule.getText());
+        CommonMethods.assertEquals(expectedSubjectGroup, dashboardPage.subjectGroupSubModule.getText());
+        CommonMethods.assertEquals(expectedSubjects, dashboardPage.subjectsSubModule.getText());
+        CommonMethods.assertEquals(expectedClassClass, dashboardPage.classClassSubModule.getText());
+        CommonMethods.assertEquals(expectedSections, dashboardPage.sectionsSubModule.getText());
     }
 
     /**
@@ -465,6 +465,7 @@ public class StepsImplementation extends PageInitializer {
      * @param reports            The expected text for the reports module.
      */
     public static void the_following_modules_are_displayed(String studentInformation, String feesCollection, String Income, String expenses, String academics, String humanResource, String homework, String reports) {
+        CucumberLogUtils.logScreenShot();
         CommonMethods.assertEquals(dashboardPage.studentInformationModule.getText(), studentInformation);
         CommonMethods.assertEquals(dashboardPage.feesCollectionModule.getText(), feesCollection);
         CommonMethods.assertEquals(dashboardPage.incomeModule.getText(), Income);
@@ -478,22 +479,23 @@ public class StepsImplementation extends PageInitializer {
     /**
      * Asserts that the following submodules are displayed on the dashboard page.
      *
-     * @param studentDetails    The expected text for the student details submodule.
-     * @param studentAdmission  The expected text for the student admission submodule.
-     * @param disabledStudents  The expected text for the disabled students submodule.
-     * @param bulkDelete        The expected text for the bulk delete submodule.
-     * @param studentCategories The expected text for the student categories submodule.
-     * @param studentHouse      The expected text for the student house submodule.
-     * @param disableReason     The expected text for the disable reason submodule.
+     * @param expectedStudentDetails    The expected text for the student details submodule.
+     * @param expectedStudentAdmission  The expected text for the student admission submodule.
+     * @param expectedDisabledStudents  The expected text for the disabled students submodule.
+     * @param expectedBulkDelete        The expected text for the bulk delete submodule.
+     * @param expectedStudentCategories The expected text for the student categories submodule.
+     * @param expectedStudentHouse      The expected text for the student house submodule.
+     * @param expectedDisableReason     The expected text for the disable reason submodule.
      */
-    public static void the_following_submodules_are_displayed(String studentDetails, String studentAdmission, String disabledStudents, String bulkDelete, String studentCategories, String studentHouse, String disableReason) {
-        assertEquals(studentDetails, dashboardPage.studentDetailsSubModule.getText());
-        assertEquals(studentAdmission, dashboardPage.studentAdmissionSubModule.getText());
-        assertEquals(disabledStudents, dashboardPage.disabledStudentsSubModule.getText());
-        assertEquals(bulkDelete, dashboardPage.bulkDeleteSubModule.getText());
-        assertEquals(studentCategories, dashboardPage.studentCategoriesSubModule.getText());
-        assertEquals(studentHouse, dashboardPage.studentHouseSubModule.getText());
-        assertEquals(disableReason, dashboardPage.disableReasonSubModule.getText());
+    public static void the_following_submodules_are_displayed(String expectedStudentDetails, String expectedStudentAdmission, String expectedDisabledStudents, String expectedBulkDelete, String expectedStudentCategories, String expectedStudentHouse, String expectedDisableReason) {
+        CucumberLogUtils.logScreenShot();
+        CommonMethods.assertEquals(expectedStudentDetails, dashboardPage.studentDetailsSubModule.getText());
+        CommonMethods.assertEquals(expectedStudentAdmission, dashboardPage.studentAdmissionSubModule.getText());
+        CommonMethods.assertEquals(expectedDisabledStudents, dashboardPage.disabledStudentsSubModule.getText());
+        CommonMethods.assertEquals(expectedBulkDelete, dashboardPage.bulkDeleteSubModule.getText());
+        CommonMethods.assertEquals(expectedStudentCategories, dashboardPage.studentCategoriesSubModule.getText());
+        CommonMethods.assertEquals(expectedStudentHouse, dashboardPage.studentHouseSubModule.getText());
+        CommonMethods.assertEquals(expectedDisableReason, dashboardPage.disableReasonSubModule.getText());
     }
 
     /**
