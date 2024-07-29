@@ -128,7 +128,7 @@ public class DashboardPage {
     /**
      * This variable represents a WebElement for the class timetable sub-module link on the Dashboard page.
      */
-    @FindBy(xpath = "//a[@href='https://mexil.it/chroma/admin/timetable/classreport']")
+    @FindBy(xpath = "//a[normalize-space()='Class Timetable']")
     public WebElement classTimetableSubModule;
 
     /**
@@ -192,21 +192,11 @@ public class DashboardPage {
     @FindBy(xpath = "//a[normalize-space()='Expense Head']")
     public WebElement expenseHeadSubModule;
 
-    /* Represents the WebElement for the Student Details submodule on the Dashboard page */
+    /**
+     * Represents the WebElement for the Student Details submodule on the Dashboard page
+     */
     @FindBy(xpath = "//ul[@class='treeview-menu']//a[normalize-space()='Student Details']")
     public WebElement studentDetailsSubModule;
-
-    /**
-     * Represents the WebElement for the Search Income on the Dashboard page.
-     */
-    @FindBy(xpath = "//a[normalize-space()='Search Income']")
-    public WebElement searchIncomeSubModule;
-
-    /**
-     * Represents the WebElement for the Income Head on the Dashboard page.
-     */
-    @FindBy(xpath = "//a[normalize-space()='Income Head']")
-    public WebElement incomeHeadSubModule;
 
     /**
      * This variable represents the WebElement for the "Disabled Students" sub-module on the Dashboard page.
@@ -297,4 +287,16 @@ public class DashboardPage {
      */
     @FindBy(xpath = "//li[contains(@class,'active')]//li[1]/a")
     public WebElement addIncomeSubModule;
+
+    /**
+     * Represents the WebElement for the Search Income on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Search Income']")
+    public WebElement searchIncomeSubModule;
+
+    /**
+     * Represents the WebElement for the Income Head on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Income Head']")
+    public WebElement incomeHeadSubModule;
 }
