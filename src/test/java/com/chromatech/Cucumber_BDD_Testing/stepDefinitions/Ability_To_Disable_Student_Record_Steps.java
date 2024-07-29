@@ -7,7 +7,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 
 public class Ability_To_Disable_Student_Record_Steps extends PageInitializer {
-
     @And("user clicks the student information tab")
     public void user_clicks_the_student_information_tab() {
         StepsImplementation.user_clicks_the_student_information_tab();
@@ -34,8 +33,8 @@ public class Ability_To_Disable_Student_Record_Steps extends PageInitializer {
     }
 
     @When("user opens a student record in student details with admission number {string}")
-    public void user_opens_a_student_record_in_student_details_with_admission_number(String admissionNo) {
-        StepsImplementation.user_opens_a_student_record_in_student_details_with_admission_number(admissionNo);
+    public void user_opens_a_student_record_in_student_details_with_admission_number(String expectedAdmissionNo) {
+        StepsImplementation.user_opens_a_student_record_in_student_details_with_admission_number(expectedAdmissionNo);
     }
 
     @When("user clicks the disable thumbs down")
