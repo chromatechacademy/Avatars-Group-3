@@ -527,4 +527,30 @@ public class StepsImplementation extends PageInitializer {
         categoryPage.groupSelenium.click();
         CommonMethods.acceptAlert();
     }
+
+    /**
+     * Clicks on Disable button
+     * 1.Clicks disable button to disable student
+     * 2.Accepts alert dialog box that appears
+     * 3.Clicks on reason dropdown
+     * 4.Selects "Very Loud" from dropdown when text is visible
+     * 5.Clicks on submit button
+     */
+    public static void clicks_on_disable_student_button() {
+        disabledStudentPage.disableButton.click();
+        CommonMethods.acceptAlert();
+        disabledStudentPage.reasonDropdown.click();
+        CommonMethods.selectDropDownValue("Very Loud", disabledStudentPage.reasonDropdown);
+        disabledStudentPage.submitButton.click();
+    }
+
+    /**
+     * Clicks on Enable button
+     * 1.Clicks on enable button to enable student
+     * 2.Accepts alert dialog box that appears
+     */
+    public static void a_user_enables_the_student_record() {
+        disabledStudentPage.enableButton.click();
+        CommonMethods.acceptAlert();
+    }
 }
