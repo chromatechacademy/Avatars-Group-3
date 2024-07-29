@@ -227,4 +227,76 @@ public class DashboardPage {
      */
     @FindBy(xpath = "//a[normalize-space()='Disable Reason']")
     public WebElement disableReasonSubModule;
+
+    /**
+     * Represents the WebElement for the Collect Fees on the Dashboard page.
+     */
+    @FindBy(xpath = "//ul[@class='treeview-menu menu-open']//a[normalize-space()='Collect Fees']")
+    public WebElement collectFeesSubModule;
+
+    /**
+     * Represents the WebElement for the Search Fees Payment on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Search Fees Payment']")
+    public WebElement searchFeesPaymentSubModule;
+
+    /**
+     * Represents the WebElement for the Search Due Fees on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Search Due Fees']")
+    public WebElement searchDueFeesSubModule;
+
+    /**
+     * Represents the WebElement for the Fees Master on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Fees Master']")
+    public WebElement feesMasterSubModule;
+
+    /**
+     * Represents the WebElement for the Fees Group on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Fees Group']")
+    public WebElement feesGroupSubModule;
+
+    /**
+     * Represents the WebElement for the Fees Type on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Fees Type']")
+    public WebElement feesTypeSubModule;
+
+    /**
+     * Represents the WebElement for the Fees Discount on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Fees Discount']")
+    public WebElement feesDiscountSubModule;
+
+    /**
+     * Represents the WebElement for the Fees Carry Forward on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Fees Carry Forward']")
+    public WebElement feesCarryForwardSubModule;
+
+    /**
+     * Represents the WebElement for the Fees Reminder on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Fees Reminder']")
+    public WebElement feesReminderSubModule;
+
+    /**
+     * Represents the WebElement for the Add Income on the Dashboard page.
+     */
+    @FindBy(xpath = "//li[contains(@class,'active')]//li[1]/a")
+    public WebElement addIncomeSubModule;
+
+    /**
+     * Represents the WebElement for the Search Income on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Search Income']")
+    public WebElement searchIncomeSubModule;
+
+    /**
+     * Represents the WebElement for the Income Head on the Dashboard page.
+     */
+    @FindBy(xpath = "//a[normalize-space()='Income Head']")
+    public WebElement incomeHeadSubModule;
 }

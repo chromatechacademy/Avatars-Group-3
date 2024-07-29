@@ -1,15 +1,11 @@
 package com.chromatech.Cucumber_BDD_Testing.stepDefinitions;
 
-import com.chromatech.Cucumber_BDD_Testing.pages.DashboardPage;
-import com.chromatech.Cucumber_BDD_Testing.pages.LoginPage;
-import com.chromatech.utils.CommonMethods;
-import com.chromatech.utils.CucumberLogUtils;
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer;
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.StepsImplementation;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Expenses_Module_Steps {
-
-    DashboardPage dashboardPage = new DashboardPage();
+public class Expenses_Module_Steps extends PageInitializer {
 
     @When("the user clicks on the Expenses module")
     public void the_user_clicks_on_the_expenses_module() {
@@ -18,9 +14,6 @@ public class Expenses_Module_Steps {
 
     @Then("the following submodules are displayed {string}, {string}, {string}")
     public void the_following_submodules_are_displayed(String addExpense, String searchExpense, String expenseHead) {
-        CucumberLogUtils.logScreenShot();
-        CommonMethods.assertEquals(dashboardPage.addExpenseSubModule.getText(), addExpense);
-        CommonMethods.assertEquals(dashboardPage.searchExpenseSubModule.getText(), searchExpense);
-        CommonMethods.assertEquals(dashboardPage.expenseHeadSubModule.getText(), expenseHead);
+        StepsImplementation.the_following_submodules_are_displayed(addExpense, searchExpense, expenseHead);
     }
 }
