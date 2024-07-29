@@ -1,6 +1,6 @@
 Feature: Adding and deleting student categories
 
-  @Progression @Nahun @AG3CP-20
+  @Regression @Nahun @AG3CP-20
   Scenario Outline: Adding and deleting student categories
     Given a user is on the Chroma Tech Academy practice site "https://mexil.it/chroma/site/login"
     And user enters username "general@teacher.com" in username text box
