@@ -9,13 +9,8 @@ import java.time.Duration;
 import java.util.*;
 import java.util.stream.Collectors;
 import io.cucumber.datatable.DataTable;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.NoSuchFrameException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -615,5 +610,29 @@ public class CommonMethods extends WebDriverUtils {
                 System.out.println("No actual sections found for " + className);
             }
         }
+    }
+
+    /**
+     * Gets the dimensions of the browser window.
+     *
+     * @return The dimensions of the browser window.
+     */
+    public static Dimension getBrowserDimensions() {
+        // Get dimension of the browser
+        Dimension dim = driver.manage().window().getSize();
+
+        return dim;
+    }
+
+    /**
+     * Gets the position of the browser window.
+     *
+     * @return The position of the browser window as a Point object.
+     */
+    public static Point getBrowserPosition() {
+        // Get position of the browser window
+        Point position = driver.manage().window().getPosition();
+
+        return position;
     }
 }
