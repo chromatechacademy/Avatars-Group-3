@@ -1,21 +1,18 @@
 package com.chromatech.Cucumber_BDD_Testing.stepDefinitions;
 
-import com.chromatech.Cucumber_BDD_Testing.pages.AddingExpensePage;
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer;
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.StepsImplementation;
 import com.chromatech.utils.CommonMethods;
-import com.chromatech.utils.WebDriverUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Adding_Expense_Steps {
-
-    AddingExpensePage addingExpensePage = new AddingExpensePage();
+public class Adding_Expense_Steps extends PageInitializer {
 
     @Given("the user is in the dashboard page {string}")
     public void the_user_is_in_the_dashboard_page(String expectedUrl) {
-        String actualUrl = WebDriverUtils.driver.getCurrentUrl();
-        CommonMethods.assertEquals(actualUrl, expectedUrl);
+        StepsImplementation.the_user_is_in_the_dashboard_page(expectedUrl);
     }
 
     @When("user clicks the expense module text")
@@ -41,7 +38,6 @@ public class Adding_Expense_Steps {
     @Then("user clicks save")
     public void user_clicks_save() {
         addingExpensePage.expenseHeadSavebutton.click();
-        CommonMethods.sleep(100);
         CommonMethods.sleep(1000);
     }
 
@@ -52,8 +48,7 @@ public class Adding_Expense_Steps {
 
     @And("user navigates on the add expense page site {string}")
     public void user_navigates_on_the_add_expense_page_site(String expectedUrl) {
-        String actualUrl = WebDriverUtils.driver.getCurrentUrl();
-        CommonMethods.assertEquals(actualUrl, expectedUrl);
+        StepsImplementation.user_navigates_on_the_add_expense_page_site(expectedUrl);
     }
 
     @And("user select dropdown {string}")
@@ -93,8 +88,7 @@ public class Adding_Expense_Steps {
 
     @And("the user is the directed to the CTMS search page {string}")
     public void the_user_is_the_directed_to_the_ctms_search_page(String expectedUrl) {
-        String actualUrl = WebDriverUtils.driver.getCurrentUrl();
-        CommonMethods.assertEquals(actualUrl, expectedUrl);
+        StepsImplementation.the_user_is_the_directed_to_the_ctms_search_page(expectedUrl);
     }
 
     @And("user user enters the name in the expense list {string}")
@@ -119,7 +113,6 @@ public class Adding_Expense_Steps {
 
     @Then("delete the expense list is displayed name")
     public void delete_the_expense_list_is_displayed_name() {
-        addingExpensePage.deleteExpense.click();
-        CommonMethods.acceptAlert();
+        StepsImplementation.delete_the_expense_list_is_displayed_name();
     }
 }

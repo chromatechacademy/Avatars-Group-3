@@ -7,8 +7,10 @@ import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.JavascriptMethods;
 import static com.chromatech.utils.CommonMethods.assertEquals;
+import static com.chromatech.utils.WebDriverUtils.driver;
 import com.chromatech.utils.WebDriverUtils;
 import org.openqa.selenium.NoSuchElementException;
+
 
 public class StepsImplementation extends PageInitializer {
 
@@ -52,7 +54,7 @@ public class StepsImplementation extends PageInitializer {
      */
     public static void the_section_is_added() {
         CommonMethods.sleep(1000);
-        CommonMethods.assertTrue(addAndDeleteSectionsPage.successMessage.isDisplayed());
+        CommonMethods.assertEquals(addAndDeleteSectionsPage.successMessage.getText(), addAndDeleteSectionsPage.successMessage.getText());
     }
 
     /**
@@ -75,16 +77,16 @@ public class StepsImplementation extends PageInitializer {
      *
      * @param classOption   The class option of the student.
      * @param sectionOption The section option of the student.
-     * @param admissionNo   The admission number of the student.
+     * @param expectedAdmissionNo   The admission number of the student.
      */
-    public static void navigate_to_test_student(String classOption, String sectionOption, String admissionNo) {
+    public static void navigate_to_test_student(String classOption, String sectionOption, String expectedAdmissionNo) {
         bulkDeletePage.bulkDeleteSubModule.click();
         CommonMethods.selectDropDownValue(classOption, bulkDeletePage.classDropDown);
         CommonMethods.selectDropDownValue(sectionOption, bulkDeletePage.sectionDropDown);
         bulkDeletePage.searchButton.click();
-        JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(admissionNo));
+        JavascriptMethods.scrollIntoView(BulkDeletePage.dynamicRecordLocateDeleter(expectedAdmissionNo));
         CucumberLogUtils.logScreenShot();
-        CommonMethods.assertEquals(BulkDeletePage.dynamicRecordNameLocator(admissionNo).getText(), admissionNo);
+        CommonMethods.assertEquals(BulkDeletePage.dynamicRecordNameLocator(expectedAdmissionNo).getText(), expectedAdmissionNo);
     }
 
     /**
@@ -193,15 +195,15 @@ public class StepsImplementation extends PageInitializer {
     /**
      * Creates a test category with the provided category name.
      *
-     * @param categoryName The name of the category to be created.
+     * @param expectedCategoryName The name of the category to be created.
      */
-    public static void creates_a_test_category(String categoryName) {
+    public static void creates_a_test_category(String expectedCategoryName) {
         CommonMethods.sleep(1000);
         categoryPage.studentCategories.click();
-        categoryPage.categoryTextBox.sendKeys(categoryName);
+        categoryPage.categoryTextBox.sendKeys(expectedCategoryName);
         categoryPage.categorySaveButton.click();
         CucumberLogUtils.logScreenShot();
-        CommonMethods.assertEquals(categoryPage.categorySelenium.getText(), categoryName);
+        CommonMethods.assertEquals(categoryPage.categorySelenium.getText(), expectedCategoryName);
     }
 
     /**
@@ -529,6 +531,214 @@ public class StepsImplementation extends PageInitializer {
     }
 
     /**
+<<<<<<< HEAD
+     * This method verifies if the expense head is displayed in the list and is able to be deleted.
+     * It first scrolls the page to bring the expense head into view,
+     * then checks if the expense head is displayed in the list using the isElementDisplayed method from the CommonMethods class.
+     * Next, it clicks on the delete sign to remove the expense head from the list.
+     * Finally, it accepts the alert to confirm deletion.
+     */
+    public static void expense_head_is_displayed_in_the_list_and_able_to_delete_it() {
+        JavascriptMethods.scrollIntoView(addExpenseAndRemovePage.expenseHeadResult);
+        CommonMethods.isElementDisplayed(addExpenseAndRemovePage.expenseHeadResult);
+        addExpenseAndRemovePage.deleteSign.click();
+        CommonMethods.sleep(100);
+    }
+
+    /**
+     * Navigates the user to the add expense page on the site and verifies the expected URL.
+     *
+     * @param expectedUrl The expected URL of the add expense page.
+     */
+    public static void user_navigates_on_the_add_expense_page_site(String expectedUrl) {
+        String actualUrl = WebDriverUtils.driver.getCurrentUrl();
+        CommonMethods.assertEquals(actualUrl, expectedUrl);
+    }
+
+    /**
+     * Verifies if the user is in the dashboard page by comparing the current URL with the expected URL.
+     *
+     * @param expectedUrl The expected URL of the dashboard page.
+     */
+    public static void the_user_is_in_the_dashboard_page(String expectedUrl) {
+        String actualUrl = WebDriverUtils.driver.getCurrentUrl();
+        CommonMethods.assertEquals(actualUrl, expectedUrl);
+    }
+
+    /**
+     * Verifies if the user is directed to the CTMS search page by comparing the current URL with the expected URL.
+     *
+     * @param expectedUrl The expected URL of the CTMS search page.
+     */
+    public static void the_user_is_the_directed_to_the_ctms_search_page(String expectedUrl) {
+        String actualUrl = WebDriverUtils.driver.getCurrentUrl();
+        CommonMethods.assertEquals(actualUrl, expectedUrl);
+
+    }
+
+    /**
+     * Deletes the expense from the list with the given name.
+     * It clicks on the delete button for the expense in the list,
+     * then accepts the alert to confirm the deletion.
+     */
+    public static void delete_the_expense_list_is_displayed_name() {
+        addingExpensePage.deleteExpense.click();
+        CommonMethods.acceptAlert();
+    }
+
+    /**
+     * Clicks the 'Student Information' tab in the dashboard.
+     * This method navigates to the 'Student Admission' sub-module.
+     */
+    public static void user_clicks_the_student_information_tab() {
+        dashboardPage.studentInformationModule.click();
+        dashboardPage.studentAdmissionSubModule.click();
+    }
+
+    /**
+     * Checks if the user is on the student admission page.
+     *
+     * @param expectedUrl the expected URL of the student admission page
+     */
+    public static void user_is_on_the_student_admission_page(String expectedUrl) {
+        String actualUrl = driver.getCurrentUrl();
+        CommonMethods.assertEquals(expectedUrl, actualUrl);
+    }
+
+    /**
+     *
+     * @param admissionNo
+     * @param rollNo
+     * @param Class
+     * @param Section
+     * @param firstname
+     * @param lastName
+     * @param gender
+     * @param dateOfBirth
+     * @param category
+     * @param guardianName
+     * @param guardianPhone
+     */
+
+    public static void the_user_fills_out_all_fields_in_admission_page(String expectedAdmissionNo, String rollNo, String Class, String Section, String firstname, String lastName, String gender, String dateOfBirth, String category, String guardianName, String guardianPhone) {
+        studentAdmissionPage.admissionNoTextBox.sendKeys(expectedAdmissionNo);
+        studentAdmissionPage.rollNumberTextBox.sendKeys(rollNo);
+        CommonMethods.selectDropDownValue(Class, studentAdmissionPage.classDropDown);
+        CommonMethods.selectDropDownValue(Section, studentAdmissionPage.sectionDropDown);
+        studentAdmissionPage.firstNameTextBox.sendKeys(firstname);
+        studentAdmissionPage.lastNameTextBox.sendKeys(lastName);
+        CommonMethods.selectDropDownValue(gender, studentAdmissionPage.genderDropDown);
+        JavascriptMethods.selectDateByJS(studentAdmissionPage.dateOfBirthTextBox, dateOfBirth);
+        CommonMethods.selectDropDownValue(category, studentAdmissionPage.categoryDropDown);
+        JavascriptMethods.scrollIntoView(studentAdmissionPage.categoryDropDown);
+        studentAdmissionPage.motherRadioButton.click();
+        studentAdmissionPage.guardianNameTextBox.sendKeys(guardianName);
+        studentAdmissionPage.guardianPhoneTextBox.sendKeys(guardianPhone);
+    }
+
+    /**
+     * Opens a student record in the student details module based on the provided admission number.
+     * This method performs the following steps:
+     * - Clicks on the student details submodule in the dashboard page.
+     * - Enters the provided admission number in the search textbox.
+     * - Clicks on the search button.
+     * - Clicks on the student result in the ability to disable student record page.
+     *
+     * @param admissionNo the admission number of the student
+     */
+
+    public static void user_opens_a_student_record_in_student_details_with_admission_number(String expectedAdmissionNo) {
+        dashboardPage.studentDetailsSubModule.click();
+        studentDetailsPage.searchByKeywordTextBox.sendKeys(expectedAdmissionNo);
+        studentDetailsPage.searchByKeywordButton.click();
+        abilityToDisableStudentRecordPage.studentResult.click();
+    }
+
+    /**
+     * This method is used to simulate a user clicking on the "Disable Thumbs Down" button.
+     * By clicking this button, the user can disable the option for other users to give thumbs down on a particular record.
+     * This method performs the necessary actions to click the button and accept any alert that may appear.
+     *
+     * @return void
+     *
+     */
+    public static void user_clicks_the_disable_thumbs_down() {
+        abilityToDisableStudentRecordPage.disableSign.click();
+        CommonMethods.acceptAlert();
+    }
+
+    /**
+     * Directs the user into a pop-up page, where they can select a reason and enter a comment, then save it.
+     *
+     * @param commentTest The comment to be entered by the user.
+     */
+    public static void user_is_directed_into_a_pop_up_page_and_select_the_reason_and_enters_comment_and_save(String commentTest) {
+        CommonMethods.sleep(5000);
+        CommonMethods.waitForVisibility(abilityToDisableStudentRecordPage.reasonDropDown);
+        CommonMethods.sleep(5000);
+        CommonMethods.selectDropDownValue("TestDisableReason", abilityToDisableStudentRecordPage.reasonDropDown);
+        CommonMethods.sendKeys(abilityToDisableStudentRecordPage.comment, commentTest);
+        abilityToDisableStudentRecordPage.reasonSaveButton.click();
+    }
+
+    /**
+     * This method represents the action of a user clicking on the disabled students module,
+     * entering the admission number of a student, and performing certain actions.
+     *
+     * @param expectedAdmissionNo the admission number of the student to be searched
+     */
+    public static void user_clicks_disabled_students_module_and_enters(String expectedAdmissionNo) {
+        abilityToDisableStudentRecordPage.disabledStudentSubModule.click();
+        abilityToDisableStudentRecordPage.searchByKeyword.sendKeys(expectedAdmissionNo);
+        CommonMethods.sleep(100);
+        abilityToDisableStudentRecordPage.searchButton.click();
+        CommonMethods.sleep(100);
+        abilityToDisableStudentRecordPage.resultName.click();
+        CommonMethods.sleep(100);
+        abilityToDisableStudentRecordPage.enableThumbsUp.click();
+        CommonMethods.acceptAlert();
+    }
+
+    /**
+     * This method represents the user action of clicking on the "Bulk Delete" button in order
+     * to delete a student record. It performs the following steps:
+     *
+     * 1. Clicks on the bulk delete submodule.
+     * 2. Selects the desired class from the class drop-down.
+     * 3. Selects the desired section from the section drop-down.
+     * 4. Clicks on the search button.
+     * 5. Selects the student record by clicking on the admission number delete checkbox.
+     * 6. Scrolls the page to the selected student record.
+     * 7. Clicks on the delete button.
+     * 8. Waits for a short period of time.
+     * 9. Accepts any alert window that may appear.
+     */
+    public static void user_clicks_bulk_delete_to_delete_a_student_record() {
+        bulkDeletePage.bulkDeleteSubModule.click();
+        CommonMethods.selectDropDownValue("SDET", bulkDeletePage.classDropDown);
+        CommonMethods.selectDropDownValue("Cucumber Fundamentals", bulkDeletePage.sectionDropDown);
+        bulkDeletePage.searchButton.click();
+        abilityToDisableStudentRecordPage.admissionNoDelete.click();
+        JavascriptMethods.scrollIntoView(abilityToDisableStudentRecordPage.admissionNoDelete);
+        bulkDeletePage.deleteButton.click();
+        CommonMethods.sleep(100);
+        CommonMethods.acceptAlert();
+    }
+
+    /**
+     * This method simulates a user clicking on the save button on the student admission page.
+     * It performs two actions:
+     *   1. It calls the click method from the CommonMethods class, passing in the save button element.
+     *      This ensures that any required pre-click actions are performed on the save button.
+     *   2. It directly clicks on the save button element on the student admission page.
+     *      This triggers the save operation on the page.
+     */
+    public static void user_clicks_save_button() {
+        CommonMethods.click(studentAdmissionPage.saveButton);
+        studentAdmissionPage.saveButton.click();
+    }
+}
+=======
      * Clicks on Disable button
      * 1.Clicks disable button to disable student
      * 2.Accepts alert dialog box that appears
@@ -554,3 +764,4 @@ public class StepsImplementation extends PageInitializer {
         CommonMethods.acceptAlert();
     }
 }
+>>>>>>> 0c28ff93cc982321022a9a78e909a4071f17c18b
