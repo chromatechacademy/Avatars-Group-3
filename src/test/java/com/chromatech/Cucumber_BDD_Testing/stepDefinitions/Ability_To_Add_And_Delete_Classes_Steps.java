@@ -4,8 +4,8 @@ import com.chromatech.Cucumber_BDD_Testing.pages.ClassesPage;
 import com.chromatech.Cucumber_BDD_Testing.pages.DashboardPage;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.testng.Assert;
 
 public class Ability_To_Add_And_Delete_Classes_Steps {
 
@@ -18,7 +18,7 @@ public class Ability_To_Add_And_Delete_Classes_Steps {
         dashboardPage.classClassSubModule.click();
         classesPage.searchClassTextBox.sendKeys(className);
         CucumberLogUtils.logScreenShot();
-        Assert.assertTrue(classesPage.emptyTableRow.isDisplayed());
+        CommonMethods.assertTrue(classesPage.emptyTableRow.isDisplayed());
     }
 
     @When("navigates to the Classes Page and adds the class {string}")
@@ -36,7 +36,7 @@ public class Ability_To_Add_And_Delete_Classes_Steps {
         classesPage.saveButton.click();
     }
 
-    @When("clicks Delete button")
+    @Then("clicks Delete button")
     public void clicks_delete_button() {
         classesPage.deleteClassButton.click();
         CommonMethods.acceptAlert();

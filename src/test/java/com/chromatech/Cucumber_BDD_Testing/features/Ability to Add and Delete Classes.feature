@@ -11,4 +11,4 @@ Feature: Ability to Add and Delete Classes
     And navigates to the Classes Page and adds the class "Testing111"
     And chooses Manual Testing in the checkbox
     And clicks Save button
-    And clicks Delete button
+    Then clicks Delete button
