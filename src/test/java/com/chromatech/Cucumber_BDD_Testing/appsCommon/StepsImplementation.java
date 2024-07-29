@@ -553,4 +553,8 @@ public class StepsImplementation extends PageInitializer {
         disabledStudentPage.enableButton.click();
         CommonMethods.acceptAlert();
     }
+
+    public static void Ability_To_Add_And_Delete_Student_Categories_Steps() {
+        dashboardPage.studentInformationModule.click();
+    }
 }
