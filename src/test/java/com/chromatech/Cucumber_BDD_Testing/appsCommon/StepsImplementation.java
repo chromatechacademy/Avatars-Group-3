@@ -619,8 +619,8 @@ public class StepsImplementation extends PageInitializer {
      * @param guardianPhone
      */
 
-    public static void the_user_fills_out_all_fields_in_admission_page(String admissionNo, String rollNo, String Class, String Section, String firstname, String lastName, String gender, String dateOfBirth, String category, String guardianName, String guardianPhone) {
-        studentAdmissionPage.admissionNoTextBox.sendKeys(admissionNo);
+    public static void the_user_fills_out_all_fields_in_admission_page(String expectedAdmissionNo, String rollNo, String Class, String Section, String firstname, String lastName, String gender, String dateOfBirth, String category, String guardianName, String guardianPhone) {
+        studentAdmissionPage.admissionNoTextBox.sendKeys(expectedAdmissionNo);
         studentAdmissionPage.rollNumberTextBox.sendKeys(rollNo);
         CommonMethods.selectDropDownValue(Class, studentAdmissionPage.classDropDown);
         CommonMethods.selectDropDownValue(Section, studentAdmissionPage.sectionDropDown);
@@ -646,9 +646,9 @@ public class StepsImplementation extends PageInitializer {
      * @param admissionNo the admission number of the student
      */
 
-    public static void user_opens_a_student_record_in_student_details_with_admission_number(String admissionNo) {
+    public static void user_opens_a_student_record_in_student_details_with_admission_number(String expectedAdmissionNo) {
         dashboardPage.studentDetailsSubModule.click();
-        studentDetailsPage.searchByKeywordTextBox.sendKeys(admissionNo);
+        studentDetailsPage.searchByKeywordTextBox.sendKeys(expectedAdmissionNo);
         studentDetailsPage.searchByKeywordButton.click();
         abilityToDisableStudentRecordPage.studentResult.click();
     }
@@ -684,11 +684,11 @@ public class StepsImplementation extends PageInitializer {
      * This method represents the action of a user clicking on the disabled students module,
      * entering the admission number of a student, and performing certain actions.
      *
-     * @param admissionNo the admission number of the student to be searched
+     * @param expectedAdmissionNo the admission number of the student to be searched
      */
-    public static void user_clicks_disabled_students_module_and_enters(String admissionNo) {
+    public static void user_clicks_disabled_students_module_and_enters(String expectedAdmissionNo) {
         abilityToDisableStudentRecordPage.disabledStudentSubModule.click();
-        abilityToDisableStudentRecordPage.searchByKeyword.sendKeys(admissionNo);
+        abilityToDisableStudentRecordPage.searchByKeyword.sendKeys(expectedAdmissionNo);
         CommonMethods.sleep(100);
         abilityToDisableStudentRecordPage.searchButton.click();
         CommonMethods.sleep(100);
