@@ -77,7 +77,7 @@ public class StepsImplementation extends PageInitializer {
      *
      * @param classOption   The class option of the student.
      * @param sectionOption The section option of the student.
-     * @param admissionNo   The admission number of the student.
+     * @param expectedAdmissionNo   The admission number of the student.
      */
     public static void navigate_to_test_student(String classOption, String sectionOption, String expectedAdmissionNo) {
         bulkDeletePage.bulkDeleteSubModule.click();
