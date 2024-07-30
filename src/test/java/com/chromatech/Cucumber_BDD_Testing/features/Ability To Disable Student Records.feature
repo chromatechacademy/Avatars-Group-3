@@ -1,6 +1,6 @@
 Feature: Ability To Disable Student Records
 
-  @Regression @AG3CP-26 @Joyce
+  @Progression @AG3CP-26 @Joyce
   Scenario Outline: Ability To Disable Student Records
     Given a user is on the Chroma Tech Academy practice site "https://mexil.it/chroma/site/login"
     And user enters username "general@teacher.com" in username text box
@@ -19,5 +19,5 @@ Feature: Ability To Disable Student Records
     And user clicks bulk delete to delete a student record
     Examples:
       | Expected Admission No | Roll Number | Class | Section               | First Name | Last Name | Gender | Date of Birth | Category | Guardian Name | Guardian Phone |
-      | 243162823 | 32145611234    | SDET  | Cucumber Fundamentals | Shawn      | David     | Male   | 01/27/1990    | Selenium | Jill Ward     | 703098765      |
+      | 243162823940 | 32145611234    | SDET  | Cucumber Fundamentals | Shawn      | David     | Male   | 01/27/1990    | Selenium | Jill Ward     | 703098765      |
 

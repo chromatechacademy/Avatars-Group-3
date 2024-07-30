@@ -6,14 +6,10 @@ import com.chromatech.Cucumber_BDD_Testing.pages.StudentDetailsPage;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.JavascriptMethods;
-
-import static com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer.studentAdmissionPage;
 import static com.chromatech.utils.CommonMethods.assertEquals;
 import static com.chromatech.utils.WebDriverUtils.driver;
-
 import com.chromatech.utils.WebDriverUtils;
 import org.openqa.selenium.NoSuchElementException;
-
 
 public class StepsImplementation extends PageInitializer {
 
@@ -559,6 +555,10 @@ public class StepsImplementation extends PageInitializer {
         CommonMethods.acceptAlert();
     }
 
+    public static void Ability_To_Add_And_Delete_Student_Categories_Steps() {
+        dashboardPage.studentInformationModule.click();
+    }
+
     /**
      * This method verifies if the expense head is displayed in the list and is able to be deleted.
      * It first scrolls the page to bring the expense head into view,
@@ -764,4 +764,3 @@ public class StepsImplementation extends PageInitializer {
         studentAdmissionPage.saveButton.click();
     }
 }
-

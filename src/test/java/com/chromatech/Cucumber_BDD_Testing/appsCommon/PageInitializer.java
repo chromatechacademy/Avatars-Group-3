@@ -17,13 +17,10 @@ public class PageInitializer {
     public static AddAndDeleteSectionsPage addAndDeleteSectionsPage;
     public static ClassesPage classesPage;
     public static CategoryPage categoryPage;
-<<<<<<< HEAD
+    public static DisabledStudentPage disabledStudentPage;
     public static AddExpenseHeadAndRemovePage addExpenseAndRemovePage;
     public static AddingExpensePage addingExpensePage;
     public static  AbilityToDisableStudentRecordPage abilityToDisableStudentRecordPage;
-=======
-    public static DisabledStudentPage disabledStudentPage;
->>>>>>> 0c28ff93cc982321022a9a78e909a4071f17c18b
 
     public static void initializeAllPages() {
         studentAdmissionPage = new StudentAdmissionPage();
@@ -34,12 +31,9 @@ public class PageInitializer {
         addAndDeleteSectionsPage = new AddAndDeleteSectionsPage();
         classesPage = new ClassesPage();
         categoryPage = new CategoryPage();
-<<<<<<< HEAD
+        disabledStudentPage = new DisabledStudentPage();
         addExpenseAndRemovePage = new AddExpenseHeadAndRemovePage();
         addingExpensePage = new AddingExpensePage();
         abilityToDisableStudentRecordPage = new AbilityToDisableStudentRecordPage();
-=======
-        disabledStudentPage = new DisabledStudentPage();
->>>>>>> 0c28ff93cc982321022a9a78e909a4071f17c18b
     }
 }
