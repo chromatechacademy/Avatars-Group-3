@@ -6,8 +6,11 @@ import com.chromatech.Cucumber_BDD_Testing.pages.StudentDetailsPage;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.JavascriptMethods;
+
+import static com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer.studentAdmissionPage;
 import static com.chromatech.utils.CommonMethods.assertEquals;
 import static com.chromatech.utils.WebDriverUtils.driver;
+
 import com.chromatech.utils.WebDriverUtils;
 import org.openqa.selenium.NoSuchElementException;
 
@@ -75,9 +78,9 @@ public class StepsImplementation extends PageInitializer {
     /**
      * Navigates the user to the test student in the bulk delete submodule.
      *
-     * @param classOption   The class option of the student.
-     * @param sectionOption The section option of the student.
-     * @param expectedAdmissionNo   The admission number of the student.
+     * @param classOption         The class option of the student.
+     * @param sectionOption       The section option of the student.
+     * @param expectedAdmissionNo The admission number of the student.
      */
     public static void navigate_to_test_student(String classOption, String sectionOption, String expectedAdmissionNo) {
         bulkDeletePage.bulkDeleteSubModule.click();
@@ -531,7 +534,32 @@ public class StepsImplementation extends PageInitializer {
     }
 
     /**
-<<<<<<< HEAD
+     * Clicks on Disable button
+     * 1.Clicks disable button to disable student
+     * 2.Accepts alert dialog box that appears
+     * 3.Clicks on reason dropdown
+     * 4.Selects "Very Loud" from dropdown when text is visible
+     * 5.Clicks on submit button
+     */
+    public static void clicks_on_disable_student_button() {
+        disabledStudentPage.disableButton.click();
+        CommonMethods.acceptAlert();
+        disabledStudentPage.reasonDropdown.click();
+        CommonMethods.selectDropDownValue("Very Loud", disabledStudentPage.reasonDropdown);
+        disabledStudentPage.submitButton.click();
+    }
+
+    /**
+     * Clicks on Enable button
+     * 1.Clicks on enable button to enable student
+     * 2.Accepts alert dialog box that appears
+     */
+    public static void a_user_enables_the_student_record() {
+        disabledStudentPage.enableButton.click();
+        CommonMethods.acceptAlert();
+    }
+
+    /**
      * This method verifies if the expense head is displayed in the list and is able to be deleted.
      * It first scrolls the page to bring the expense head into view,
      * then checks if the expense head is displayed in the list using the isElementDisplayed method from the CommonMethods class.
@@ -606,8 +634,7 @@ public class StepsImplementation extends PageInitializer {
     }
 
     /**
-     *
-     * @param admissionNo
+     * @param expectedAdmissionNo
      * @param rollNo
      * @param Class
      * @param Section
@@ -644,7 +671,7 @@ public class StepsImplementation extends PageInitializer {
      * - Clicks on the search button.
      * - Clicks on the student result in the ability to disable student record page.
      *
-     * @param admissionNo the admission number of the student
+     * @param expectedAdmissionNo the admission number of the student
      */
 
     public static void user_opens_a_student_record_in_student_details_with_admission_number(String expectedAdmissionNo) {
@@ -660,7 +687,6 @@ public class StepsImplementation extends PageInitializer {
      * This method performs the necessary actions to click the button and accept any alert that may appear.
      *
      * @return void
-     *
      */
     public static void user_clicks_the_disable_thumbs_down() {
         abilityToDisableStudentRecordPage.disableSign.click();
@@ -702,7 +728,7 @@ public class StepsImplementation extends PageInitializer {
     /**
      * This method represents the user action of clicking on the "Bulk Delete" button in order
      * to delete a student record. It performs the following steps:
-     *
+     * <p>
      * 1. Clicks on the bulk delete submodule.
      * 2. Selects the desired class from the class drop-down.
      * 3. Selects the desired section from the section drop-down.
@@ -728,40 +754,14 @@ public class StepsImplementation extends PageInitializer {
     /**
      * This method simulates a user clicking on the save button on the student admission page.
      * It performs two actions:
-     *   1. It calls the click method from the CommonMethods class, passing in the save button element.
-     *      This ensures that any required pre-click actions are performed on the save button.
-     *   2. It directly clicks on the save button element on the student admission page.
-     *      This triggers the save operation on the page.
+     * 1. It calls the click method from the CommonMethods class, passing in the save button element.
+     * This ensures that any required pre-click actions are performed on the save button.
+     * 2. It directly clicks on the save button element on the student admission page.
+     * This triggers the save operation on the page.
      */
     public static void user_clicks_save_button() {
         CommonMethods.click(studentAdmissionPage.saveButton);
         studentAdmissionPage.saveButton.click();
     }
 }
-=======
-     * Clicks on Disable button
-     * 1.Clicks disable button to disable student
-     * 2.Accepts alert dialog box that appears
-     * 3.Clicks on reason dropdown
-     * 4.Selects "Very Loud" from dropdown when text is visible
-     * 5.Clicks on submit button
-     */
-    public static void clicks_on_disable_student_button() {
-        disabledStudentPage.disableButton.click();
-        CommonMethods.acceptAlert();
-        disabledStudentPage.reasonDropdown.click();
-        CommonMethods.selectDropDownValue("Very Loud", disabledStudentPage.reasonDropdown);
-        disabledStudentPage.submitButton.click();
-    }
 
-    /**
-     * Clicks on Enable button
-     * 1.Clicks on enable button to enable student
-     * 2.Accepts alert dialog box that appears
-     */
-    public static void a_user_enables_the_student_record() {
-        disabledStudentPage.enableButton.click();
-        CommonMethods.acceptAlert();
-    }
-}
->>>>>>> 0c28ff93cc982321022a9a78e909a4071f17c18b
