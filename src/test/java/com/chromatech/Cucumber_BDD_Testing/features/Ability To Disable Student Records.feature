@@ -1,6 +1,6 @@
 Feature: Ability To Disable Student Records
 
-  @Progression @AG3CP-26 @Joyce
+  @Regression @AG3CP-26 @Joyce
   Scenario Outline: Ability To Disable Student Records
     Given a user is on the Chroma Tech Academy practice site "https://mexil.it/chroma/site/login"
     And user enters username "general@teacher.com" in username text box
