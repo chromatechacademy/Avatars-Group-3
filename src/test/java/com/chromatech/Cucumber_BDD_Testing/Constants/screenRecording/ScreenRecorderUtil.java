@@ -115,7 +115,7 @@ public class ScreenRecorderUtil extends ScreenRecorder {
      */
     public static File getLastModified(String directoryFilePath) {
         File directory = new File(directoryFilePath);
-        File[] files = directory.listFiles(File::isFile);
+        File[] files = directory.listFiles(file -> file.isFile() && file.getName().endsWith(".mov"));
         long lastModifiedTime = Long.MIN_VALUE;
         File chosenFile = null;
 
