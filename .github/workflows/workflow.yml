@@ -1,7 +1,8 @@
 name: Smoke Tests Workflow
 
 on:
-  push: kei
+  push:
+    branches: kei
 
 jobs:
   test:
