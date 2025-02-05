@@ -33,3 +33,19 @@ jobs:
         with:
           name: cucumber-report
           path: target/cucumber-reports/cucumber-html-report.html
+
+      - name: Upload report for GitHub Pages
+        uses: actions/upload-pages-artifact@v4
+        with:
+        path: target/cucumber-reports
+
+  deploy:
+    name: Deploy Cucumber Report
+    runs-on: ubuntu-latest
+    needs: test
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v2
