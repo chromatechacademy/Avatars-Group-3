@@ -35,7 +35,7 @@ jobs:
           path: target/cucumber-reports/cucumber-html-report.html
 
       - name: Upload report for GitHub Pages
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: target/cucumber-reports
 
