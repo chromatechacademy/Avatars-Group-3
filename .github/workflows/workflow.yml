@@ -1,7 +1,7 @@
 name: Smoke Tests Workflow
 
 on:
-  push[kei]
+  push: kei
 
 jobs:
   test:
