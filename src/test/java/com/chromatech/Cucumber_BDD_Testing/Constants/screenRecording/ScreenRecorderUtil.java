@@ -4,9 +4,7 @@ import java.awt.AWTException;
 import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
@@ -90,7 +88,7 @@ public class ScreenRecorderUtil extends ScreenRecorder {
 
             screenRecorder = new ScreenRecorderUtil(gc, captureSize,
                     new Format(MediaTypeKey, MediaType.FILE, MimeTypeKey, MIME_QUICKTIME),
-                    new Format(MediaTypeKey, MediaType.VIDEO, EncodingKey, ENCODING_QUICKTIME_JPEG, CompressorNameKey, ENCODING_QUICKTIME_JPEG, DepthKey, 24, FrameRateKey, Rational.valueOf(30), QualityKey, 1.0f, KeyFrameIntervalKey, 15 * 60),
+                    new Format(MediaTypeKey, MediaType.VIDEO, EncodingKey, ENCODING_QUICKTIME_JPEG, CompressorNameKey, ENCODING_QUICKTIME_JPEG, DepthKey, 24, FrameRateKey, Rational.valueOf(60), QualityKey, 1.0f, KeyFrameIntervalKey, 15 * 60),
                     new Format(MediaTypeKey, MediaType.VIDEO, EncodingKey, "black", FrameRateKey, Rational.valueOf(30)), null, file, methodName);
             screenRecorder.start();
         }
@@ -164,6 +162,34 @@ public class ScreenRecorderUtil extends ScreenRecorder {
             System.out.println(".mov file deleted successfully");
         } else {
             System.out.println("Failed to delete .mov file");
+        }
+    }
+
+    public static void slowDownVideo(String inputFile, String outputFile, double slowdownFactor) {
+        String command = "ffmpeg -i \"" + inputFile + "\" -vf \"setpts=" + slowdownFactor + "*PTS\" \"" + outputFile + "\"";
+        ProcessBuilder processBuilder = new ProcessBuilder("bash", "-c", command);
+
+        processBuilder.redirectErrorStream(true); // This will redirect stderr to the same stream as stdout.
+
+        try {
+            Process process = processBuilder.start();
+
+            // Capture the output of the ffmpeg command:
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    System.out.println(">>> " + line);
+                }
+            }
+
+            int exitCode = process.waitFor();
+
+            if (exitCode != 0)
+                System.err.println("FFmpeg command exited with code " + exitCode);
+
+        } catch (IOException | InterruptedException e) {
+            System.err.println("Exception thrown during execution:");
+            e.printStackTrace();
         }
     }
 

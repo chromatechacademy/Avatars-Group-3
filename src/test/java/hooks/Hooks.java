@@ -12,6 +12,8 @@ import io.cucumber.java.Scenario;
 
 import java.io.File;
 
+import static com.chromatech.Cucumber_BDD_Testing.Constants.screenRecording.ScreenRecorderUtil.slowDownVideo;
+
 public class Hooks {
 
     @Before
@@ -36,7 +38,13 @@ public class Hooks {
             String outputFilename = directoryFilePath + baseName + ".mp4";
 
             ScreenRecorderUtil.convertMovToMp4(movieFile.getAbsolutePath(), outputFilename);
-        }
+            File outputFileBefore = new File(outputFilename);
+            System.out.println("Does the output file exist before slowing down? " + outputFileBefore.exists());
+
+            slowDownVideo(outputFilename, outputFilename + "_slow.mp4", 2.0);
+
+            File outputFileAfter = new File(outputFilename + "_slow.mp4");
+            System.out.println("Does the output file exist after slowing down? " + outputFileAfter.exists());        }
 
         WebDriverUtils.tearDown();
     }
